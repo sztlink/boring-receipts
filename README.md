@@ -74,6 +74,11 @@ Reporting a single "tok/s" without the regime is the hype this lab refuses.
 - **Rung 1 (noob)** — `receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md` —
   prebuilt llama.cpp b9286, Llama-3.1-8B Q4_K_M: pp512 4448 tok/s, tg 131 tok/s,
   6.3 GB VRAM, ~345 W. Reproducible by anyone with a GPU and 10 minutes.
+- **Research sibling RS1** — `receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md` —
+  cites the RealRAG/EPKV probe family in `turboquant-cuda-bench`: entity-hop
+  graph/path prompting beats BM25→BGE strong baseline (EM 0.25 vs 0.09), while
+  strict single-candidate ECD fails the follow-up gate. This is deliberately cited
+  as research sibling evidence, not absorbed into the canonical runtime axes.
 
 Next rungs climb from here; we don't jump to the top.
 
