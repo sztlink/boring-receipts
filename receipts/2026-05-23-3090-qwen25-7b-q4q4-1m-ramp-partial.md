@@ -11,15 +11,18 @@
 
 ## Claim
 
-A small local Qwen model can be pushed well beyond 128K on a single RTX 3090 with
+A small local Qwen model can be pushed **well beyond 128K** on a single RTX 3090 with
 llama.cpp, flash-attn and q4_0/q4_0 KV cache.
 
-This run reached **524,288 context depth** with exit code 0. The next rung,
-**786,432**, started but produced no JSONL row; the process was gone by the time it
-was inspected and the 3090 had returned to idle. The 1M rung was not reached.
+This is primarily a positive capacity receipt: the run reached **524,288 context
+depth** with exit code 0. The next rung, **786,432**, started but produced no JSONL
+row; the process was gone by the time it was inspected and the 3090 had returned to
+idle. The 1M rung was not reached.
 
-This is a capacity receipt, not a quality receipt. It says what the command could
-allocate and step through; it does not prove useful reasoning or retrieval at 524K.
+Read this as: **128K, 262K and 524K worked; 786K is the observed wall for this
+command shape.** It is a capacity receipt, not a quality receipt. It says what the
+command could allocate and step through; it does not prove useful reasoning or
+retrieval at 524K.
 
 ## Target
 
@@ -78,8 +81,8 @@ Depth sequence:
 Interpretation:
 
 - 128K and 262K are clean capacity passes for this small-model/q4_0-KV setup.
-- 524K also passes, but decode is only ~8 tok/s; it is a capacity pass, not a good
-  interactive experience.
+- 524K is also a real pass. It is slow (~8 tok/s), but it matters: the 3090 did get
+  past half a million context depth with a reproducible command.
 - 786K is the observed wall for this command shape.
 - 1M was discussed and targeted, but not reached here.
 

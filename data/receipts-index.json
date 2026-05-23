@@ -163,8 +163,8 @@
       "date": "2026-05-23",
       "node": "AYA-3090",
       "category": "context-capacity",
-      "status": "PASS_TO_524K_STALLED_AT_786K",
-      "gesture": "Qwen2.5-7B q4/q4 KV beyond-128K ramp: 524K pass, 786K stall, 1M not reached"
+      "status": "PASS_TO_524K_OBSERVED_WALL_AT_786K",
+      "gesture": "beyond-128K capacity ramp: Qwen2.5-7B q4/q4 KV passes 128K, 262K and 524K on one 3090; 786K is the wall"
     },
     {
       "id": "RS1",

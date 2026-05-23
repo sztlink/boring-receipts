@@ -55,6 +55,7 @@
           <div class="tw"><table>
             <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>HW</th><th>Mode</th><th>Gate</th><th>Link</th></tr></thead>
             <tbody>
+              <tr><td data-l="ID">R16</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">q4/q4 KV context ramp to 524K</td><td data-l="HW">RTX 3090</td><td data-l="Mode">capacity</td><td data-l="Gate" class="gp">PASS TO 524K</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md">open</a></td></tr>
               <tr><td data-l="ID">R15</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">KV dtype × long context</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="warn">TIMEOUT / NEGATIVE</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md">open</a></td></tr>
               <tr><td data-l="ID">R14</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">source KV dtype q8/q8 and q8/q4</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="gb">NEGATIVE DELTA</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">open</a></td></tr>
               <tr><td data-l="ID">R12</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">flash-attn × ctx (generalizes R6)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md">open</a></td></tr>
@@ -90,10 +91,9 @@
         validating a branch under load - each rung reproducible by the one below. We never
         skip steps to look advanced. Skipping the floor is the opposite of boring.</p>
 
-        <div class="banner"><strong>No-delta is evidence.</strong> RS2 scaled to N=500 and stopped being a
-        positive claim. R14 and R15 turn a blocker into measurable negatives: KV dtype runs, but does not
-        win in short or long context here. Both stay public because a receipt archive must preserve resistance
-        from the real, not only wins. <a href="negatives.html">Read the negative/no-delta shelf</a>.</div>
+        <div class="banner"><strong>Going far is evidence too.</strong> R16 reached 524K context on one
+        RTX 3090 before finding the wall at 786K. R14/R15 stay negative, RS2 stays no-delta, and R16 stays a
+        capacity pass — the archive preserves the curve, not just the last rung. <a href="receipts.html">Read the receipts</a>.</div>
 
         <h2 id="contact">Contact</h2>
         <p>Send a branch and a command shape; get back a receipt: commit, flags, driver,

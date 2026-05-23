@@ -81,6 +81,12 @@ gate-v1 PASS</span>
     claim hides. ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-context-sweep.md">full receipt R3</a></p>
 
+    <p class="small"><strong>R16 - beyond-128K capacity ramp</strong>. This is the positive context result:
+    Qwen2.5-7B Q4_K_M with q4/q4 KV reaches 128K, 262K and <strong>524K</strong> on one RTX 3090.
+    Decode is 28.6 tok/s at 128K, 15.4 at 262K, and 8.0 at 524K; 786K is where the command hits the wall.
+    The receipt preserves the climb, not just the final stall. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md">full receipt R16</a></p>
+
     <p class="small"><strong>R14 - patched source KV dtype</strong>. R13's toolchain blocker was overcome
     with VS2019, explicit SDK tools and a local PDL guard patch. The axis now runs, but the short-context
     speed result is negative: q8/q8 decode is 0.92× f16 and q8/q4 decode is 0.55× f16, with q8/q4 prefill

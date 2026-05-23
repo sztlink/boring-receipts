@@ -26,7 +26,7 @@ what kind of gesture they perform so the lab reads as process, not inventory.
 | R5 | [`2026-05-23-3090-llama31-8b-flash-attn.md`](receipts/2026-05-23-3090-llama31-8b-flash-attn.md) | Flash-attn point delta. |
 | R6 | [`2026-05-23-3090-llama31-8b-flash-attn-context-curve.md`](receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md) | Flash-attn curve across context. |
 | R12 | [`2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md`](receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md) | Cross-architecture flash-attn/context confirmation. |
-| R16 | [`2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md`](receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md) | Beyond-128K capacity ramp: 524K pass, 786K stall, 1M not reached. |
+| R16 | [`2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md`](receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md) | Beyond-128K capacity ramp: 128K/262K/524K pass on one 3090; 786K is the wall. |
 
 ## Model library
 
@@ -54,5 +54,5 @@ The KV-dtype axis remains the sharpest next runtime frontier. The prebuilt block
 it; a patched source build runs the axis; the long-context curve is negative/partial
 for this command shape. The next honest move is not another blind benchmark loop. It
 is source/kernel inspection, an upstream-clean CUDA 12.x build, or an external
-branch-and-command request. For context capacity, the next meaningful target is a
+branch-and-command request. For context capacity, R16 is now the local ladder: the next meaningful target is a
 Qwen3.6-27B or long-context fork recipe with a quality gate.
