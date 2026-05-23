@@ -11,9 +11,17 @@
 html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.5}
 
 .sheet{position:relative;max-width:860px;margin:24px auto;background:var(--paper);padding:30px 78px 70px;overflow:hidden;box-shadow:0 20px 50px -30px rgba(0,0,0,.6)}
-.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.5;mix-blend-mode:multiply;
-  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="220" height="220" filter="url(%23n)"/></svg>');
-  background-size:220px 220px}
+/* Real continuous-form paper fibre (Texturelabs Paper 366), multiplied over the
+   warm paper tone. Replaces the synthetic feTurbulence grain with photographed
+   stock so the sheet reads as physical printout, not CSS noise. */
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.55;mix-blend-mode:multiply;
+  background-image:url('assets/textures/paper-sheet.jpg');
+  background-size:cover;background-position:center}
+/* Faint horizontal banding (Texturelabs Paper 367) reads as platen / roller
+   marks across the printout. Kept very low so data stays legible. */
+.sheet::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.13;mix-blend-mode:multiply;
+  background-image:url('assets/textures/paper-accent.jpg');
+  background-size:cover;background-position:center}
 .frame{position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none;z-index:3}
 .frame::before,.frame::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--line)}
 .frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
@@ -40,6 +48,9 @@ h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:36px 0 12px}
 .tag{color:var(--red);font-weight:700;letter-spacing:2px;font-size:12px;margin-top:30px}
 p{max-width:64ch;color:#26231c}
 a{color:var(--blue)}
+/* body links carry a printed underline; nav/table links opt out below */
+p a,li a,.banner a,.foot a{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;text-decoration-thickness:1px}
+p a:hover,li a:hover,.banner a:hover,.foot a:hover{text-decoration-style:solid}
 ul,ol{max-width:64ch;color:#26231c}li{margin:.3em 0}
 code{background:var(--panel);border:1px solid var(--faint);padding:1px 5px;font-size:.92em}
 .small{color:var(--muted);font-size:12px}
@@ -49,9 +60,12 @@ img{max-width:100%;border:1px solid var(--line);background:var(--panel)}
 
 nav.side a{display:block;font-size:16px;color:var(--ink);text-decoration:none;margin:0 0 13px}
 nav.side a:hover{color:var(--blue)}
+nav.side a[aria-current]{color:var(--ink);font-weight:700}
+nav.side a[aria-current]::before{content:"› ";color:var(--red);margin-left:-12px}
 nav.top{display:flex;gap:18px;margin:6px 0 26px;font-size:14px}
 nav.top a{color:var(--ink);text-decoration:none}nav.top a:hover{color:var(--blue)}
-.body{display:grid;grid-template-columns:108px 1fr;gap:26px}
+.body{display:grid;grid-template-columns:108px minmax(0,1fr);gap:26px}
+.body>main{min-width:0}
 
 .panel{border:1.3px solid var(--line);background:var(--panel)}
 .panel-h{display:flex;justify-content:space-between;padding:8px 13px;border-bottom:1.3px solid var(--line);font-size:13px}
@@ -59,13 +73,26 @@ nav.top a{color:var(--ink);text-decoration:none}nav.top a:hover{color:var(--blue
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{border-collapse:collapse;width:100%;font-size:12px}
 th,td{text-align:left;padding:5px 9px;white-space:nowrap}
+/* Home is a preview, not the full ledger. Hide the low-variance HW (always
+   RTX 3090) and Mode columns so ID/Date/Model/Config/Gate/Link fit the narrow
+   main column without leaking past the sheet. Full detail lives on receipts.html.
+   Config (free text) may wrap; everything else stays single-line. */
+#receipts td:nth-child(4){white-space:normal}
+#receipts th:nth-child(5),#receipts td:nth-child(5),
+#receipts th:nth-child(6),#receipts td:nth-child(6){display:none}
 th{color:var(--muted);font-weight:400;border-bottom:1px solid var(--faint)}
 td a{color:var(--blue);text-decoration:none}
 tbody tr:hover{background:#efe7d3}
 table.grid{font-size:13px}
 table.grid th,table.grid td{border:1px solid var(--line);white-space:normal}
 table.grid th{background:var(--panel)}
+
+/* Gate states read as printed stamps: a struck glyph + weight, not colour alone. */
 .gp,.pass{color:var(--green)}.warn{color:var(--yellow)}.gb{color:var(--blue)}
+td.gp,td.pass,td.warn,td.gb{font-weight:700;letter-spacing:.3px}
+td.gp::before,td.pass::before{content:"\2713\00a0";font-weight:700}      /* ✓ */
+td.warn::before{content:"\2298\00a0"}                                     /* ⊘ blocked */
+td.gb::before{content:"\2248\00a0"}                                       /* ≈ no-delta */
 
 .foot{margin-top:42px;border-top:1px solid var(--faint);padding-top:12px;font-size:10.5px;color:var(--muted);word-break:break-word}
 .foot a,.lk{color:var(--blue)}
@@ -91,4 +118,6 @@ table.grid th{background:var(--panel)}
   .tw td{white-space:normal;border:0;padding:3px 0;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .tw td::before{content:attr(data-l);color:var(--muted);flex-shrink:0}
   .tw td:empty{display:none}
+  /* stacked cards have vertical room: restore HW/Mode hidden on the desktop preview */
+  #receipts td:nth-child(5),#receipts td:nth-child(6){display:flex}
 }
