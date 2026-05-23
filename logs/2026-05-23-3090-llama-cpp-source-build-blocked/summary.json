@@ -1,0 +1,8 @@
+﻿{
+    "schema":  "boring-kv-source-build-v1",
+    "status":  "failed",
+    "date":  "2026-05-23T11:18:01.7266012-03:00",
+    "root":  "C:\\Users\\user\\boring\\kvdtype-source-build-20260523",
+    "log":  "C:\\Users\\user\\boring\\kvdtype-source-build-20260523.log",
+    "error":  "step cmake-configure failed code "
+}

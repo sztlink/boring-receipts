@@ -30,6 +30,7 @@ const includeFiles = [
 
 const includeDirs = [
   'receipts',
+  'logs',
   'assets',
   'data',
   'docs',

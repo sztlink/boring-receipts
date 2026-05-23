@@ -41,11 +41,14 @@ what kind of gesture they perform so the lab reads as process, not inventory.
 | ID | receipt | gesture |
 |---|---|---|
 | R4 | [`2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md`](receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md) | KV-cache quantization blocked on prebuilt. |
+| R13 | [`2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md`](receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md) | Source-build CUDA path blocked at CMake/MSVC/Windows SDK preflight. |
 | RS1 | [`2026-05-23-4090-vllm-realrag-entity-hop-path.md`](receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md) | Positive path-construction bridge plus failed strict ECD shortcut. |
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | Small-slice gain demoted by N=500 no-delta. |
 
 ## Open frontier
 
 The KV-dtype axis remains the sharpest next runtime frontier. The current prebuilt
-blocks it. The next honest move is a source build or another stack that can vary
-K/V dtype without hanging, with the same receipt grammar and a visible quality gate.
+blocks it, and the first source-build attempt found a toolchain blocker before
+benchmarking. The next honest move is not another blind run: first repair the
+Windows SDK / developer-shell environment so `rc.exe`, `mt.exe`, MSVC and CUDA all
+resolve in the same shell, then rerun the KV dtype benchmark.

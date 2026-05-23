@@ -4,21 +4,158 @@
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
-    {"id":"R1","file":"receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md","date":"2026-05-22","node":"AYA-3090","category":"runtime-baseline","status":"PASS","gesture":"shared workstation Llama-3.1-8B Q4_K_M baseline"},
-    {"id":"R2","file":"receipts/2026-05-22-3090-llama31-8b-quant-sweep.md","date":"2026-05-22","node":"AYA-3090","category":"weight-quant","status":"PASS","gesture":"Q4/Q5/Q8 sweep with quality gate"},
-    {"id":"R1b","file":"receipts/2026-05-23-3090-llama31-8b-q4km-baseline-dedicated.md","date":"2026-05-23","node":"AYA-3090","category":"runtime-baseline","status":"PASS","gesture":"dedicated-mode rerun; idle resident process costs VRAM not throughput"},
-    {"id":"R2b","file":"receipts/2026-05-23-3090-llama31-8b-quant-sweep-dedicated.md","date":"2026-05-23","node":"AYA-3090","category":"weight-quant","status":"PASS","gesture":"dedicated-mode quant sweep"},
-    {"id":"R3","file":"receipts/2026-05-23-3090-llama31-8b-context-sweep.md","date":"2026-05-23","node":"AYA-3090","category":"context","status":"PASS","gesture":"0 to 64K context wall"},
-    {"id":"R4","file":"receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md","date":"2026-05-23","node":"AYA-3090","category":"blocked","status":"BLOCKED","gesture":"KV-cache quantization hangs on prebuilt"},
-    {"id":"R5","file":"receipts/2026-05-23-3090-llama31-8b-flash-attn.md","date":"2026-05-23","node":"AYA-3090","category":"flash-attn","status":"PASS","gesture":"flash-attn point delta"},
-    {"id":"R6","file":"receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md","date":"2026-05-23","node":"AYA-3090","category":"flash-attn","status":"PASS","gesture":"flash-attn across context"},
-    {"id":"R7","file":"receipts/2026-05-23-3090-qwen25-7b-q4km.md","date":"2026-05-23","node":"AYA-3090","category":"model-library","status":"PASS","gesture":"Qwen2.5-7B model card"},
-    {"id":"R8","file":"receipts/2026-05-23-3090-mistral-7b-v03-q4km.md","date":"2026-05-23","node":"AYA-3090","category":"model-library","status":"PASS","gesture":"Mistral-7B model card"},
-    {"id":"R9","file":"receipts/2026-05-23-3090-gemma2-9b-q4km.md","date":"2026-05-23","node":"AYA-3090","category":"model-library","status":"PASS","gesture":"Gemma-2-9B model card"},
-    {"id":"R10","file":"receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md","date":"2026-05-23","node":"AYA-3090","category":"weight-quant","status":"PASS","gesture":"Qwen quant ladder; quality cost differs by family"},
-    {"id":"R11","file":"receipts/2026-05-23-3090-qwen25-14b-q4km.md","date":"2026-05-23","node":"AYA-3090","category":"model-library","status":"PASS","gesture":"Qwen2.5-14B model card"},
-    {"id":"R12","file":"receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md","date":"2026-05-23","node":"AYA-3090","category":"flash-attn","status":"PASS","gesture":"Qwen flash-attn/context confirmation"},
-    {"id":"RS1","file":"receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md","date":"2026-05-23","node":"AYA-4090","category":"research-sibling","status":"MIXED","gesture":"entity-hop path construction positive; strict ECD negative"},
-    {"id":"RS2","file":"receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md","date":"2026-05-23","node":"AYA-4090","category":"research-sibling","status":"NO_DELTA_AT_500","gesture":"gated rerank small-slice gain demoted by N=500 no-delta"}
+    {
+      "id": "R1",
+      "file": "receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md",
+      "date": "2026-05-22",
+      "node": "AYA-3090",
+      "category": "runtime-baseline",
+      "status": "PASS",
+      "gesture": "shared workstation Llama-3.1-8B Q4_K_M baseline"
+    },
+    {
+      "id": "R2",
+      "file": "receipts/2026-05-22-3090-llama31-8b-quant-sweep.md",
+      "date": "2026-05-22",
+      "node": "AYA-3090",
+      "category": "weight-quant",
+      "status": "PASS",
+      "gesture": "Q4/Q5/Q8 sweep with quality gate"
+    },
+    {
+      "id": "R1b",
+      "file": "receipts/2026-05-23-3090-llama31-8b-q4km-baseline-dedicated.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "runtime-baseline",
+      "status": "PASS",
+      "gesture": "dedicated-mode rerun; idle resident process costs VRAM not throughput"
+    },
+    {
+      "id": "R2b",
+      "file": "receipts/2026-05-23-3090-llama31-8b-quant-sweep-dedicated.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "weight-quant",
+      "status": "PASS",
+      "gesture": "dedicated-mode quant sweep"
+    },
+    {
+      "id": "R3",
+      "file": "receipts/2026-05-23-3090-llama31-8b-context-sweep.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "context",
+      "status": "PASS",
+      "gesture": "0 to 64K context wall"
+    },
+    {
+      "id": "R4",
+      "file": "receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "blocked",
+      "status": "BLOCKED",
+      "gesture": "KV-cache quantization hangs on prebuilt"
+    },
+    {
+      "id": "R5",
+      "file": "receipts/2026-05-23-3090-llama31-8b-flash-attn.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "flash-attn",
+      "status": "PASS",
+      "gesture": "flash-attn point delta"
+    },
+    {
+      "id": "R6",
+      "file": "receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "flash-attn",
+      "status": "PASS",
+      "gesture": "flash-attn across context"
+    },
+    {
+      "id": "R7",
+      "file": "receipts/2026-05-23-3090-qwen25-7b-q4km.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "model-library",
+      "status": "PASS",
+      "gesture": "Qwen2.5-7B model card"
+    },
+    {
+      "id": "R8",
+      "file": "receipts/2026-05-23-3090-mistral-7b-v03-q4km.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "model-library",
+      "status": "PASS",
+      "gesture": "Mistral-7B model card"
+    },
+    {
+      "id": "R9",
+      "file": "receipts/2026-05-23-3090-gemma2-9b-q4km.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "model-library",
+      "status": "PASS",
+      "gesture": "Gemma-2-9B model card"
+    },
+    {
+      "id": "R10",
+      "file": "receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "weight-quant",
+      "status": "PASS",
+      "gesture": "Qwen quant ladder; quality cost differs by family"
+    },
+    {
+      "id": "R11",
+      "file": "receipts/2026-05-23-3090-qwen25-14b-q4km.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "model-library",
+      "status": "PASS",
+      "gesture": "Qwen2.5-14B model card"
+    },
+    {
+      "id": "R12",
+      "file": "receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "flash-attn",
+      "status": "PASS",
+      "gesture": "Qwen flash-attn/context confirmation"
+    },
+    {
+      "id": "R13",
+      "file": "receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "blocked",
+      "status": "BLOCKED",
+      "gesture": "source-build CUDA path blocked at CMake/MSVC/Windows SDK preflight"
+    },
+    {
+      "id": "RS1",
+      "file": "receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md",
+      "date": "2026-05-23",
+      "node": "AYA-4090",
+      "category": "research-sibling",
+      "status": "MIXED",
+      "gesture": "entity-hop path construction positive; strict ECD negative"
+    },
+    {
+      "id": "RS2",
+      "file": "receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md",
+      "date": "2026-05-23",
+      "node": "AYA-4090",
+      "category": "research-sibling",
+      "status": "NO_DELTA_AT_500",
+      "gesture": "gated rerank small-slice gain demoted by N=500 no-delta"
+    }
   ]
 }

@@ -106,6 +106,9 @@ to start with:
   [`receipts/2026-05-23-3090-llama31-8b-context-sweep.md`](receipts/2026-05-23-3090-llama31-8b-context-sweep.md)
 - **R4 - KV-quant BLOCKED** - a failure reproduction is still a receipt.
   [`receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md`](receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md)
+- **R13 - source-build CUDA BLOCKED** - the source-build path hit a toolchain
+  preflight blocker before benchmarking.
+  [`receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md`](receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md)
 
 12 runtime receipts (R1–R12) over a **5-model library, 7.25B–14.77B** (Mistral,
 Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling receipts

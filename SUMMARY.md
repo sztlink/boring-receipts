@@ -64,6 +64,8 @@ The archive deliberately keeps resistance visible:
 
 - **R4 - KV-quant BLOCKED:** the prebuilt hangs under the KV dtype command shape;
   the blocker redirects the next move to a source build.
+- **R13 - source-build CUDA BLOCKED:** the source-build attempt reached a CMake /
+  MSVC / Windows SDK preflight blocker before any `llama-bench` binary was produced.
 - **RS1 - mixed:** entity-hop path construction works, strict single-candidate ECD
   fails.
 - **RS2 - N=500 NO DELTA:** the 100-case gated-rerank gain does not scale; direct
@@ -77,5 +79,8 @@ Offline single-node receipts. Not a leaderboard, not a vendor benchmark, not
 serving-readiness. The canonical minimal KV/long-context receipt the upstream
 [llama.cpp #18722](https://github.com/ggml-org/llama.cpp/issues/18722) left unowned.
 
-The open frontier is the **KV-dtype axis** (the heart of the TurboQuant comparison),
-BLOCKED here on the prebuilt - the next real move is a source build that unblocks it.
+The open frontier is still the **KV-dtype axis** (the heart of the TurboQuant
+comparison), but it now has two blockers: the prebuilt runtime hang (R4) and the
+source-build environment preflight (R13). The next real move is to repair the
+Windows SDK / developer-shell environment, then rerun the source-build KV dtype
+benchmark.

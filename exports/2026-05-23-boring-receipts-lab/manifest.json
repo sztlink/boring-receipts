@@ -1,7 +1,7 @@
 {
   "schema": "boring-receipts-preservation-package-v1",
   "package": "2026-05-23-boring-receipts-lab",
-  "created": "2026-05-23T13:39:48.518Z",
+  "created": "2026-05-23T14:23:04.427Z",
   "source": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "boundary": "Static preservation package: Markdown receipts, public HTML exhibit, JSON index, SVG assets, scripts and checksums. External binaries/models/datasets are not bundled.",
@@ -48,18 +48,18 @@
     },
     {
       "path": "NEGATIVES.md",
-      "bytes": 2252,
-      "sha256": "73fe67ffeab6e7aa5558995cc66e100e93e6349e670322c22a8bf16d134ac266"
+      "bytes": 2614,
+      "sha256": "02644e362c0f9fe89944954705969814e045ae12ff6d6c4cca2c6d8900a50c6b"
     },
     {
       "path": "PRESERVATION.md",
-      "bytes": 3000,
-      "sha256": "c65b1affc459d7b1230fac5bb54d7ff42add119f908885af9710f452ad950bd8"
+      "bytes": 3040,
+      "sha256": "16c1f621faf8cb313f1a2749a2f29f5586de6cb09bc607f731c6c76e4432f4ee"
     },
     {
       "path": "PROCESS-INDEX.md",
-      "bytes": 3245,
-      "sha256": "b70a4580639658762a0989f1a5d9669d0f720c190a3e87f3ffe911fd7c6cbae0"
+      "bytes": 3585,
+      "sha256": "ff32bc3d87bb7892850b98a01bd408225bb6d07dd1831735efc3fc2c5a42e0e3"
     },
     {
       "path": "README.md",
@@ -68,8 +68,8 @@
     },
     {
       "path": "SUMMARY.md",
-      "bytes": 4390,
-      "sha256": "257a448568af9d3d6de6e1815628b3904ea669efc38e59ad76609dbd1306cf5c"
+      "bytes": 4714,
+      "sha256": "27234482ce60c7007d882e61cfdd84d6ea6a5ca01f0f39d2760deabf4f469552"
     },
     {
       "path": "assets/delta-library-5model.svg",
@@ -108,8 +108,8 @@
     },
     {
       "path": "data/receipts-index.json",
-      "bytes": 3557,
-      "sha256": "7f8f2279c4d1614f9326ea1e866e952df867a5037a16453d72c43d9fac36de2b"
+      "bytes": 4842,
+      "sha256": "bdb1688f98892d78e85fbcdfb9c41cb99f33c277e289827ed23a151a8cd62e37"
     },
     {
       "path": "docs/assets/delta-library-5model.svg",
@@ -158,13 +158,13 @@
     },
     {
       "path": "docs/index.html",
-      "bytes": 11406,
-      "sha256": "4164ce81ea27ab349f63b1da4d6df9a3e70be55b753ab0b0f85000f2636133a4"
+      "bytes": 11830,
+      "sha256": "4a3efb97212430a9a5c5487383b721154a214b806f4bff8d7c7c32571fabacce"
     },
     {
       "path": "docs/negatives.html",
-      "bytes": 3229,
-      "sha256": "873acfce59d89c81acd741d600da7f4cd288bf799304a8d40871244945e4a142"
+      "bytes": 3671,
+      "sha256": "b4c9d2370d137d3badc0f28073d6bbca3f0e9133e33c45acce3ea0989b8f4543"
     },
     {
       "path": "docs/preservation.html",
@@ -180,6 +180,16 @@
       "path": "docs/style.css",
       "bytes": 5859,
       "sha256": "6da6e7063aeaa63711ed02d1626b57f6077c9cde398e791ad73fac6abafb72d8"
+    },
+    {
+      "path": "logs/2026-05-23-3090-llama-cpp-source-build-blocked/build-attempt.log",
+      "bytes": 5207,
+      "sha256": "6f2166ca82cfa8eee4bc179a528ffbea03d3ee4bdc27540a14f36cf0d4a68b96"
+    },
+    {
+      "path": "logs/2026-05-23-3090-llama-cpp-source-build-blocked/summary.json",
+      "bytes": 329,
+      "sha256": "82a43fab6c4fb9b2bbfcd67104cfa474a9e4b9195d438703847f206bd55d7b78"
     },
     {
       "path": "receipt-template.md",
@@ -205,6 +215,11 @@
       "path": "receipts/2026-05-23-3090-gemma2-9b-q4km.md",
       "bytes": 3223,
       "sha256": "6aead73cd2a6f6e2f37890e2a1a1f24b323ceacd26bd0a8dce37bee01cb78d7e"
+    },
+    {
+      "path": "receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md",
+      "bytes": 4663,
+      "sha256": "9160f13670bc96d77c5b180ad744346c914bfd58e1e1ad866e581a50436add34"
     },
     {
       "path": "receipts/2026-05-23-3090-llama31-8b-context-sweep.md",
@@ -273,8 +288,8 @@
     },
     {
       "path": "scripts/export-static-package.mjs",
-      "bytes": 4729,
-      "sha256": "67d356101aa443c0b23f8d29d00b22409dbc5021bf01401cfed364e1d7fd40bf"
+      "bytes": 4739,
+      "sha256": "26bf79a7957e4ad76da90c139e526890a261dd583efc05714577effee5f4a6ef"
     },
     {
       "path": "scripts/generate-delta-sheet.mjs",

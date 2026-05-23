@@ -46,6 +46,7 @@ receipt-template.md
 receipt-template.yaml
 data/*.json
 receipts/*.md
+logs/** when a receipt cites local logs
 assets/*.svg
 scripts/*.mjs
 docs/*.html
