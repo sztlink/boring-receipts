@@ -70,21 +70,35 @@ Reporting a single "tok/s" without the regime is the hype this lab refuses.
 | AYA-4090 | RTX 4090, Win+WSL2 | vLLM (installed) | later — LLM-busy |
 | AYA2 | NUC, CPU-only | — | not an inference node |
 
-## Receipts so far
+## Why this exists
 
-- **Rung 1 (noob)** — `receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md` —
-  prebuilt llama.cpp b9286, Llama-3.1-8B Q4_K_M: pp512 4448 tok/s, tg 131 tok/s,
-  6.3 GB VRAM, ~345 W. Reproducible by anyone with a GPU and 10 minutes.
-- **Research sibling RS1** — `receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md` —
-  cites the RealRAG/EPKV probe family in `turboquant-cuda-bench`: entity-hop
-  graph/path prompting beats BM25→BGE strong baseline (EM 0.25 vs 0.09), while
-  strict single-candidate ECD fails the follow-up gate. This is deliberately cited
-  as research sibling evidence, not absorbed into the canonical runtime axes.
-- **Research sibling RS2** — `receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md` —
-  confidence-gated answer rerank improves the RS1 path prompt without EM losses:
-  EM 0.27 / F1 0.345, wins 2, losses 0 vs RS1 path prompt.
+Most inference "benchmarks" are claims you can't re-run: a tok/s number with no
+commit, no flags, no context length, no quality check. The llama.cpp issue
+[#18722](https://github.com/ggml-org/llama.cpp/issues/18722) asked for a canonical
+minimal KV/long-context receipt and was closed **not planned** — so nobody owns it.
+Boring Receipts fills that vacuum: every number ships with the exact command, build,
+hardware, and a quality gate, so you can re-run it and check. **Boring = reproducible
+= trustworthy.**
 
-Next rungs climb from here; we don't jump to the top.
+## Receipts
+
+The full library + the six findings are in **[SUMMARY.md](SUMMARY.md)**. Good ones
+to start with:
+
+- **R6 — flash-attn × context** — the free flag whose win *scales* with context
+  (~3× decode at 64K). [`receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md`](receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md)
+- **R10 — Qwen quant ladder** — the Q4/Q5/Q8 speed↔quality↔VRAM trade-off, and how
+  it generalizes across models. [`receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md`](receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md)
+- **R3 — context wall** — why "128K context!" hides a ~20 t/s decode on a 3090.
+  [`receipts/2026-05-23-3090-llama31-8b-context-sweep.md`](receipts/2026-05-23-3090-llama31-8b-context-sweep.md)
+- **R4 — KV-quant BLOCKED** — a failure reproduction is still a receipt.
+  [`receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md`](receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md)
+
+12 runtime receipts (R1–R12) over a **5-model library, 7.25B–14.77B** (Mistral,
+Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling receipts
+citing the RealRAG/EPKV probe family in
+[turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench). All under
+`receipts/`. Next rungs climb from here; we don't jump to the top.
 
 ## Guardrails
 
