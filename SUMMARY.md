@@ -24,7 +24,8 @@ family** (e.g. Qwen2.5-7B 8.02 vs Qwen2.5-14B 6.13), never across families.
 1. **Flash-attention is a free win that scales with context.** `-fa 1` on the stock
    binary: +11% prefill / +4% decode at empty context, but **+127% prefill / +39%
    decode at 16K**, and at 64K it nearly **triples decode** (20.5 → 58.4 t/s) and
-   gives **4.6× prefill**. Always pass `-fa 1` for long context. (R5, R6)
+   gives **4.6× prefill**. Always pass `-fa 1` for long context. Confirmed
+   cross-architecture: on Qwen2.5-7B the 64K decode gain is **+233%** (R12). (R5, R6, R12)
 
 2. **KV-cache quantization is BLOCKED on this prebuilt.** `-ctk q8_0 -ctv q4_0`
    (which needs `-fa 1`) hangs indefinitely on b9286 win-cuda on the 3090; isolated
