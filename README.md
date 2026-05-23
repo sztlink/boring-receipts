@@ -4,6 +4,7 @@
 
 **Live:** https://sztlink.github.io/boring-receipts/ ·
 **Findings:** [SUMMARY.md](SUMMARY.md) ·
+**Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) ·
 **Research sibling:** [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench)
 
 A NVIDIA validation node for the Waffle/TurboQuant community. No hype, no vague
