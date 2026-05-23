@@ -1,0 +1,12 @@
+Run launched by Pi on 2026-05-23.
+Command script: bench-longctx.cmd
+Planned curve: f16/f16, q8_0/q8_0, q8_0/q4_0 at depths 0,4096,16384,32768,65536 with -r 2.
+
+Outcome:
+- f16/f16 completed all depths.
+- q8_0/q8_0 completed all depths.
+- q8_0/q4_0 completed depths 0,4096,16384 for pp512 and tg128.
+- q8_0/q4_0 did not emit the 32768-depth row before the outer SSH command timed out after 7200 seconds.
+- After timeout, llama-bench.exe was still resident with VRAM allocated and GPU utilization at 0%; Pi stopped the process to release the 3090.
+
+This should be treated as a timeout / pathological regression, not as a complete long-context curve for q8_0/q4_0.

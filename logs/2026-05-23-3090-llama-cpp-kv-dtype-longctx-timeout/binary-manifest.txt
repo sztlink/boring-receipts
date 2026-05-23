@@ -1,0 +1,30 @@
+ Volume in drive C has no label.
+ Volume Serial Number is A2B6-B0EF
+
+ Directory of C:\Users\user\boring\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\build\bin
+
+23-May-26  12:16 PM             9,728 llama-bench.exe
+
+ Directory of C:\Users\user\boring\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\build\bin
+
+23-May-26  12:17 PM             9,728 llama-cli.exe
+
+ Directory of C:\Users\user\boring\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\build\bin
+
+23-May-26  12:11 PM       199,837,696 ggml-cuda.dll
+
+ Directory of C:\Users\user\boring\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\build\bin
+
+23-May-26  12:13 PM         1,977,856 llama.dll
+
+ Directory of C:\Users\user\boring\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\build\bin
+
+23-May-26  12:11 PM            55,808 ggml.dll
+               5 File(s)    201,890,816 bytes
+               0 Dir(s)  74,763,939,840 bytes free
+SHA256 hash of llama-bench.exe:
+ad99bef9ad34f28e763c870269c19049a817655e7269187c3862f74946ec77c3
+CertUtil: -hashfile command completed successfully.
+SHA256 hash of ggml-cuda.dll:
+165f04996c9baa592fcf68c9cd0ec9a19f66fd2a931f8ff544e5899008093a5f
+CertUtil: -hashfile command completed successfully.

@@ -116,8 +116,12 @@ to start with:
   tools and a local PDL guard patch. KV dtype runs, but q8/q8 is slower than f16 and
   q8/q4 strongly regresses in this short-context test.
   [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md)
+- **R15 - KV dtype long-context timeout** - q8/q8 completes 64K but gets slower
+  relative to f16 as depth grows; q8/q4 becomes pathological and times out before
+  the 32K row.
+  [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md)
 
-13 runtime receipts (R1–R14, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
+14 runtime receipts (R1–R15, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
 (Mistral, Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling
 receipts citing the RealRAG/EPKV probe family in
 [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench). All under

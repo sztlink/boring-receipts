@@ -1,0 +1,4 @@
+RUN q8_0-q8_0 23-May-26 12:30:10.08 
+ggml_cuda_init: found 1 CUDA devices (Total VRAM: 24575 MiB):
+  Device 0: NVIDIA GeForce RTX 3090, compute capability 8.6, VMM: yes, VRAM: 24575 MiB
+EXIT 0 

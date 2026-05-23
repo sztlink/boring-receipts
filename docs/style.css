@@ -2,16 +2,18 @@
    Light editorial / szt.link tokens. Used by every page so the perforated
    paper aesthetic is consistent. */
 :root{
-  --paper:#f6f2ea; --ink:#161410; --muted:#6e675a; --line:#1c1a15;
-  --faint:#c9bb9c; --panel:#f7f1e3; --blue:#2f5f87; --green:#356b46; --red:#a33a2b; --yellow:#9a7320;
+  /* Warm aged-paper neutrals on a single hue family (~40°), accents tuned down to
+     faded printer-ribbon: desaturated and earthy, not poster-bright. */
+  --paper:#f4eedd; --ink:#1d1811; --muted:#857758; --line:#241d12;
+  --faint:#ccbd96; --panel:#f4eedd; --blue:#4a6679; --green:#566f44; --red:#9c4b35; --yellow:#8c6c24;
   /* translucent ink tint for boxed regions: lets the paper texture read through
      instead of pasting a flat lighter card over it */
-  --tint:rgba(40,36,28,.05);
+  --tint:rgba(48,40,24,.06);
   --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.5}
+html,body{margin:0;background:#cdbb95;color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.5}
 
 .sheet{position:relative;max-width:860px;margin:24px auto;background:var(--paper);padding:30px 78px 70px;overflow:hidden;box-shadow:0 20px 50px -30px rgba(0,0,0,.6)}
 /* Real continuous-form paper fibre (Texturelabs Paper 366), multiplied over the
@@ -44,7 +46,7 @@ html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);f
    print texture, so type reads as dot-matrix print rather than crisp vector.
    Regular grid (not random noise) keeps it intentional, not artificial. */
 .content::after{content:"";position:absolute;inset:0;z-index:11;pointer-events:none;mix-blend-mode:multiply;
-  background-image:radial-gradient(circle at 50% 50%, rgba(22,20,16,.42) 0.4px, transparent 0.9px);
+  background-image:radial-gradient(circle at 50% 50%, rgba(74,56,32,.42) 0.4px, transparent 0.9px);
   background-size:2.8px 2.8px}
 
 .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin:34px 0 0}

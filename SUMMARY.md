@@ -27,11 +27,12 @@ family** (e.g. Qwen2.5-7B 8.02 vs Qwen2.5-14B 6.13), never across families.
    gives **4.6× prefill**. Always pass `-fa 1` for long context. Confirmed
    cross-architecture: on Qwen2.5-7B the 64K decode gain is **+233%** (R12). (R5, R6, R12)
 
-2. **KV-cache quantization moved from blocked to runnable, with a negative short-context delta.**
+2. **KV-cache quantization moved from blocked to runnable, then to negative long-context evidence.**
    The b9286 win-cuda prebuilt still hangs under the `-ctk/-ctv` command shape (R4),
    but a patched source build with VS2019, CUDA 11.8 and a local PDL guard patch runs
-   the KV dtype axis. The first result is not a speed win: q8/q8 decode is 0.92x f16,
-   and q8/q4 decode is 0.55x f16 while prefill collapses to 0.04x. (R4, R14)
+   the KV dtype axis. The result is not a speed win. q8/q8 decode falls from 0.92x
+   f16 at depth 0 to 0.69x at 64K. q8/q4 becomes pathological: 1.71 tok/s at 16K
+   and no 32K row before timeout. (R4, R14, R15)
 
 3. **The long-context wall.** On the context axis, **both** prefill and decode
    collapse with depth (pp −94%, tg −85% by 64K with f16 KV, fa off) - the
@@ -68,6 +69,8 @@ The archive deliberately keeps resistance visible:
   MSVC / Windows SDK preflight blocker before any `llama-bench` binary was produced.
 - **R14 - patched source KV dtype negative delta:** the blocker was overcome, but
   q8/q8 is slower than f16 and q8/q4 strongly regresses in the short-context test.
+- **R15 - KV dtype long-context timeout:** q8/q8 completes 64K but gets worse vs f16
+  with depth; q8/q4 times out before the 32K row.
 - **RS1 - mixed:** entity-hop path construction works, strict single-candidate ECD
   fails.
 - **RS2 - N=500 NO DELTA:** the 100-case gated-rerank gain does not scale; direct
@@ -82,6 +85,7 @@ serving-readiness. The canonical minimal KV/long-context receipt the upstream
 [llama.cpp #18722](https://github.com/ggml-org/llama.cpp/issues/18722) left unowned.
 
 The open frontier is still the **KV-dtype axis** (the heart of the TurboQuant
-comparison). R14 makes the axis runnable with a patched source build, but the first
-short-context result is negative for speed. The next real move is a long-context KV
-dtype curve plus a small quality gate.
+comparison). R14 makes the axis runnable with a patched source build, and R15 shows
+that the long-context curve is also negative for this command shape. The next real
+move is source/kernel inspection or an upstream-clean CUDA 12.x build, not another
+blind rerun.

@@ -1,0 +1,2 @@
+name, driver_version, memory.used [MiB], memory.total [MiB], utilization.gpu [%], temperature.gpu, power.draw [W]
+NVIDIA GeForce RTX 3090, 566.14, 617 MiB, 24576 MiB, 0 %, 76, 203.66 W
