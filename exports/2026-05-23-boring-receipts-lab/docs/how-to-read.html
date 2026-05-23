@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to read · Boring Receipts Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+  <div class="frame"></div><div class="holes l"></div><div class="holes r"></div>
+  <div class="ticks">‹<br>⌄<br>·<br>·</div><div class="ruler" id="ruler"></div><div class="fold"></div>
+  <div class="content">
+    <div class="topbar"><span class="glyphs">○&nbsp;○&nbsp;✕</span><span class="meta">receipt grammar
+claim → non-claim
+no hype</span></div>
+    <div class="tag">READING PROTOCOL</div>
+    <h1>How to read a boring receipt</h1>
+    <p class="lede">The repetition is the interface.</p>
+    <nav class="top"><a href="index.html">‹ Home</a><a href="receipts.html">Receipts</a><a href="negatives.html">Negatives</a><a href="https://github.com/sztlink/boring-receipts/blob/main/HOW-TO-READ.md">Markdown</a></nav>
+
+    <div class="banner"><strong>A receipt is not a leaderboard entry.</strong> It is a small public proof that a specific command shape ran on a specific machine under a specific state, and that its limits are visible enough to contest.</div>
+
+    <h2>The fixed reading order</h2>
+    <ol>
+      <li><strong>Claim</strong> - the smallest thing the receipt says happened.</li>
+      <li><strong>Target</strong> - engine, regime, repo, branch, commit, build, model, dataset if any.</li>
+      <li><strong>Command</strong> - the exact command shape or command chain.</li>
+      <li><strong>Environment</strong> - OS, driver, CUDA, GPU, VRAM, resident processes, endpoint.</li>
+      <li><strong>Results</strong> - metrics with coordinates, never a single speed score.</li>
+      <li><strong>Quality gate</strong> - the invariant that should not move.</li>
+      <li><strong>Evidence</strong> - paths, logs, stdout excerpts, hashes when available.</li>
+      <li><strong>What this receipt does not prove</strong> - the boundary of the claim.</li>
+      <li><strong>Next step</strong> - the smallest action that would sharpen the receipt.</li>
+    </ol>
+
+    <h2>Six rules</h2>
+    <ul>
+      <li>A receipt re-executes.</li>
+      <li>Coordinates beat scores.</li>
+      <li>Negative, blocked and no-delta results have equal standing.</li>
+      <li>The quality gate is not an axis.</li>
+      <li>The card is not the body: RealRAG/EPKV live in the sibling research repo.</li>
+      <li>Reproducibility is not neutrality.</li>
+    </ul>
+
+    <h2>Status vocabulary</h2>
+    <div class="tw"><table class="grid"><tbody>
+      <tr><td data-l="status" class="pass">PASS</td><td data-l="meaning">command completed and stated quality gate passed</td></tr>
+      <tr><td data-l="status" class="warn">BLOCKED</td><td data-l="meaning">the stack resisted; the blocker is the finding</td></tr>
+      <tr><td data-l="status">MIXED</td><td data-l="meaning">part of the gate passed and part failed</td></tr>
+      <tr><td data-l="status">NO DELTA</td><td data-l="meaning">the intervention did not materially change the baseline</td></tr>
+      <tr><td data-l="status">NOT EXERCISED</td><td data-l="meaning">no behavioral gate was run; useful only when declared</td></tr>
+    </tbody></table></div>
+
+    <div class="foot">Public card: Boring Receipts. Research body: <a href="https://github.com/sztlink/turboquant-cuda-bench">turboquant-cuda-bench</a>.</div>
+  </div>
+</div>
+<script src="deco.js"></script>
+</body></html>

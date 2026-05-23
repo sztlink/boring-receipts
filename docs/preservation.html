@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preservation · Boring Receipts Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+  <div class="frame"></div><div class="holes l"></div><div class="holes r"></div>
+  <div class="ticks">‹<br>⌄<br>·<br>·</div><div class="ruler" id="ruler"></div><div class="fold"></div>
+  <div class="content">
+    <div class="topbar"><span class="glyphs">○&nbsp;○&nbsp;✕</span><span class="meta">markdown
+html
+json
+hashes</span></div>
+    <div class="tag">ARCHIVE POLICY</div>
+    <h1>Preservation</h1>
+    <p class="lede">The live site is a derived exhibit. The archive is the receipt trail.</p>
+    <nav class="top"><a href="index.html">‹ Home</a><a href="receipts.html">Receipts</a><a href="negatives.html">Negatives</a><a href="https://github.com/sztlink/boring-receipts/blob/main/PRESERVATION.md">Markdown</a></nav>
+
+    <h2>What gets frozen</h2>
+    <ul>
+      <li>Markdown doctrine and receipts.</li>
+      <li>Static HTML/CSS/JS public exhibit.</li>
+      <li>Structured JSON index.</li>
+      <li>SVG assets and generator scripts.</li>
+      <li>SHA-256 manifests.</li>
+    </ul>
+
+    <h2>Export command</h2>
+    <p><code>node scripts/export-static-package.mjs</code></p>
+    <p>The command creates <code>exports/&lt;date&gt;-boring-receipts-lab/</code> with <code>manifest.json</code> and <code>SHA256SUMS</code>.</p>
+
+    <h2>Boundary</h2>
+    <p>A package preserves the proof trail and command shape. It does not bundle vendor binaries, model weights or external datasets. Those dependencies remain named in each receipt and should be mirrored or hashed when license and storage constraints allow.</p>
+
+    <h2>Genealogy</h2>
+    <p>The lab began as a refusal of speculative drift: crypto detour → Waffle/TurboQuant validation → boring receipts. Naming the genealogy keeps the archive from becoming a decontextualized benchmark shelf.</p>
+
+    <div class="foot">Read <a href="https://github.com/sztlink/boring-receipts/blob/main/GENEALOGY.md">GENEALOGY.md</a> and <a href="https://github.com/sztlink/boring-receipts/blob/main/PRESERVATION.md">PRESERVATION.md</a>.</div>
+  </div>
+</div>
+<script src="deco.js"></script>
+</body></html>

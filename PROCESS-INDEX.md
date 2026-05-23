@@ -1,0 +1,51 @@
+# Process index
+
+The receipt list is chronological. This index is behavioral. It groups receipts by
+what kind of gesture they perform so the lab reads as process, not inventory.
+
+## Runtime baselines
+
+| ID | receipt | gesture |
+|---|---|---|
+| R1 | [`2026-05-22-3090-llama31-8b-q4km-baseline.md`](receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md) | Shared-workstation baseline. |
+| R1b | [`2026-05-23-3090-llama31-8b-q4km-baseline-dedicated.md`](receipts/2026-05-23-3090-llama31-8b-q4km-baseline-dedicated.md) | Dedicated-mode baseline, makes idle VRAM tax explicit. |
+
+## Weight quantization ladders
+
+| ID | receipt | gesture |
+|---|---|---|
+| R2 | [`2026-05-22-3090-llama31-8b-quant-sweep.md`](receipts/2026-05-22-3090-llama31-8b-quant-sweep.md) | First Q4/Q5/Q8 sweep with quality gate. |
+| R2b | [`2026-05-23-3090-llama31-8b-quant-sweep-dedicated.md`](receipts/2026-05-23-3090-llama31-8b-quant-sweep-dedicated.md) | Dedicated-mode rerun. |
+| R10 | [`2026-05-23-3090-qwen25-7b-quant-ladder.md`](receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md) | Cross-model quant-ladder generalization with different quality cost. |
+
+## Context and flash-attn behavior
+
+| ID | receipt | gesture |
+|---|---|---|
+| R3 | [`2026-05-23-3090-llama31-8b-context-sweep.md`](receipts/2026-05-23-3090-llama31-8b-context-sweep.md) | Long-context wall, 0→64K. |
+| R5 | [`2026-05-23-3090-llama31-8b-flash-attn.md`](receipts/2026-05-23-3090-llama31-8b-flash-attn.md) | Flash-attn point delta. |
+| R6 | [`2026-05-23-3090-llama31-8b-flash-attn-context-curve.md`](receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md) | Flash-attn curve across context. |
+| R12 | [`2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md`](receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md) | Cross-architecture flash-attn/context confirmation. |
+
+## Model library
+
+| ID | receipt | gesture |
+|---|---|---|
+| R7 | [`2026-05-23-3090-qwen25-7b-q4km.md`](receipts/2026-05-23-3090-qwen25-7b-q4km.md) | Qwen2.5-7B model card. |
+| R8 | [`2026-05-23-3090-mistral-7b-v03-q4km.md`](receipts/2026-05-23-3090-mistral-7b-v03-q4km.md) | Mistral-7B model card. |
+| R9 | [`2026-05-23-3090-gemma2-9b-q4km.md`](receipts/2026-05-23-3090-gemma2-9b-q4km.md) | Gemma-2-9B model card. |
+| R11 | [`2026-05-23-3090-qwen25-14b-q4km.md`](receipts/2026-05-23-3090-qwen25-14b-q4km.md) | Qwen2.5-14B model card. |
+
+## Blockers, no-delta and falsification
+
+| ID | receipt | gesture |
+|---|---|---|
+| R4 | [`2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md`](receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md) | KV-cache quantization blocked on prebuilt. |
+| RS1 | [`2026-05-23-4090-vllm-realrag-entity-hop-path.md`](receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md) | Positive path-construction bridge plus failed strict ECD shortcut. |
+| RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | Small-slice gain demoted by N=500 no-delta. |
+
+## Open frontier
+
+The KV-dtype axis remains the sharpest next runtime frontier. The current prebuilt
+blocks it. The next honest move is a source build or another stack that can vary
+K/V dtype without hanging, with the same receipt grammar and a visible quality gate.

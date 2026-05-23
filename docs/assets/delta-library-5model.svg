@@ -61,5 +61,5 @@
         <rect x="150" y="477" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
         <text x="640" y="488" class="mono val" text-anchor="end">9.2</text>
         <text x="720" y="488" class="mono del">+87.8%</text>
-  <text x="58" y="542" class="mono small">decode tracks parameter count within an architecture; Gemma-2-9B drops more than its params imply (heavier arch).</text><text x="58" y="562" class="mono micro">prefill (not shown) does NOT track size as cleanly — it is compute/architecture-bound. PPL not cross-family comparable.</text>
+  <text x="58" y="542" class="mono small">decode tracks parameter count within an architecture; Gemma-2-9B drops more than its params imply (heavier arch).</text><text x="58" y="562" class="mono micro">prefill (not shown) does NOT track size as cleanly - it is compute/architecture-bound. PPL not cross-family comparable.</text>
 </svg>

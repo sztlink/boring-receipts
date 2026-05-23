@@ -29,11 +29,11 @@
 
   <rect x="58" y="170" width="1064" height="42" fill="#f1ece0" stroke="#356b46" stroke-width="1.6"/>
   <text x="78" y="197" class="mono mlabel" fill="#356b46">GATE: PASS</text>
-  <text x="300" y="197" class="mono small">PPL Δ &lt; 5% vs Q8_0 — none broke the model (Q4 +2.3% · Q5 +0.9%) · gate-v1</text>
+  <text x="300" y="197" class="mono small">PPL Δ &lt; 5% vs Q8_0 - none broke the model (Q4 +2.3% · Q5 +0.9%) · gate-v1</text>
 
   <text x="58" y="244" class="mono leg">Q4_K_M · Q5_K_M · Q8_0 weight quants · bar length = value · delta vs Q4 baseline (PPL vs Q8 ref)</text>
 
-  
+
     <text x="58" y="300" class="mono mlabel">tg  decode</text>
     <text x="58" y="316" class="mono unit">t/s</text>
     <text x="1090" y="300" class="mono dir" text-anchor="end">↑ higher = faster</text>
@@ -49,7 +49,7 @@
       <rect x="128" y="384" width="286.2" height="15" fill="#3a352c" opacity="0.9"/>
       <text x="620" y="395" class="mono val" text-anchor="end">89.8</text>
       <text x="702" y="395" class="mono del">-31.8%</text>
-  
+
     <text x="58" y="444" class="mono mlabel">pp  prefill</text>
     <text x="58" y="460" class="mono unit">t/s</text>
     <text x="1090" y="444" class="mono dir" text-anchor="end">↑ higher = faster</text>
@@ -65,7 +65,7 @@
       <rect x="128" y="528" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
       <text x="620" y="539" class="mono val" text-anchor="end">4621</text>
       <text x="702" y="539" class="mono del">+3.7%</text>
-  
+
     <text x="58" y="588" class="mono mlabel">VRAM peak</text>
     <text x="58" y="604" class="mono unit">GiB</text>
     <text x="1090" y="588" class="mono dir" text-anchor="end">↓ lower = leaner</text>
@@ -81,7 +81,7 @@
       <rect x="128" y="672" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
       <text x="620" y="683" class="mono val" text-anchor="end">8.7</text>
       <text x="702" y="683" class="mono del">+55.4%</text>
-  
+
     <text x="58" y="732" class="mono mlabel">PPL  quality</text>
     <text x="58" y="748" class="mono unit"></text>
     <text x="1090" y="732" class="mono dir" text-anchor="end">↓ lower = better (Q8 ref)</text>
@@ -99,7 +99,7 @@
       <text x="702" y="827" class="mono del">ref</text>
 
   <line x1="58" y1="854" x2="1122" y2="854" stroke="#cdbe9f" stroke-width="1"/>
-  <text x="58" y="878" class="mono small">tg (decode) falls hard with bits — memory-bound. pp (prefill) is flat — compute-bound. that divergence is the thesis.</text>
-  <text x="58" y="898" class="mono small">trade-off vs Q4 baseline: Q8 is −32% decode &amp; +55% VRAM, for 2.3% lower PPL (better) — Q4 is the speed/footprint floor.</text>
+  <text x="58" y="878" class="mono small">tg (decode) falls hard with bits - memory-bound. pp (prefill) is flat - compute-bound. that divergence is the thesis.</text>
+  <text x="58" y="898" class="mono small">trade-off vs Q4 baseline: Q8 is −32% decode &amp; +55% VRAM, for 2.3% lower PPL (better) - Q4 is the speed/footprint floor.</text>
   <text x="58" y="918" class="mono micro">reproduce: llama-bench -m {Q4,Q5,Q8} -ngl 99 -p 512 -n 128 -r 5 · gate: llama-perplexity -f wiki.test.raw</text>
 </svg>

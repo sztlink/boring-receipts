@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Negatives · Boring Receipts Lab</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sheet">
+  <div class="frame"></div><div class="holes l"></div><div class="holes r"></div>
+  <div class="ticks">‹<br>⌄<br>·<br>·</div><div class="ruler" id="ruler"></div><div class="fold"></div>
+  <div class="content">
+    <div class="topbar"><span class="glyphs">○&nbsp;○&nbsp;✕</span><span class="meta">blocked
+mixed
+no delta</span></div>
+    <div class="tag">NEGATIVE EVIDENCE SHELF</div>
+    <h1>Blocked, mixed, no-delta</h1>
+    <p class="lede">A lab that only preserves gains is a marketing surface.</p>
+    <nav class="top"><a href="index.html">‹ Home</a><a href="receipts.html">Receipts</a><a href="how-to-read.html">How to read</a><a href="https://github.com/sztlink/boring-receipts/blob/main/NEGATIVES.md">Markdown</a></nav>
+
+    <div class="banner"><strong>Negative receipts are not footnotes.</strong> They remove false paths, expose stack boundaries and keep the archive from becoming a growth curve.</div>
+
+    <div class="tw"><table class="grid">
+      <thead><tr><th>ID</th><th>Status</th><th>Receipt</th><th>Why it matters</th></tr></thead>
+      <tbody>
+        <tr><td data-l="ID">R4</td><td data-l="Status" class="warn">BLOCKED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md">KV-cache quantization</a></td><td data-l="Why">The prebuilt hangs under the KV dtype command shape. The honest next move is a source build, not a fake delta.</td></tr>
+        <tr><td data-l="ID">RS1</td><td data-l="Status">MIXED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md">RealRAG entity-hop path</a></td><td data-l="Why">Path construction works; strict single-candidate ECD fails. The boundary between evidence construction and sampler control stays visible.</td></tr>
+        <tr><td data-l="ID">RS2</td><td data-l="Status">N=500 NO DELTA</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">Gated answer rerank</a></td><td data-l="Why">The small 100-case gain does not scale. Direct entity-hop path prompting remains the non-oracle baseline.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2>How to read a negative receipt</h2>
+    <ol>
+      <li>What tempting claim did it test?</li>
+      <li>What part of the stack resisted?</li>
+      <li>What remains true after the failure?</li>
+      <li>What path does it close or redirect?</li>
+    </ol>
+
+    <h2>Current lesson</h2>
+    <p><code>entity-hop path prompt == gated rerank v1</code> at N=500. That does not erase the 100-case signal. It demotes it to what it is: a small-slice historical signal, not a scaled quality claim.</p>
+
+    <div class="foot">Positive, negative and no-delta states use the same receipt structure and the same public weight.</div>
+  </div>
+</div>
+<script src="deco.js"></script>
+</body></html>

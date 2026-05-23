@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="686" viewBox="0 0 1180 686" role="img" aria-label="flash-attn lifts the curve">
+  <defs>
+    <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+      .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
+      .title{font-size:38px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:15px;fill:#6e675a;}
+      .pl{font-size:16px;font-weight:700;fill:#161410;}
+      .un{font-size:11px;fill:#6e675a;}
+      .lbl{font-size:13px;fill:#161410;}
+      .val{font-size:13px;font-weight:700;fill:#161410;}
+      .del{font-size:12px;fill:#6e675a;}
+      .ax{font-size:11px;fill:#6e675a;}
+      .leg{font-size:12px;fill:#6e675a;}
+      .small{font-size:12px;fill:#6e675a;}
+      .micro{font-size:10.5px;fill:#6e675a;}
+    </style>
+  </defs>
+  <rect width="1180" height="686" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="630" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
+  <text x="58" y="64" class="mono tag">BORING-RECEIPTS · R6 · FLASH-ATTN × CONTEXT</text>
+  <text x="58" y="112" class="mono title">flash-attn lifts the curve</text>
+  <text x="58" y="140" class="mono sub">Llama-3.1-8B Q4_K_M · AYA-3090 · fa off vs on, depth 0→64K</text>
+  <text x="58" y="198" class="mono pl">tg  decode</text>
+      <text x="58" y="214" class="mono un">t/s</text><line x1="90" y1="214" x2="90" y2="346" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="346" x2="1120" y2="346" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="362" class="mono ax" text-anchor="middle">0</text><text x="347.5" y="362" class="mono ax" text-anchor="middle">4K</text><text x="605" y="362" class="mono ax" text-anchor="middle">16K</text><text x="862.5" y="362" class="mono ax" text-anchor="middle">32K</text><text x="1120" y="362" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,234.1 347.5,251.9 605.0,284.1 862.5,313.1 1120.0,328.7" fill="none" stroke="#6e675a" stroke-width="2.2" /><circle cx="90.0" cy="234.1" r="3.2" fill="#6e675a"/><circle cx="347.5" cy="251.9" r="3.2" fill="#6e675a"/><circle cx="605.0" cy="284.1" r="3.2" fill="#6e675a"/><circle cx="862.5" cy="313.1" r="3.2" fill="#6e675a"/><circle cx="1120.0" cy="328.7" r="3.2" fill="#6e675a"/><text x="1126" y="332.7176578786021" class="mono leg" fill="#6e675a">fa off</text><text x="90" y="226.12844880441452" class="mono ax" fill="#6e675a" text-anchor="middle">133</text><text x="347.5" y="243.91661557326796" class="mono ax" fill="#6e675a" text-anchor="middle">112</text><text x="605" y="276.12078479460456" class="mono ax" fill="#6e675a" text-anchor="middle">73</text><text x="862.5" y="305.12139791538937" class="mono ax" fill="#6e675a" text-anchor="middle">39</text><text x="1120" y="320.7176578786021" class="mono ax" fill="#6e675a" text-anchor="middle">21</text><polyline points="90.0,228.1 347.5,237.6 605.0,258.4 862.5,276.4 1120.0,296.8" fill="none" stroke="#356b46" stroke-width="2.2" stroke-dasharray="1 0"/><circle cx="90.0" cy="228.1" r="3.2" fill="#356b46"/><circle cx="347.5" cy="237.6" r="3.2" fill="#356b46"/><circle cx="605.0" cy="258.4" r="3.2" fill="#356b46"/><circle cx="862.5" cy="276.4" r="3.2" fill="#356b46"/><circle cx="1120.0" cy="296.8" r="3.2" fill="#356b46"/><text x="1126" y="300.76640098099324" class="mono leg" fill="#356b46">fa on</text><text x="90" y="220.14285714285717" class="mono ax" fill="#356b46" text-anchor="middle">140</text><text x="347.5" y="229.58491722869405" class="mono ax" fill="#356b46" text-anchor="middle">129</text><text x="605" y="250.40803188228085" class="mono ax" fill="#356b46" text-anchor="middle">104</text><text x="862.5" y="268.3648068669528" class="mono ax" fill="#356b46" text-anchor="middle">83</text><text x="1120" y="288.76640098099324" class="mono ax" fill="#356b46" text-anchor="middle">58</text><text x="58" y="434" class="mono pl">pp  prefill</text>
+      <text x="58" y="450" class="mono un">t/s</text><line x1="90" y1="450" x2="90" y2="582" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="582" x2="1120" y2="582" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="598" class="mono ax" text-anchor="middle">0</text><text x="347.5" y="598" class="mono ax" text-anchor="middle">4K</text><text x="605" y="598" class="mono ax" text-anchor="middle">16K</text><text x="862.5" y="598" class="mono ax" text-anchor="middle">32K</text><text x="1120" y="598" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,475.7 347.5,516.8 605.0,551.9 862.5,569.4 1120.0,575.7" fill="none" stroke="#6e675a" stroke-width="2.2" /><circle cx="90.0" cy="475.7" r="3.2" fill="#6e675a"/><circle cx="347.5" cy="516.8" r="3.2" fill="#6e675a"/><circle cx="605.0" cy="551.9" r="3.2" fill="#6e675a"/><circle cx="862.5" cy="569.4" r="3.2" fill="#6e675a"/><circle cx="1120.0" cy="575.7" r="3.2" fill="#6e675a"/><text x="1126" y="579.6883430642239" class="mono leg" fill="#6e675a">fa off</text><text x="90" y="467.74586556990425" class="mono ax" fill="#6e675a" text-anchor="middle">4478</text><text x="347.5" y="508.79536368604215" class="mono ax" fill="#6e675a" text-anchor="middle">2748</text><text x="605" y="543.9128534038942" class="mono ax" fill="#6e675a" text-anchor="middle">1268</text><text x="862.5" y="561.3766861284478" class="mono ax" fill="#6e675a" text-anchor="middle">532</text><text x="1120" y="567.6883430642239" class="mono ax" fill="#6e675a" text-anchor="middle">266</text><polyline points="90.0,464.1 347.5,480.1 605.0,512.4 862.5,533.9 1120.0,553.2" fill="none" stroke="#356b46" stroke-width="2.2" stroke-dasharray="1 0"/><circle cx="90.0" cy="464.1" r="3.2" fill="#356b46"/><circle cx="347.5" cy="480.1" r="3.2" fill="#356b46"/><circle cx="605.0" cy="512.4" r="3.2" fill="#356b46"/><circle cx="862.5" cy="533.9" r="3.2" fill="#356b46"/><circle cx="1120.0" cy="553.2" r="3.2" fill="#356b46"/><text x="1126" y="557.194167217924" class="mono leg" fill="#356b46">fa on</text><text x="90" y="456.14285714285717" class="mono ax" fill="#356b46" text-anchor="middle">4967</text><text x="347.5" y="472.06436768385635" class="mono ax" fill="#356b46" text-anchor="middle">4296</text><text x="605" y="504.4056774713107" class="mono ax" fill="#356b46" text-anchor="middle">2933</text><text x="862.5" y="525.9270039402917" class="mono ax" fill="#356b46" text-anchor="middle">2026</text><text x="1120" y="545.194167217924" class="mono ax" fill="#356b46" text-anchor="middle">1214</text>
+  <text x="58" y="648" class="mono small">the win grows with context: +5% tg at d0 → +185% tg at 64K (decode nearly 3×); prefill 4.6× at 64K.</text><text x="58" y="668" class="mono micro">flash-attn halves the context-tax slope. always pass -fa 1 for long context.</text>
+</svg>
