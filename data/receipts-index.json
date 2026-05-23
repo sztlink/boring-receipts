@@ -149,6 +149,15 @@
       "gesture": "patched source build makes KV dtype runnable; q8/q8 and q8/q4 are slower than f16 in short-context test"
     },
     {
+      "id": "R15",
+      "file": "receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "kv-dtype",
+      "status": "PARTIAL_TIMEOUT_NEGATIVE_DELTA",
+      "gesture": "long-context KV dtype curve: q8/q8 slower with depth; q8/q4 exits -1 before 32K"
+    },
+    {
       "id": "RS1",
       "file": "receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md",
       "date": "2026-05-23",

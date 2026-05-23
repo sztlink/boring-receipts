@@ -6,7 +6,7 @@ Outcome:
 - f16/f16 completed all depths.
 - q8_0/q8_0 completed all depths.
 - q8_0/q4_0 completed depths 0,4096,16384 for pp512 and tg128.
-- q8_0/q4_0 did not emit the 32768-depth row before the outer SSH command timed out after 7200 seconds.
-- After timeout, llama-bench.exe was still resident with VRAM allocated and GPU utilization at 0%; Pi stopped the process to release the 3090.
+- q8_0/q4_0 did not emit the 32768-depth row before the outer SSH/Pi command timed out or disconnected.
+- On follow-up inspection, q8_0/q4_0 stderr ended with EXIT -1 and the 3090 had returned to idle.
 
-This should be treated as a timeout / pathological regression, not as a complete long-context curve for q8_0/q4_0.
+This should be treated as a timeout/stall plus EXIT -1 pathological regression, not as a complete long-context curve for q8_0/q4_0.

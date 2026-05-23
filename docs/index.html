@@ -55,6 +55,7 @@
           <div class="tw"><table>
             <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>HW</th><th>Mode</th><th>Gate</th><th>Link</th></tr></thead>
             <tbody>
+              <tr><td data-l="ID">R15</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">KV dtype × long context</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="warn">TIMEOUT / NEGATIVE</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md">open</a></td></tr>
               <tr><td data-l="ID">R14</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">source KV dtype q8/q8 and q8/q4</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="gb">NEGATIVE DELTA</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">open</a></td></tr>
               <tr><td data-l="ID">R12</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">flash-attn × ctx (generalizes R6)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md">open</a></td></tr>
               <tr><td data-l="ID">R11</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-14B</td><td data-l="Config">model card · extends to 14B</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">PPL 6.13</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-14b-q4km.md">open</a></td></tr>
@@ -90,8 +91,8 @@
         skip steps to look advanced. Skipping the floor is the opposite of boring.</p>
 
         <div class="banner"><strong>No-delta is evidence.</strong> RS2 scaled to N=500 and stopped being a
-        positive claim. R14 also turns a blocker into a measurable negative: KV dtype runs, but does not
-        win in the short-context test. Both stay public because a receipt archive must preserve resistance
+        positive claim. R14 and R15 turn a blocker into measurable negatives: KV dtype runs, but does not
+        win in short or long context here. Both stay public because a receipt archive must preserve resistance
         from the real, not only wins. <a href="negatives.html">Read the negative/no-delta shelf</a>.</div>
 
         <h2 id="contact">Contact</h2>

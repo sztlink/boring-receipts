@@ -87,6 +87,11 @@ gate-v1 PASS</span>
     collapsing to 0.04×. ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">full receipt R14</a></p>
 
+    <p class="small"><strong>R15 - KV dtype long-context timeout</strong>. The long-context follow-up makes
+    the negative stronger: q8/q8 completes 64K but decode falls from 0.92× f16 at depth 0 to 0.69× at 64K.
+    q8/q4 emits only 0, 4K and 16K rows, reaches 1.71 tok/s decode at 16K, then exits -1 before the 32K row. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md">full receipt R15</a></p>
+
     <h2>Research sibling cards</h2>
     <p class="small"><strong>RS1 - RealRAG entity-hop path construction</strong>. This one deliberately cites
     the probe/RAG program in the sibling repo instead of absorbing it into the runtime axes. Entity-hop

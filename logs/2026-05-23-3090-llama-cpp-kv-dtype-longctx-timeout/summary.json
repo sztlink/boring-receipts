@@ -1,6 +1,6 @@
 {
   "receipt": "2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout",
-  "status": "PARTIAL_TIMEOUT",
+  "status": "PARTIAL_TIMEOUT_EXIT_NEGATIVE_ONE",
   "source": "llama.cpp b9286 / 99d4026 plus local PDL guard patch for CUDA 11.8",
   "toolchain": {
     "host": "Sztutman / felipe-pc",
@@ -12,8 +12,8 @@
   },
   "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
   "command": "llama-bench -ngl 99 -fa 1 -ctk <K> -ctv <V> -p 512 -n 128 -d 0,4096,16384,32768,65536 -r 2 -o jsonl",
-  "timeout_seconds": 7200,
-  "stopped_process": true,
+  "timeout_seconds": "outer Pi command timed out/disconnected before q8_0/q4_0 completed",
+  "stopped_process": false,
   "completeness": {
     "f16-f16": {
       "0": {
@@ -473,5 +473,9 @@
         1.70933
       ]
     }
+  ],
+  "exit_code_q8_0_q4_0": -1,
+  "notes": [
+    "Follow-up inspection found q8_0-q4_0.stderr.txt ending with EXIT -1; no 32768/65536 rows were emitted."
   ]
 }

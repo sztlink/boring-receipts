@@ -117,8 +117,8 @@ to start with:
   q8/q4 strongly regresses in this short-context test.
   [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md)
 - **R15 - KV dtype long-context timeout** - q8/q8 completes 64K but gets slower
-  relative to f16 as depth grows; q8/q4 becomes pathological and times out before
-  the 32K row.
+  relative to f16 as depth grows; q8/q4 becomes pathological and exits `-1`
+  before the 32K row.
   [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md)
 
 14 runtime receipts (R1–R15, excluding blocker R13) over a **5-model library, 7.25B–14.77B**

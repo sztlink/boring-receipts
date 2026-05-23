@@ -59,9 +59,9 @@ llama-bench.exe \
   -p 512 -n 128 -d 0,4096,16384,32768,65536 -r 2 -o jsonl
 ```
 
-The outer SSH command timed out after 7200 seconds during the `q8_0/q4_0` variant.
-After timeout, `llama-bench.exe` was still resident with VRAM allocated and GPU 0%.
-The process was stopped to release the 3090.
+The outer SSH/Pi command timed out or disconnected during the `q8_0/q4_0` variant.
+On follow-up inspection, the run had emitted only partial q8/q4 rows and the stderr
+ended with `EXIT -1`; the 3090 had returned to idle.
 
 ## Result
 
@@ -88,14 +88,14 @@ Reading:
 | 0 | 206.80 | 0.042x | 76.03 | 0.542x |
 | 4096 | 14.01 | 0.003x | 7.64 | 0.060x |
 | 16384 | 3.07 | 0.001x | 1.71 | 0.017x |
-| 32768 | timeout | n/a | timeout | n/a |
+| 32768 | no row / exited `-1` | n/a | no row / exited `-1` | n/a |
 | 65536 | not reached | n/a | not reached | n/a |
 
 Reading:
 
 - q8/q4 is not merely slower in this build. It becomes unusable as context grows.
 - The 16K decode value is 1.71 tok/s, compared with 103.59 tok/s for f16.
-- The run did not produce a 32K row before the 7200 s outer timeout.
+- The run did not produce a 32K row before ending with `EXIT -1`.
 
 ## Quality gate
 
@@ -141,7 +141,7 @@ logs/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout/binary-manifest.txt
 ## Caveats
 
 - This is still a patched-source receipt, not an upstream-clean receipt.
-- q8/q4 was killed after timeout, so the 32K and 64K q8/q4 cells are timeout/not
+- q8/q4 ended with `EXIT -1`, so the 32K and 64K q8/q4 cells are absent/not
   reached, not measured numbers.
 - The result should redirect work away from this exact q8/q4 path, not close the
   larger KV dtype or TurboQuant question.
