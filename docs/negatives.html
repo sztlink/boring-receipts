@@ -25,6 +25,7 @@ no delta</span></div>
       <tbody>
         <tr><td data-l="ID">R4</td><td data-l="Status" class="warn">BLOCKED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md">KV-cache quantization</a></td><td data-l="Why">The prebuilt hangs under the KV dtype command shape. The honest next move is a source build, not a fake delta.</td></tr>
         <tr><td data-l="ID">R13</td><td data-l="Status" class="warn">BLOCKED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md">source-build CUDA preflight</a></td><td data-l="Why">The source-build path reached a Windows SDK / developer-shell blocker before any benchmark. Fix `rc.exe`/`mt.exe`/CUDA in one shell before rerunning.</td></tr>
+        <tr><td data-l="ID">R14</td><td data-l="Status">PASS, negative delta</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">patched source KV dtype</a></td><td data-l="Why">The axis runs after a local PDL guard patch, but q8/q8 is slower than f16 and q8/q4 strongly regresses in the short-context test.</td></tr>
         <tr><td data-l="ID">RS1</td><td data-l="Status">MIXED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md">RealRAG entity-hop path</a></td><td data-l="Why">Path construction works; strict single-candidate ECD fails. The boundary between evidence construction and sampler control stays visible.</td></tr>
         <tr><td data-l="ID">RS2</td><td data-l="Status">N=500 NO DELTA</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">Gated answer rerank</a></td><td data-l="Why">The small 100-case gain does not scale. Direct entity-hop path prompting remains the non-oracle baseline.</td></tr>
       </tbody>
@@ -39,7 +40,7 @@ no delta</span></div>
     </ol>
 
     <h2>Current lesson</h2>
-    <p><code>entity-hop path prompt == gated rerank v1</code> at N=500. That does not erase the 100-case signal. It demotes it to what it is: a small-slice historical signal, not a scaled quality claim.</p>
+    <p><code>entity-hop path prompt == gated rerank v1</code> at N=500. <code>KV q8/q8 and q8/q4 do not beat f16</code> in the patched-source short-context test. Neither closes the field. Each demotes a tempting claim to a measured local result.</p>
 
     <div class="foot">Positive, negative and no-delta states use the same receipt structure and the same public weight.</div>
   </div>

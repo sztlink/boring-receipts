@@ -13,6 +13,7 @@ keep the lab from turning every experiment into a growth curve.
 |---|---|---|---|
 | R4 | [`2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md`](receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md) | BLOCKED | KV-cache quantization hangs on the llama.cpp b9286 win-cuda prebuilt when `-ctk/-ctv` are used with flash-attn. This identifies a real source-build frontier instead of pretending the axis was measured. |
 | R13 | [`2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md`](receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md) | BLOCKED | The first source-build attempt reached a toolchain blocker before benchmarking: CMake/MSVC/CUDA on AYA-3090 could not produce `llama-bench.exe` because the effective Windows SDK resource/manifest tools were missing. |
+| R14 | [`2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md) | PASS, negative delta | The patched source build runs KV dtype commands, but q8/q8 is slower than f16 and q8/q4 strongly regresses in the short-context test. This turns a blocker into a measurable negative instead of hiding it. |
 | RS1 | [`2026-05-23-4090-vllm-realrag-entity-hop-path.md`](receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md) | MIXED | Entity-hop path prompting beats BM25→BGE, but strict single-candidate ECD fails. The mixed result preserves the boundary between evidence construction and sampler control. |
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | 100-case PASS; 500-case NO DELTA | The small gated-rerank gain does not scale to N=500. Publishing the no-delta follow-up keeps the receipt from becoming a cherry-picked claim. |
 
@@ -34,11 +35,12 @@ look more authoritative than failed or null results.
 
 ## Current lesson
 
-The most important current negative is RS2 at N=500:
+The current negatives now split across two domains:
 
 ```txt
 entity-hop path prompt == gated rerank v1
+KV q8/q8 and q8/q4 do not beat f16 in the short-context patched-source test
 ```
 
-That does not erase the 100-case signal. It demotes it to what it is: a small-slice
-historical signal, not a scaled quality claim.
+That does not erase the 100-case RAG signal, and it does not close the KV dtype
+axis. It demotes both to what they are: measured local results, not scaled claims.

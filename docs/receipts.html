@@ -81,6 +81,12 @@ gate-v1 PASS</span>
     claim hides. ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-context-sweep.md">full receipt R3</a></p>
 
+    <p class="small"><strong>R14 - patched source KV dtype</strong>. R13's toolchain blocker was overcome
+    with VS2019, explicit SDK tools and a local PDL guard patch. The axis now runs, but the short-context
+    speed result is negative: q8/q8 decode is 0.92× f16 and q8/q4 decode is 0.55× f16, with q8/q4 prefill
+    collapsing to 0.04×. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">full receipt R14</a></p>
+
     <h2>Research sibling cards</h2>
     <p class="small"><strong>RS1 - RealRAG entity-hop path construction</strong>. This one deliberately cites
     the probe/RAG program in the sibling repo instead of absorbing it into the runtime axes. Entity-hop

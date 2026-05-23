@@ -109,10 +109,14 @@ to start with:
 - **R13 - source-build CUDA BLOCKED** - the source-build path hit a toolchain
   preflight blocker before benchmarking.
   [`receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md`](receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md)
+- **R14 - patched source KV dtype** - R13 was overcome with VS2019, explicit SDK
+  tools and a local PDL guard patch. KV dtype runs, but q8/q8 is slower than f16 and
+  q8/q4 strongly regresses in this short-context test.
+  [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md)
 
-12 runtime receipts (R1–R12) over a **5-model library, 7.25B–14.77B** (Mistral,
-Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling receipts
-citing the RealRAG/EPKV probe family in
+13 runtime receipts (R1–R14, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
+(Mistral, Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling
+receipts citing the RealRAG/EPKV probe family in
 [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench). All under
 `receipts/`. Next rungs climb from here; we don't jump to the top.
 
