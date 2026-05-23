@@ -6,119 +6,165 @@
 <meta name="description" content="Send branch + command shape. We return boring receipts. Reproducible NVIDIA inference-validation receipts — no hype, no single speed score.">
 <style>
   :root{
-    --paper:#f3ead7; --ink:#1d1b16; --muted:#6b6457; --line:#26241f;
-    --faint:#cdbe9f; --panel:#fbf3df; --blue:#2f5f87; --green:#2f7d4f; --red:#a33a2b;
+    --paper:#f1ece0; --ink:#161410; --muted:#6e675a; --line:#1c1a15;
+    --faint:#c9bb9c; --panel:#f7f1e3; --blue:#2f5f87; --green:#356b46;
     --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
   }
   *{box-sizing:border-box}
-  html,body{margin:0;background:#e9dec4;color:var(--ink);font-family:var(--mono);font-size:15px;line-height:1.55}
-  /* paper sheet with matrix-printer tractor holes down both edges */
+  html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);font-size:14px;line-height:1.5}
+
   .sheet{
-    position:relative;max-width:840px;margin:26px auto;background:var(--paper);
-    border:1.5px dashed var(--line);
-    padding:34px 64px 60px;
-    background-image:
-      radial-gradient(circle at 22px 0, #efe6cf 0.8px, transparent 1px),
-      radial-gradient(circle, var(--paper) 3.4px, transparent 3.8px),
-      radial-gradient(circle, var(--paper) 3.4px, transparent 3.8px);
-    background-size:18px 18px, 28px 26px, 28px 26px;
-    background-position:0 0, 16px 12px, calc(100% - 16px) 12px;
-    background-repeat:repeat, repeat-y, repeat-y;
-    box-shadow:0 1px 0 #d7c9a8 inset, 0 18px 40px -28px rgba(0,0,0,.5);
+    position:relative;max-width:860px;margin:24px auto;background:var(--paper);
+    padding:30px 78px 70px;overflow:hidden;
+    box-shadow:0 20px 50px -30px rgba(0,0,0,.6);
   }
-  /* tractor-hole columns */
-  .sheet::before,.sheet::after{
-    content:"";position:absolute;top:0;bottom:0;width:30px;
-    background-image:radial-gradient(circle, #e9dec4 3.2px, transparent 3.6px);
-    background-size:30px 26px;background-position:center 12px;background-repeat:repeat-y;
-    border-right:1px dotted var(--faint);border-left:1px dotted var(--faint);
+  /* scanned-paper grain (fractal noise) — the texture */
+  .sheet::before{
+    content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.5;mix-blend-mode:multiply;
+    background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="220" height="220" filter="url(%23n)"/></svg>');
+    background-size:220px 220px;
   }
-  .sheet::before{left:0}.sheet::after{right:0}
+  /* thin inner frame with corner ticks */
+  .frame{position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none;z-index:3}
+  .frame::before,.frame::after{content:"";position:absolute;width:14px;height:14px;border:1px solid var(--line)}
+  .frame::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .frame::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
 
-  .topbar{display:flex;justify-content:space-between;align-items:flex-start;font-size:11px;color:var(--muted);letter-spacing:1px}
-  .dots{font-size:15px;color:var(--ink);letter-spacing:6px}
-  .meta{text-align:right;line-height:1.4;white-space:pre}
+  /* tractor-feed holes, both edges */
+  .holes{position:absolute;top:0;bottom:0;width:18px;z-index:4;pointer-events:none;
+    background-image:radial-gradient(circle at 9px 9px, #c7b896 1.7px, transparent 2.2px);
+    background-size:18px 17px;background-repeat:repeat-y;opacity:.85}
+  .holes.l{left:14px}.holes.r{right:14px}
 
-  h1{font-family:var(--serif);font-weight:600;font-size:38px;letter-spacing:.5px;text-align:center;margin:18px 0 30px}
+  /* vertical numeric ruler down the right margin */
+  .ruler{position:absolute;top:30px;bottom:24px;right:30px;width:18px;z-index:4;pointer-events:none;
+    font-size:9px;line-height:1.32;color:#8c826e;letter-spacing:0;text-align:center;
+    writing-mode:horizontal-tb;white-space:pre;overflow:hidden}
+  /* margin tick marks (left) */
+  .ticks{position:absolute;left:34px;top:46%;z-index:4;pointer-events:none;color:#8c826e;font-size:13px;line-height:2.1}
+  /* dithered dot block, top-left */
+  .dither{position:absolute;top:30px;left:78px;z-index:4;pointer-events:none;opacity:.85}
+  /* corner fold, bottom-right */
+  .fold{position:absolute;right:0;bottom:0;width:34px;height:34px;z-index:4;pointer-events:none;
+    background:linear-gradient(135deg, transparent 50%, #d9cdb2 50%);border-left:1px solid var(--faint);border-top:1px solid var(--faint)}
 
-  .body{display:grid;grid-template-columns:120px 1fr;gap:30px}
-  nav a{display:block;font-size:17px;color:var(--ink);text-decoration:none;margin:0 0 14px;padding-bottom:2px}
-  nav a:hover{color:var(--blue);border-bottom:1px solid var(--blue);width:max-content}
+  .content{position:relative;z-index:6}
+  .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin:34px 0 0}
+  .glyphs{font-size:17px;letter-spacing:9px;color:var(--ink)}
+  .meta{text-align:right;font-size:11px;color:#5a5346;line-height:1.5;white-space:pre}
 
-  .panel{border:1.4px solid var(--line);background:var(--panel)}
-  .panel-h{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1.4px solid var(--line);font-size:14px}
-  table{border-collapse:collapse;width:100%;font-size:12.5px}
-  th,td{text-align:left;padding:5px 10px;white-space:nowrap}
+  h1{font-family:var(--serif);font-weight:600;font-size:34px;letter-spacing:.4px;margin:30px 0 6px;text-align:center}
+  .lede{font-style:italic;color:var(--muted);text-align:center;margin:0 0 30px;font-size:13px}
+
+  .body{display:grid;grid-template-columns:108px 1fr;gap:26px}
+  nav a{display:block;font-size:16px;color:var(--ink);text-decoration:none;margin:0 0 13px}
+  nav a:hover{color:var(--blue)}
+
+  .panel{border:1.3px solid var(--line);background:var(--panel)}
+  .panel-h{display:flex;justify-content:space-between;padding:8px 13px;border-bottom:1.3px solid var(--line);font-size:13px}
+  table{border-collapse:collapse;width:100%;font-size:12px}
+  th,td{text-align:left;padding:4px 9px;white-space:nowrap}
   th{color:var(--muted);font-weight:400;border-bottom:1px solid var(--faint)}
-  td a{color:var(--blue);text-decoration:none}td a:hover{text-decoration:underline}
-  tbody tr:hover{background:#f5ecd6}
-  .gate-pass{color:var(--green)}
+  td a{color:var(--blue);text-decoration:none}
+  tbody tr:hover{background:#efe7d3}
+  .gp{color:var(--green)}
 
-  h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:40px 0 14px}
-  p{max-width:60ch;color:#2a271f}
-  .lede{font-style:italic;color:var(--muted);text-align:center;margin:-18px 0 30px}
-  .foot{margin-top:46px;border-top:1px solid var(--faint);padding-top:14px;font-size:11px;color:var(--muted)}
-  .foot a{color:var(--blue)}
-  @media(max-width:680px){.sheet{padding:28px 40px}.body{grid-template-columns:1fr}nav{display:flex;gap:18px;flex-wrap:wrap}}
+  h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:36px 0 12px}
+  p{max-width:58ch;color:#26231c}
+  .foot{margin-top:40px;border-top:1px solid var(--faint);padding-top:12px;font-size:10.5px;color:var(--muted)}
+  .foot a,.lk{color:var(--blue)}
+  @media(max-width:680px){.sheet{padding:26px 46px}.body{grid-template-columns:1fr}nav{display:flex;gap:16px;flex-wrap:wrap}.ruler{display:none}}
 </style></head>
 <body>
 <div class="sheet">
+  <div class="frame"></div>
+  <div class="holes l"></div>
+  <div class="holes r"></div>
 
-  <div class="topbar">
-    <span class="dots">○ ○ ✕</span>
-    <span class="meta">node AYA-3090 · llama.cpp b9286
-gate-v1 PASS · 2026-05-22
-≈ no hype · no single score</span>
-  </div>
+  <!-- dithered dot block, top-left -->
+  <svg class="dither" width="120" height="34" viewBox="0 0 120 34" aria-hidden="true">
+    <g fill="#2a261d">
+      <rect x="2" y="3" width="2" height="2"/><rect x="10" y="1" width="2" height="2"/><rect x="7" y="8" width="2" height="2"/>
+      <rect x="16" y="5" width="2" height="2"/><rect x="22" y="2" width="2" height="2"/><rect x="13" y="13" width="2" height="2"/>
+      <rect x="28" y="9" width="2" height="2"/><rect x="34" y="4" width="2" height="2"/><rect x="20" y="18" width="2" height="2"/>
+      <rect x="40" y="11" width="2" height="2"/><rect x="46" y="6" width="2" height="2"/><rect x="31" y="22" width="2" height="2"/>
+      <rect x="5" y="16" width="2" height="2"/><rect x="52" y="3" width="2" height="2"/><rect x="58" y="13" width="2" height="2"/>
+      <rect x="11" y="25" width="2" height="2"/><rect x="64" y="7" width="2" height="2"/><rect x="42" y="20" width="2" height="2"/>
+      <rect x="3" y="28" width="2" height="2"/><rect x="70" y="2" width="2" height="2"/><rect x="25" y="29" width="2" height="2"/>
+      <rect x="76" y="10" width="2" height="2"/><rect x="55" y="24" width="2" height="2"/><rect x="18" y="9" width="2" height="2"/>
+    </g>
+  </svg>
 
-  <h1>Boring Receipts Lab</h1>
-  <p class="lede">Send branch + command shape. We return boring receipts.</p>
+  <!-- left margin tick marks -->
+  <div class="ticks">‹<br>⌄<br>·<br>·</div>
 
-  <div class="body">
-    <nav>
-      <a href="#receipts">Home</a>
-      <a href="receipts.html">Receipts</a>
-      <a href="#philosophy">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+  <!-- right numeric ruler -->
+  <div class="ruler" id="ruler"></div>
 
-    <main>
-      <div class="panel" id="receipts">
-        <div class="panel-h"><span>Benchmark Receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
-        <table>
-          <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>Hardware</th><th>Gate</th><th>Link</th></tr></thead>
-          <tbody>
-            <tr><td>R2</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4/Q5/Q8 sweep</td><td>RTX 3090</td><td class="gate-pass">PASS</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
-            <tr><td>R1</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4_K_M · ngl 99</td><td>RTX 3090</td><td>n/a</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
-          </tbody>
-        </table>
-      </div>
+  <div class="fold"></div>
 
-      <h2 id="philosophy">Philosophy</h2>
-      <p>A receipt does not speak to a reader — it re-executes. Hand its command to a
-      fresh machine and a faithful receipt regenerates; if it does not reproduce, it
-      self-denounces. That property, not its prose, is what makes a number trustworthy.
-      No hype, no vague benchmark claims, and never a single speed score — only the
-      delta, the curve, the gate, carrying their coordinates.</p>
+  <div class="content">
+    <div class="topbar">
+      <span class="glyphs">○&nbsp;○&nbsp;✕</span>
+      <span class="meta">≈7(-(Q1223Wl/M019)
+:1:l0970620) 72)-
+*4AA2000* 00:00)</span>
+    </div>
 
-      <p>"Boring" is institutionalized suspicion, and suspicion needs a body. The ladder
-      runs from the noob who downloaded a GGUF and ran one command, up to the expert
-      validating a branch under load — each rung reproducible by the one below. We never
-      skip steps to look advanced. Skipping the floor is the opposite of boring.</p>
+    <h1>Boring Receipts Lab</h1>
+    <p class="lede">Send branch + command shape. We return boring receipts.</p>
 
-      <h2 id="contact">Contact</h2>
-      <p>Send a branch and a command shape; get back a receipt: commit, flags, driver,
-      VRAM, tok/s split prefill/decode, quality gate, failures. No routing through anyone's
-      repo. &nbsp;→ <a href="https://github.com/sztlink/boring-receipts">github.com/sztlink/boring-receipts</a></p>
+    <div class="body">
+      <nav>
+        <a href="#receipts">Home</a>
+        <a href="receipts.html">Receipts</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-      <div class="foot">
-        boringreceipts.com · a NVIDIA validation node for the Waffle / TurboQuant community ·
-        the canonical minimal KV/long-context receipt the upstream
-        <a href="https://github.com/ggml-org/llama.cpp/issues/18722">#18722</a> left unowned ·
-        research sibling: <a href="https://github.com/sztlink/turboquant-cuda-bench">turboquant-cuda-bench</a>
-      </div>
-    </main>
+      <main>
+        <div class="panel" id="receipts">
+          <div class="panel-h"><span>Benchmark Receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
+          <table>
+            <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>Hardware</th><th>Gate</th><th>Link</th></tr></thead>
+            <tbody>
+              <tr><td>R2</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4/Q5/Q8 sweep</td><td>RTX 3090</td><td class="gp">PASS</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
+              <tr><td>R1</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4_K_M · ngl 99</td><td>RTX 3090</td><td>n/a</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 id="about">Philosophy</h2>
+        <p>A receipt does not speak to a reader — it re-executes. Hand its command to a
+        fresh machine and a faithful receipt regenerates; if it does not reproduce, it
+        self-denounces. That property, not its prose, is what makes a number trustworthy.
+        No hype, no vague benchmark claims, and never a single speed score — only the
+        delta, the curve, the gate, carrying their coordinates.</p>
+
+        <p>"Boring" is institutionalized suspicion, and suspicion needs a body. The ladder
+        runs from the noob who downloaded a GGUF and ran one command, up to the expert
+        validating a branch under load — each rung reproducible by the one below. We never
+        skip steps to look advanced. Skipping the floor is the opposite of boring.</p>
+
+        <h2 id="contact">Contact</h2>
+        <p>Send a branch and a command shape; get back a receipt: commit, flags, driver,
+        VRAM, tok/s split prefill/decode, quality gate, failures. No routing through anyone's
+        repo. &nbsp;→ <a class="lk" href="https://github.com/sztlink/boring-receipts">github.com/sztlink/boring-receipts</a></p>
+
+        <div class="foot">
+          boringreceipts.com · a NVIDIA validation node for the Waffle / TurboQuant community ·
+          the canonical minimal KV/long-context receipt the upstream
+          <a href="https://github.com/ggml-org/llama.cpp/issues/18722">#18722</a> left unowned ·
+          research sibling: <a href="https://github.com/sztlink/turboquant-cuda-bench">turboquant-cuda-bench</a>
+        </div>
+      </main>
+    </div>
   </div>
 </div>
+<script>
+  // build the vertical numeric ruler (1..9 repeating), pure decoration
+  var r=[],n=0; for(var i=0;i<70;i++){ r.push((i%9)+1); }
+  document.getElementById('ruler').textContent = r.join('\n');
+</script>
 </body></html>
