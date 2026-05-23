@@ -42,12 +42,6 @@ html,body{margin:0;background:#cdbb95;color:var(--ink);font-family:var(--mono);f
 .fold{position:absolute;right:0;bottom:0;width:34px;height:34px;z-index:4;pointer-events:none;
   background:linear-gradient(135deg, transparent 50%, #d9cdb2 50%);border-left:1px solid var(--faint);border-top:1px solid var(--faint)}
 .content{position:relative;z-index:6}
-/* Regular halftone dot screen over the whole sheet — ink and paper share one
-   print texture, so type reads as dot-matrix print rather than crisp vector.
-   Regular grid (not random noise) keeps it intentional, not artificial. */
-.content::after{content:"";position:absolute;inset:0;z-index:11;pointer-events:none;mix-blend-mode:multiply;
-  background-image:radial-gradient(circle at 50% 50%, rgba(74,56,32,.42) 0.4px, transparent 0.9px);
-  background-size:2.8px 2.8px}
 
 .topbar{display:flex;justify-content:space-between;align-items:flex-start;margin:34px 0 0}
 .glyphs{font-size:17px;letter-spacing:9px;color:var(--ink)}
