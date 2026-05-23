@@ -4,6 +4,7 @@
 
 **Live:** https://sztlink.github.io/boring-receipts/ ·
 **Findings:** [SUMMARY.md](SUMMARY.md) ·
+**Requests:** [REQUESTS.md](REQUESTS.md) ·
 **Contribute:** [CONTRIBUTING.md](CONTRIBUTING.md) ·
 **Research sibling:** [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench)
 
@@ -36,6 +37,8 @@ just a benchmark claim.
 
 ## Layout
 
+- `REQUESTS.md` - how to ask for a validation run: branch + command shape,
+  hardware lane, expected metric, quality gate, caveats.
 - `HOW-TO-READ.md` - how to read a boring receipt: claim, target, command,
   environment, results, gate, evidence, non-claims, next step.
 - `CANON.md` - the doctrine: *for whom*. A receipt re-executes (it does not address
@@ -123,6 +126,12 @@ receipts citing the RealRAG/EPKV probe family in
 Important null result: **RS2 at N=500 is NO DELTA**. The small gated-rerank gain did
 not scale, and the receipt says so. Negative, blocked and no-delta receipts are
 first-class evidence, not footnotes. See `NEGATIVES.md`.
+
+## Request a receipt
+
+If you want a branch, release, or command validated, send the smallest reproducible
+shape: repo/branch/commit, build flags, command, model/quant/context, expected
+metric, and any quality gate. See **[REQUESTS.md](REQUESTS.md)**.
 
 ## Guardrails
 

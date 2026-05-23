@@ -3,14 +3,14 @@
 > Send branch + command shape. We return boring receipts.
 > Reproducible first, interesting second.
 
-There are two ways to get a receipt into the lab.
+There are two ways to get a receipt into the lab. If you want us to run a validation node, start with [`REQUESTS.md`](REQUESTS.md).
 
 ## 1. Send a branch + command shape (lightest)
 
 Open an issue (or ping) with: a repo/branch (or release), the **exact command**,
 and the model + quant. A node validator runs it and returns a receipt - commit,
 flags, driver, VRAM, tok/s split prefill/decode, quality gate, failures. No need to
-route it through your own repo. Nodes today: AYA-3090 (live), AYA-4090 (later).
+route it through your own repo. Nodes today: AYA-3090 (live), AYA-4090 (strategic).
 
 ## 2. Run it yourself and submit the receipt
 
