@@ -31,6 +31,10 @@
 | CUDA | |
 | GPU | |
 | VRAM total | |
+| dedicated mode | true / false |
+| resident loads | none / e.g. ComfyUI |
+| idle VRAM | MiB (before model load) |
+| idle power | W |
 
 ## Model
 

@@ -2,6 +2,11 @@
 
 > Send branch + command shape. We return boring receipts.
 
+> **Note (2026-05-23):** generated on a **shared workstation** (ComfyUI resident).
+> See **R2b** (`2026-05-23-...-quant-sweep-dedicated.md`) for the dedicated-mode
+> sweep — throughput identical within noise, VRAM ~0.5 GiB lower. The delta-sheet
+> SVG is now generated from the dedicated (R2b) numbers. Both preserved.
+
 | field | value |
 |---|---|
 | **rung** | 2 — quant sweep (see ladder in README) |

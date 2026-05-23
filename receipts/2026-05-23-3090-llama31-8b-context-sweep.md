@@ -58,6 +58,7 @@ the KV cache is what buys back both the memory and some of the speed.
 | GPU | RTX 3090 (compute 8.6), 24575 MiB |
 | build | llama.cpp b9286 (`99d4026b1`), prebuilt win-cuda-12.4 |
 | model | Meta-Llama-3.1-8B-Instruct Q4_K_M, KV f16 |
+| dedicated mode | true · resident: none · idle 687 MiB / 45 W |
 | reps | 2 |
 
 ## Command

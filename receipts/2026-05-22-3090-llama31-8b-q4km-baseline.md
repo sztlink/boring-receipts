@@ -2,6 +2,11 @@
 
 > Send branch + command shape. We return boring receipts.
 
+> **Note (2026-05-23):** generated on a **shared workstation** (ComfyUI resident,
+> ~1.2 GB idle VRAM). See **R1b** (`2026-05-23-...-baseline-dedicated.md`) for the
+> dedicated-mode baseline — throughput identical, VRAM ~515 MiB lower. Both preserved:
+> each receipt is a dated gesture of a machine state, not a silent update.
+
 | field | value |
 |---|---|
 | **status** | pass |

@@ -25,7 +25,7 @@
   <rect x="28" y="28" width="1124" height="896" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
   <text x="58" y="66" class="mono tag">BORING-RECEIPTS · RUNG 2 · WEIGHT-QUANT SWEEP</text>
   <text x="58" y="116" class="mono title">delta sheet</text>
-  <text x="58" y="146" class="mono sub">Llama-3.1-8B · AYA-3090 · llama.cpp b9286 · three weight quants</text>
+  <text x="58" y="146" class="mono sub">Llama-3.1-8B · AYA-3090 · llama.cpp b9286 · three weight quants · dedicated mode</text>
 
   <rect x="58" y="170" width="1064" height="42" fill="#f1ece0" stroke="#356b46" stroke-width="1.6"/>
   <text x="78" y="197" class="mono mlabel" fill="#356b46">GATE: PASS</text>
@@ -39,48 +39,48 @@
     <text x="1090" y="300" class="mono dir" text-anchor="end">↑ higher = faster</text>
       <text x="98" y="343" class="mono q" text-anchor="end">Q4</text>
       <rect x="128" y="332" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="343" class="mono val" text-anchor="end">131.9</text>
+      <text x="620" y="343" class="mono val" text-anchor="end">131.8</text>
       <text x="702" y="343" class="mono del">baseline</text>
       <text x="98" y="369" class="mono q" text-anchor="end">Q5</text>
-      <rect x="128" y="358" width="378.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <rect x="128" y="358" width="378.5" height="15" fill="#3a352c" opacity="0.9"/>
       <text x="620" y="369" class="mono val" text-anchor="end">118.7</text>
-      <text x="702" y="369" class="mono del">-10.0%</text>
+      <text x="702" y="369" class="mono del">-9.9%</text>
       <text x="98" y="395" class="mono q" text-anchor="end">Q8</text>
-      <rect x="128" y="384" width="287.5" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="395" class="mono val" text-anchor="end">90.3</text>
-      <text x="702" y="395" class="mono del">-31.5%</text>
+      <rect x="128" y="384" width="286.2" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="395" class="mono val" text-anchor="end">89.8</text>
+      <text x="702" y="395" class="mono del">-31.8%</text>
   
     <text x="58" y="444" class="mono mlabel">pp  prefill</text>
     <text x="58" y="460" class="mono unit">t/s</text>
     <text x="1090" y="444" class="mono dir" text-anchor="end">↑ higher = faster</text>
       <text x="98" y="487" class="mono q" text-anchor="end">Q4</text>
-      <rect x="128" y="476" width="412.3" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="487" class="mono val" text-anchor="end">4459</text>
+      <rect x="128" y="476" width="404.9" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="487" class="mono val" text-anchor="end">4455</text>
       <text x="702" y="487" class="mono del">baseline</text>
       <text x="98" y="513" class="mono q" text-anchor="end">Q5</text>
-      <rect x="128" y="502" width="402.0" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="513" class="mono val" text-anchor="end">4347</text>
-      <text x="702" y="513" class="mono del">-2.5%</text>
+      <rect x="128" y="502" width="395.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="513" class="mono val" text-anchor="end">4346</text>
+      <text x="702" y="513" class="mono del">-2.4%</text>
       <text x="98" y="539" class="mono q" text-anchor="end">Q8</text>
       <rect x="128" y="528" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="539" class="mono val" text-anchor="end">4542</text>
-      <text x="702" y="539" class="mono del">+1.9%</text>
+      <text x="620" y="539" class="mono val" text-anchor="end">4621</text>
+      <text x="702" y="539" class="mono del">+3.7%</text>
   
     <text x="58" y="588" class="mono mlabel">VRAM peak</text>
     <text x="58" y="604" class="mono unit">GiB</text>
     <text x="1090" y="588" class="mono dir" text-anchor="end">↓ lower = leaner</text>
       <text x="98" y="631" class="mono q" text-anchor="end">Q4</text>
-      <rect x="128" y="620" width="273.9" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="631" class="mono val" text-anchor="end">6.0</text>
+      <rect x="128" y="620" width="270.3" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="631" class="mono val" text-anchor="end">5.6</text>
       <text x="702" y="631" class="mono del">baseline</text>
       <text x="98" y="657" class="mono q" text-anchor="end">Q5</text>
-      <rect x="128" y="646" width="305.9" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="657" class="mono val" text-anchor="end">6.7</text>
-      <text x="702" y="657" class="mono del">+11.7%</text>
+      <rect x="128" y="646" width="304.1" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="657" class="mono val" text-anchor="end">6.3</text>
+      <text x="702" y="657" class="mono del">+12.5%</text>
       <text x="98" y="683" class="mono q" text-anchor="end">Q8</text>
       <rect x="128" y="672" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
-      <text x="620" y="683" class="mono val" text-anchor="end">9.2</text>
-      <text x="702" y="683" class="mono del">+53.3%</text>
+      <text x="620" y="683" class="mono val" text-anchor="end">8.7</text>
+      <text x="702" y="683" class="mono del">+55.4%</text>
   
     <text x="58" y="732" class="mono mlabel">PPL  quality</text>
     <text x="58" y="748" class="mono unit"></text>
@@ -100,6 +100,6 @@
 
   <line x1="58" y1="854" x2="1122" y2="854" stroke="#cdbe9f" stroke-width="1"/>
   <text x="58" y="878" class="mono small">tg (decode) falls hard with bits — memory-bound. pp (prefill) is flat — compute-bound. that divergence is the thesis.</text>
-  <text x="58" y="898" class="mono small">trade-off, sayable in full: Q4 is +31.5% faster decode &amp; −35% VRAM vs Q8, costing +2.3% PPL — within the gate.</text>
+  <text x="58" y="898" class="mono small">trade-off vs Q4 baseline: Q8 is −32% decode &amp; +55% VRAM, for 2.3% lower PPL (better) — Q4 is the speed/footprint floor.</text>
   <text x="58" y="918" class="mono micro">reproduce: llama-bench -m {Q4,Q5,Q8} -ngl 99 -p 512 -n 128 -r 5 · gate: llama-perplexity -f wiki.test.raw</text>
 </svg>

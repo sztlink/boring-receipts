@@ -23,10 +23,11 @@ const C = {
 const QLAB = ['Q4','Q5','Q8'];
 
 // metric: vals aligned to QLAB; base = index of baseline; dir note; fmt
+// dedicated mode (R2b) — clean baseline, GPU idle 687 MiB, no resident process
 const METRICS = [
-  { label:'tg  decode',   unit:'t/s', vals:[131.9,118.7,90.3],     base:0, dir:'↑ higher = faster', fmt:v=>v.toFixed(1) },
-  { label:'pp  prefill',  unit:'t/s', vals:[4459,4347,4542],       base:0, dir:'↑ higher = faster', fmt:v=>String(v) },
-  { label:'VRAM peak',    unit:'GiB', vals:[6.0,6.7,9.2],          base:0, dir:'↓ lower = leaner',  fmt:v=>v.toFixed(1) },
+  { label:'tg  decode',   unit:'t/s', vals:[131.76,118.74,89.80],  base:0, dir:'↑ higher = faster', fmt:v=>v.toFixed(1) },
+  { label:'pp  prefill',  unit:'t/s', vals:[4455,4346,4621],       base:0, dir:'↑ higher = faster', fmt:v=>String(v) },
+  { label:'VRAM peak',    unit:'GiB', vals:[5.6,6.3,8.7],          base:0, dir:'↓ lower = leaner',  fmt:v=>v.toFixed(1) },
   { label:'PPL  quality', unit:'',    vals:[7.5002,7.3948,7.3285], base:2, dir:'↓ lower = better (Q8 ref)', fmt:v=>v.toFixed(2) },
 ];
 const GATE = { state:'PASS', version:'gate-v1',
@@ -86,7 +87,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <rect x="28" y="28" width="${W-56}" height="${H-56}" fill="none" stroke="${C.line}" stroke-width="1.5"/>
   <text x="58" y="66" class="mono tag">BORING-RECEIPTS · RUNG 2 · WEIGHT-QUANT SWEEP</text>
   <text x="58" y="116" class="mono title">delta sheet</text>
-  <text x="58" y="146" class="mono sub">Llama-3.1-8B · AYA-3090 · llama.cpp b9286 · three weight quants</text>
+  <text x="58" y="146" class="mono sub">Llama-3.1-8B · AYA-3090 · llama.cpp b9286 · three weight quants · dedicated mode</text>
 
   <rect x="58" y="170" width="${W-116}" height="42" fill="${C.paper}" stroke="${gateColor(GATE.state)}" stroke-width="1.6"/>
   <text x="78" y="197" class="mono mlabel" fill="${gateColor(GATE.state)}">GATE: ${esc(GATE.state)}</text>
@@ -101,7 +102,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
 
   <line x1="58" y1="854" x2="${W-58}" y2="854" stroke="${C.faint}" stroke-width="1"/>
   <text x="58" y="878" class="mono small">tg (decode) falls hard with bits — memory-bound. pp (prefill) is flat — compute-bound. that divergence is the thesis.</text>
-  <text x="58" y="898" class="mono small">trade-off, sayable in full: Q4 is +31.5% faster decode &amp; −35% VRAM vs Q8, costing +2.3% PPL — within the gate.</text>
+  <text x="58" y="898" class="mono small">trade-off vs Q4 baseline: Q8 is −32% decode &amp; +55% VRAM, for 2.3% lower PPL (better) — Q4 is the speed/footprint floor.</text>
   <text x="58" y="918" class="mono micro">reproduce: llama-bench -m {Q4,Q5,Q8} -ngl 99 -p 512 -n 128 -r 5 · gate: llama-perplexity -f wiki.test.raw</text>
 </svg>`;
 

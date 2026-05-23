@@ -27,6 +27,11 @@ environment:
   vram_total_mib: null
   cpu: null                     # optional
   ram_gb: null                  # optional
+  # --- machine state (format v1.1) — never hide a shared box ---
+  dedicated_mode: null          # true = nothing else on the GPU; false = shared workstation
+  resident_processes: null      # [] or list (e.g. ["ComfyUI"]) sharing the GPU during the run
+  idle_baseline_vram_mib: null  # VRAM in use at idle, before loading the model
+  idle_baseline_power_w: null   # power draw at idle
 
 model:
   name: null                    # e.g. Meta-Llama-3.1-8B-Instruct
