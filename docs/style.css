@@ -4,6 +4,9 @@
 :root{
   --paper:#f1ece0; --ink:#161410; --muted:#6e675a; --line:#1c1a15;
   --faint:#c9bb9c; --panel:#f7f1e3; --blue:#2f5f87; --green:#356b46; --red:#a33a2b; --yellow:#9a7320;
+  /* translucent ink tint for boxed regions: lets the paper texture read through
+     instead of pasting a flat lighter card over it */
+  --tint:rgba(40,36,28,.05);
   --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
 }
@@ -44,6 +47,10 @@ html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);f
 
 h1{font-family:var(--serif);font-weight:600;font-size:34px;letter-spacing:.4px;margin:30px 0 6px;text-align:center}
 h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:36px 0 12px}
+/* inked-print texture on display type only — body mono stays crisp for reading */
+h1{filter:url('assets/rough.svg#ink')}
+h2,.tag{filter:url('assets/rough.svg#ink-soft')}
+.glyphs{filter:url('assets/rough.svg#ink-soft')}
 .lede{font-style:italic;color:var(--muted);text-align:center;margin:0 0 30px;font-size:13px}
 .tag{color:var(--red);font-weight:700;letter-spacing:2px;font-size:12px;margin-top:30px}
 p{max-width:64ch;color:#26231c}
@@ -52,11 +59,13 @@ a{color:var(--blue)}
 p a,li a,.banner a,.foot a{text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px;text-decoration-thickness:1px}
 p a:hover,li a:hover,.banner a:hover,.foot a:hover{text-decoration-style:solid}
 ul,ol{max-width:64ch;color:#26231c}li{margin:.3em 0}
-code{background:var(--panel);border:1px solid var(--faint);padding:1px 5px;font-size:.92em}
+code{background:var(--tint);border:1px solid var(--faint);padding:1px 5px;font-size:.92em}
 .small{color:var(--muted);font-size:12px}
-img{max-width:100%;border:1px solid var(--line);background:var(--panel)}
+/* delta sheets carry a baked paper background; multiply blends them into the
+   live sheet texture so they stop reading as a pasted white plate */
+img{max-width:100%;border:1px solid var(--line);background:transparent;mix-blend-mode:multiply}
 
-.banner{border:1px solid var(--line);background:var(--panel);padding:14px 16px;margin:16px 0;max-width:none}
+.banner{border:1px solid var(--line);background:var(--tint);padding:14px 16px;margin:16px 0;max-width:none}
 
 nav.side a{display:block;font-size:16px;color:var(--ink);text-decoration:none;margin:0 0 13px}
 nav.side a:hover{color:var(--blue)}
@@ -73,7 +82,7 @@ nav.top a.md{margin-left:auto;color:var(--blue)}
 .body{display:grid;grid-template-columns:108px minmax(0,1fr);gap:26px}
 .body>main{min-width:0}
 
-.panel{border:1.3px solid var(--line);background:var(--panel)}
+.panel{border:1.3px solid var(--line);background:var(--tint)}
 .panel-h{display:flex;justify-content:space-between;padding:8px 13px;border-bottom:1.3px solid var(--line);font-size:13px}
 
 .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -91,7 +100,7 @@ td a{color:var(--blue);text-decoration:none}
 tbody tr:hover{background:#efe7d3}
 table.grid{font-size:13px}
 table.grid th,table.grid td{border:1px solid var(--line);white-space:normal}
-table.grid th{background:var(--panel)}
+table.grid th{background:var(--tint)}
 
 /* Gate states read as printed stamps: a struck glyph + weight, not colour alone. */
 .gp,.pass{color:var(--green)}.warn{color:var(--yellow)}.gb{color:var(--blue)}
