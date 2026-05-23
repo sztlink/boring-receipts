@@ -1,64 +1,124 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boring Receipts Lab · turboquant-cuda-bench</title><style>
-:root{--paper:#f3ead7;--ink:#171717;--muted:#5f594f;--line:#24221e;--panel:#fff7e8;--blue:#2f5f87;--green:#2f7d4f;--red:#a33a2b;--yellow:#a06f18}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-main{max-width:1080px;margin:0 auto;padding:40px 22px 90px}
-h1{font-size:40px;letter-spacing:-1.5px;margin:.2em 0}h2{font-size:22px;margin:1.8em 0 .6em;border-bottom:1px solid var(--line);padding-bottom:6px}
-a{color:var(--blue)}img{max-width:100%;border:1px solid var(--line);background:var(--panel)}
-.tag{color:var(--red);font-weight:700;letter-spacing:2px;font-size:13px}
-.lede{font-size:18px;color:var(--muted)}
-.banner{border:1px solid var(--line);background:var(--panel);padding:16px 18px;margin:18px 0}
-table{border-collapse:collapse;width:100%;font-size:14px;margin:.4em 0}th,td{border:1px solid var(--line);padding:7px 10px;text-align:left}th{background:var(--panel)}
-.small{color:var(--muted);font-size:13px}code{background:var(--panel);border:1px solid var(--line);padding:1px 5px}
-.pass{color:var(--green)}.warn{color:var(--yellow)}
-</style></head><body><main>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boring Receipts Lab</title>
+<meta name="description" content="Send branch + command shape. We return boring receipts. Reproducible NVIDIA inference-validation receipts — no hype, no single speed score.">
+<style>
+  :root{
+    --paper:#f3ead7; --ink:#1d1b16; --muted:#6b6457; --line:#26241f;
+    --faint:#cdbe9f; --panel:#fbf3df; --blue:#2f5f87; --green:#2f7d4f; --red:#a33a2b;
+    --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,"Liberation Mono",monospace;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#e9dec4;color:var(--ink);font-family:var(--mono);font-size:15px;line-height:1.55}
+  /* paper sheet with matrix-printer tractor holes down both edges */
+  .sheet{
+    position:relative;max-width:840px;margin:26px auto;background:var(--paper);
+    border:1.5px dashed var(--line);
+    padding:34px 64px 60px;
+    background-image:
+      radial-gradient(circle at 22px 0, #efe6cf 0.8px, transparent 1px),
+      radial-gradient(circle, var(--paper) 3.4px, transparent 3.8px),
+      radial-gradient(circle, var(--paper) 3.4px, transparent 3.8px);
+    background-size:18px 18px, 28px 26px, 28px 26px;
+    background-position:0 0, 16px 12px, calc(100% - 16px) 12px;
+    background-repeat:repeat, repeat-y, repeat-y;
+    box-shadow:0 1px 0 #d7c9a8 inset, 0 18px 40px -28px rgba(0,0,0,.5);
+  }
+  /* tractor-hole columns */
+  .sheet::before,.sheet::after{
+    content:"";position:absolute;top:0;bottom:0;width:30px;
+    background-image:radial-gradient(circle, #e9dec4 3.2px, transparent 3.6px);
+    background-size:30px 26px;background-position:center 12px;background-repeat:repeat-y;
+    border-right:1px dotted var(--faint);border-left:1px dotted var(--faint);
+  }
+  .sheet::before{left:0}.sheet::after{right:0}
 
-<div class="tag">NVIDIA VALIDATION NODE · WAFFLE / TURBOQUANT</div>
-<h1>Boring Receipts</h1>
-<p class="lede">Send branch + command shape. We return boring receipts.</p>
+  .topbar{display:flex;justify-content:space-between;align-items:flex-start;font-size:11px;color:var(--muted);letter-spacing:1px}
+  .dots{font-size:15px;color:var(--ink);letter-spacing:6px}
+  .meta{text-align:right;line-height:1.4;white-space:pre}
 
-<div class="banner"><strong>What "boring" means:</strong> the ladder runs from the noob to the
-Waffle House. The same plain, reproducible receipt covers the person who downloaded a GGUF and ran
-one command, and the expert validating a branch under load. Every rung reproducible by the one
-below. No hype, no single speed score, no skipped steps.</div>
+  h1{font-family:var(--serif);font-weight:600;font-size:38px;letter-spacing:.5px;text-align:center;margin:18px 0 30px}
 
-<h2>The ladder</h2>
-<table>
-<tr><th>rung</th><th>who</th><th>proves</th><th>reproducible by</th></tr>
-<tr><td>1 — noob</td><td>anyone with a GPU</td><td>prebuilt llama.cpp + a GGUF, one command, real tok/s</td><td>a beginner in ~10 min</td></tr>
-<tr><td>2 — quant</td><td>local user</td><td>same model across quants: the speed↔footprint trade-off</td><td>rung 1</td></tr>
-<tr><td>3 — build</td><td>tinkerer</td><td>source build + flags (flash-attn) delta</td><td>rung 2</td></tr>
-<tr><td>4 — serving</td><td>someone who serves</td><td>vLLM/SGLang throughput, req/s, TTFT, ITL under concurrency</td><td>rung 3</td></tr>
-<tr><td>5 — Waffle House</td><td>the community</td><td>a TriAttention/longctx/MTP branch + delta + quality gate + failures</td><td>rung 4</td></tr>
-</table>
+  .body{display:grid;grid-template-columns:120px 1fr;gap:30px}
+  nav a{display:block;font-size:17px;color:var(--ink);text-decoration:none;margin:0 0 14px;padding-bottom:2px}
+  nav a:hover{color:var(--blue);border-bottom:1px solid var(--blue);width:max-content}
 
-<h2>Nodes</h2>
-<table>
-<tr><th>node</th><th>machine</th><th>engine</th><th>status</th></tr>
-<tr><td>AYA-3090</td><td>Windows · RTX 3090 24 GB</td><td>llama.cpp (native)</td><td class="pass">live</td></tr>
-<tr><td>AYA-3090-wsl</td><td>WSL2 Ubuntu</td><td>vLLM / SGLang</td><td>available</td></tr>
-<tr><td>AYA-4090</td><td>RTX 4090 · Win+WSL2</td><td>vLLM</td><td>later — LLM-busy</td></tr>
-</table>
+  .panel{border:1.4px solid var(--line);background:var(--panel)}
+  .panel-h{display:flex;justify-content:space-between;align-items:center;padding:9px 14px;border-bottom:1.4px solid var(--line);font-size:14px}
+  table{border-collapse:collapse;width:100%;font-size:12.5px}
+  th,td{text-align:left;padding:5px 10px;white-space:nowrap}
+  th{color:var(--muted);font-weight:400;border-bottom:1px solid var(--faint)}
+  td a{color:var(--blue);text-decoration:none}td a:hover{text-decoration:underline}
+  tbody tr:hover{background:#f5ecd6}
+  .gate-pass{color:var(--green)}
 
-<h2>Receipts</h2>
-<p><strong>Rung 2 — weight-quant sweep</strong> · Llama-3.1-8B · AYA-3090. The delta sheet:
-the canonical visual. Gate stamp first, delta over a zero dead-line, color marks series not verdict.</p>
-<img src="assets/delta-sheet-rung2-quant-sweep.svg" alt="rung 2 weight-quant sweep delta sheet">
-<p class="small">decode (tg) collapses with bits — memory-bound. prefill (pp) stays flat — compute-bound.
-the divergence between the two is the whole prefill/decode thesis. ·
-<a href="../receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">full receipt</a></p>
+  h2{font-family:var(--serif);font-weight:600;font-size:24px;margin:40px 0 14px}
+  p{max-width:60ch;color:#2a271f}
+  .lede{font-style:italic;color:var(--muted);text-align:center;margin:-18px 0 30px}
+  .foot{margin-top:46px;border-top:1px solid var(--faint);padding-top:14px;font-size:11px;color:var(--muted)}
+  .foot a{color:var(--blue)}
+  @media(max-width:680px){.sheet{padding:28px 40px}.body{grid-template-columns:1fr}nav{display:flex;gap:18px;flex-wrap:wrap}}
+</style></head>
+<body>
+<div class="sheet">
 
-<p><strong>Rung 1 — baseline</strong> · prebuilt llama.cpp b9286, Q4_K_M: pp512 4448 t/s, tg 131 t/s,
-6.3 GB VRAM, ~345 W. <a href="../receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">full receipt</a></p>
+  <div class="topbar">
+    <span class="dots">○ ○ ✕</span>
+    <span class="meta">node AYA-3090 · llama.cpp b9286
+gate-v1 PASS · 2026-05-22
+≈ no hype · no single score</span>
+  </div>
 
-<h2>Read the doctrine</h2>
-<ul>
-<li><a href="../CANON.md">CANON</a> — for whom (a receipt re-executes; the ladder is transferable trust)</li>
-<li><a href="../AXES.md">AXES</a> — what (axes of variation, the quality gate, scoring, visual form)</li>
-<li><a href="../GLOSSARY.md">GLOSSARY</a> — in what words (tok/s, pp/tg, TTFT, quant, ngl…)</li>
-</ul>
+  <h1>Boring Receipts Lab</h1>
+  <p class="lede">Send branch + command shape. We return boring receipts.</p>
 
-<p class="small">Boundary: offline single-node receipts. Not a leaderboard, not a vendor benchmark,
-not serving-readiness. The canonical minimal KV/long-context receipt the upstream issue #18722 left unowned.</p>
-</main></body></html>
+  <div class="body">
+    <nav>
+      <a href="#receipts">Home</a>
+      <a href="receipts.html">Receipts</a>
+      <a href="#philosophy">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+      <div class="panel" id="receipts">
+        <div class="panel-h"><span>Benchmark Receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
+        <table>
+          <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>Hardware</th><th>Gate</th><th>Link</th></tr></thead>
+          <tbody>
+            <tr><td>R2</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4/Q5/Q8 sweep</td><td>RTX 3090</td><td class="gate-pass">PASS</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
+            <tr><td>R1</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4_K_M · ngl 99</td><td>RTX 3090</td><td>n/a</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="philosophy">Philosophy</h2>
+      <p>A receipt does not speak to a reader — it re-executes. Hand its command to a
+      fresh machine and a faithful receipt regenerates; if it does not reproduce, it
+      self-denounces. That property, not its prose, is what makes a number trustworthy.
+      No hype, no vague benchmark claims, and never a single speed score — only the
+      delta, the curve, the gate, carrying their coordinates.</p>
+
+      <p>"Boring" is institutionalized suspicion, and suspicion needs a body. The ladder
+      runs from the noob who downloaded a GGUF and ran one command, up to the expert
+      validating a branch under load — each rung reproducible by the one below. We never
+      skip steps to look advanced. Skipping the floor is the opposite of boring.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>Send a branch and a command shape; get back a receipt: commit, flags, driver,
+      VRAM, tok/s split prefill/decode, quality gate, failures. No routing through anyone's
+      repo. &nbsp;→ <a href="https://github.com/sztlink/boring-receipts">github.com/sztlink/boring-receipts</a></p>
+
+      <div class="foot">
+        boringreceipts.com · a NVIDIA validation node for the Waffle / TurboQuant community ·
+        the canonical minimal KV/long-context receipt the upstream
+        <a href="https://github.com/ggml-org/llama.cpp/issues/18722">#18722</a> left unowned ·
+        research sibling: <a href="https://github.com/sztlink/turboquant-cuda-bench">turboquant-cuda-bench</a>
+      </div>
+    </main>
+  </div>
+</div>
+</body></html>
