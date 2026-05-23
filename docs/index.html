@@ -87,8 +87,14 @@
     .meta{font-size:9px}
     .glyphs{font-size:15px;letter-spacing:6px}
     h1{font-size:26px;margin-top:22px}
-    table{font-size:11px}th,td{padding:4px 7px}
     p{max-width:100%}
+    /* table -> stacked cards (no horizontal scroll, no nowrap) */
+    .tw{overflow:visible}
+    .tw table,.tw tbody,.tw tr,.tw td{display:block;width:auto}
+    .tw thead{position:absolute;left:-9999px}
+    .tw tr{border:1px solid var(--faint);background:var(--paper);margin:8px;padding:6px 10px}
+    .tw td{white-space:normal;border:0;padding:3px 0;font-size:12px;display:flex;justify-content:space-between;gap:12px}
+    .tw td::before{content:attr(data-l);color:var(--muted)}
   }
 </style></head>
 <body>
@@ -144,8 +150,8 @@
           <div class="tw"><table>
             <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>Hardware</th><th>Gate</th><th>Link</th></tr></thead>
             <tbody>
-              <tr><td>R2</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4/Q5/Q8 sweep</td><td>RTX 3090</td><td class="gp">PASS</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
-              <tr><td>R1</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4_K_M · ngl 99</td><td>RTX 3090</td><td>n/a</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
+              <tr><td data-l="ID">R2</td><td data-l="Date">2026-05-22</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4/Q5/Q8 sweep</td><td data-l="Hardware">RTX 3090</td><td data-l="Gate" class="gp">PASS</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
+              <tr><td data-l="ID">R1</td><td data-l="Date">2026-05-22</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4_K_M · ngl 99</td><td data-l="Hardware">RTX 3090</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
             </tbody>
           </table></div>
         </div>
