@@ -2,7 +2,7 @@
    Light editorial / szt.link tokens. Used by every page so the perforated
    paper aesthetic is consistent. */
 :root{
-  --paper:#f1ece0; --ink:#161410; --muted:#6e675a; --line:#1c1a15;
+  --paper:#f6f2ea; --ink:#161410; --muted:#6e675a; --line:#1c1a15;
   --faint:#c9bb9c; --panel:#f7f1e3; --blue:#2f5f87; --green:#356b46; --red:#a33a2b; --yellow:#9a7320;
   /* translucent ink tint for boxed regions: lets the paper texture read through
      instead of pasting a flat lighter card over it */
@@ -17,12 +17,12 @@ html,body{margin:0;background:#ddd2bb;color:var(--ink);font-family:var(--mono);f
 /* Real continuous-form paper fibre (Texturelabs Paper 366), multiplied over the
    warm paper tone. Replaces the synthetic feTurbulence grain with photographed
    stock so the sheet reads as physical printout, not CSS noise. */
-.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.55;mix-blend-mode:multiply;
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.4;mix-blend-mode:multiply;
   background-image:url('assets/textures/paper-sheet.jpg');
   background-size:100% auto;background-position:top center;background-repeat:repeat-y}
 /* Faint horizontal banding (Texturelabs Paper 367) reads as platen / roller
    marks across the printout. Kept very low so data stays legible. */
-.sheet::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.13;mix-blend-mode:multiply;
+.sheet::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:5;opacity:.1;mix-blend-mode:multiply;
   background-image:url('assets/textures/paper-accent.jpg');
   background-size:100% auto;background-position:top center;background-repeat:repeat-y}
 .frame{position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none;z-index:3}
