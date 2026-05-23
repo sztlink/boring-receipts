@@ -80,6 +80,9 @@ Reporting a single "tok/s" without the regime is the hype this lab refuses.
   graph/path prompting beats BM25→BGE strong baseline (EM 0.25 vs 0.09), while
   strict single-candidate ECD fails the follow-up gate. This is deliberately cited
   as research sibling evidence, not absorbed into the canonical runtime axes.
+- **Research sibling RS2** — `receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md` —
+  confidence-gated answer rerank improves the RS1 path prompt without EM losses:
+  EM 0.27 / F1 0.345, wins 2, losses 0 vs RS1 path prompt.
 
 Next rungs climb from here; we don't jump to the top.
 

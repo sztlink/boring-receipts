@@ -81,12 +81,16 @@ gate-v1 PASS</span>
     claim hides. ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-context-sweep.md">full receipt R3</a></p>
 
-    <h2>Research sibling card</h2>
+    <h2>Research sibling cards</h2>
     <p class="small"><strong>RS1 — RealRAG entity-hop path construction</strong>. This one deliberately cites
     the probe/RAG program in the sibling repo instead of absorbing it into the runtime axes. Entity-hop
     graph/path prompting beats BM25→BGE strong baseline (EM 0.25 vs 0.09), while strict single-candidate
     ECD fails the follow-up gate (EM 0.13 vs path prompt 0.26). ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md">full receipt RS1</a></p>
+    <p class="small"><strong>RS2 — confidence-gated answer rerank</strong>. Keep the path answer by default;
+    intervene only when a verifier is high-confidence and non-overlapping. EM 0.27 / F1 0.345, with 2 wins
+    and 0 losses vs RS1 path prompt. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">full receipt RS2</a></p>
 
     <h2>Read the doctrine</h2>
     <ul>
