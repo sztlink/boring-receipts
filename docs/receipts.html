@@ -75,6 +75,12 @@ gate-v1 PASS</span>
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">full receipt R2</a> ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">R1 baseline</a></p>
 
+    <p class="small"><strong>R3 — context sweep</strong> (0→64K). On the <em>context</em> axis the thesis
+    flips: prefill <em>and</em> decode both collapse (pp −94%, tg −85% by 64K) — the bottleneck is attention
+    over the growing KV cache, not the weights. decode at 64K is 20 t/s, the honest number a "128K context!"
+    claim hides. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-context-sweep.md">full receipt R3</a></p>
+
     <h2>Read the doctrine</h2>
     <ul>
       <li><a href="https://github.com/sztlink/boring-receipts/blob/main/CANON.md">CANON</a> — for whom (a receipt re-executes; the ladder is transferable trust)</li>
