@@ -72,9 +72,24 @@
 
   h2{font-family:var(--serif);font-weight:600;font-size:22px;margin:36px 0 12px}
   p{max-width:58ch;color:#26231c}
-  .foot{margin-top:40px;border-top:1px solid var(--faint);padding-top:12px;font-size:10.5px;color:var(--muted)}
+  .foot{margin-top:40px;border-top:1px solid var(--faint);padding-top:12px;font-size:10.5px;color:var(--muted);word-break:break-word}
   .foot a,.lk{color:var(--blue)}
-  @media(max-width:680px){.sheet{padding:26px 46px}.body{grid-template-columns:1fr}nav{display:flex;gap:16px;flex-wrap:wrap}.ruler{display:none}}
+  .tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  @media(max-width:680px){
+    html,body{font-size:13px}
+    body{overflow-x:hidden}
+    .sheet{padding:20px 22px;margin:10px auto}
+    .body{grid-template-columns:1fr;gap:12px}
+    nav{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+    nav a{margin:0;font-size:15px}
+    .ruler,.ticks,.holes{display:none}
+    .dither{left:22px}
+    .meta{font-size:9px}
+    .glyphs{font-size:15px;letter-spacing:6px}
+    h1{font-size:26px;margin-top:22px}
+    table{font-size:11px}th,td{padding:4px 7px}
+    p{max-width:100%}
+  }
 </style></head>
 <body>
 <div class="sheet">
@@ -126,13 +141,13 @@
       <main>
         <div class="panel" id="receipts">
           <div class="panel-h"><span>Benchmark Receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
-          <table>
+          <div class="tw"><table>
             <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>Hardware</th><th>Gate</th><th>Link</th></tr></thead>
             <tbody>
               <tr><td>R2</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4/Q5/Q8 sweep</td><td>RTX 3090</td><td class="gp">PASS</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
               <tr><td>R1</td><td>2026-05-22</td><td>Llama-3.1-8B</td><td>Q4_K_M · ngl 99</td><td>RTX 3090</td><td>n/a</td><td><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
             </tbody>
-          </table>
+          </table></div>
         </div>
 
         <h2 id="about">Philosophy</h2>
