@@ -7,7 +7,7 @@ Research sibling receipt. This cites the RealRAG/EPKV probe program in
 
 | field | value |
 |---|---|
-| **status** | **PASS on 100-case slice; 300-case follow-up is MIXED / not robust** |
+| **status** | **PASS on 100-case slice; v0 300-case mixed; v1 300-case small clean gain** |
 | **rung** | research sibling / RealRAG behavior receipt |
 | **node** | AYA-4090 |
 | **date** | 2026-05-23 |
@@ -22,8 +22,11 @@ and the verifier has high confidence in a non-overlapping answer.
 That confidence gate adds two exact-match wins and zero losses over the direct
 entity-hop path prompt on the 100-case 2Wiki slice.
 
-300-case follow-up: the positive signal does **not** robustly scale. Gated rerank
-is +1 EM over path prompt but introduces 2 EM losses.
+300-case v0 follow-up: the positive signal did **not** robustly scale. Gated rerank
+was +1 EM over path prompt but introduced 2 EM losses.
+
+300-case v1 follow-up: adding two abstention guards removed those losses and produced
+a small clean gain: EM 0.230 / F1 0.340 vs path EM 0.220 / F1 0.333, with 3 wins and 0 losses.
 
 ## Target
 
@@ -36,6 +39,7 @@ is +1 EM over path prompt but introduces 2 EM losses.
 | branch | `main` |
 | commit | `dce28e4` — `Add confidence-gated entity-hop answer rerank` |
 | follow-up commit | `55fd4b5` — `Scale entity-hop gated rerank to 300 cases` |
+| v1 follow-up commit | `a2192ce` — `Add stricter gated rerank v1` |
 | dataset | local 2Wiki dev slice, first 100 compositional/inference records with ≥2 evidences |
 | baseline | RS1 entity-hop path prompt and BM25→BGE strong baseline |
 
@@ -118,7 +122,8 @@ A third override changed wrong→wrong without affecting EM.
 | signal | EM / contains / token-F1 + win/loss vs RS1 |
 | 100-case criterion | beat RS1 entity-hop path prompt without EM losses |
 | 100-case passed | **true**: EM 0.270 vs 0.250; F1 0.345 vs 0.330; losses 0 |
-| 300-case follow-up | **mixed / not robust**: EM 0.223 vs 0.220; F1 0.333 vs 0.333; wins 3, losses 2 |
+| 300-case v0 follow-up | **mixed / not robust**: EM 0.223 vs 0.220; F1 0.333 vs 0.333; wins 3, losses 2 |
+| 300-case v1 follow-up | **small clean gain**: EM 0.230 vs 0.220; F1 0.340 vs 0.333; wins 3, losses 0 |
 
 ## Evidence
 
@@ -132,13 +137,17 @@ bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-10
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-300.md
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-300/summary.json
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-300/summary.json
+
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-GATED-V1.md
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-v1-300/summary.json
 ```
 
 ## Caveats
 
 - This is still a 100-case local 2Wiki slice, not a general RAG claim.
 - The verifier is another LLM call; this is quality/control-plane evidence, not a latency receipt.
-- The gate is postprocessed from verifier confidence and string-overlap heuristics; the 300-case follow-up shows that `confidence=high` is not calibrated enough.
+- The v0 gate is postprocessed from verifier confidence and string-overlap heuristics; the 300-case v0 follow-up shows that `confidence=high` is not calibrated enough.
+- The v1 gate is still hand-written and deterministic; treat the 300-case clean gain as a control-plane signal, not a general RAG claim.
 - Oracle compact-evidence ECD remains much stronger (EM ≈0.91), but that is a control upper bound, not natural retrieval.
 
 ## Interpretation
@@ -159,7 +168,8 @@ The lesson is negative and positive:
 
 - negative: unconditional sampler bias and strict single-candidate ECD lose cases;
 - positive: confidence-gated answer control can add wins;
-- 300-case correction: the current gate does not preserve the zero-loss property.
+- 300-case v0 correction: the original gate did not preserve the zero-loss property;
+- 300-case v1 correction: stricter abstention restored the zero-loss property with a small gain.
 
 ## Next step
 
