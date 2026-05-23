@@ -88,9 +88,9 @@ gate-v1 PASS</span>
     ECD fails the follow-up gate (EM 0.13 vs path prompt 0.26). ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md">full receipt RS1</a></p>
     <p class="small"><strong>RS2 — confidence-gated answer rerank</strong>. Keep the path answer by default;
-    intervene only when a verifier is high-confidence and non-overlapping. 100-case: EM 0.27 / F1 0.345,
-    with 2 wins and 0 losses vs RS1 path prompt. 300-case v0 was mixed; v1 abstention guards give a small
-    clean gain (EM 0.230 vs path 0.220; wins 3, losses 0). ·
+    intervene only when a verifier is high-confidence and non-overlapping. 100-case was positive and 300-case
+    v1 gave a small clean gain, but the 500-case machine-only follow-up shows no delta vs direct path prompting
+    (EM 0.216 vs 0.216; wins 2, losses 2). ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">full receipt RS2</a></p>
 
     <h2>Read the doctrine</h2>
