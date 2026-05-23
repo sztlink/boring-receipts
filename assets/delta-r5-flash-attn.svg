@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="592" viewBox="0 0 1180 592" role="img" aria-label="flash-attn on/off">
+  <defs>
+    <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+      .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
+      .title{font-size:38px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:15px;fill:#6e675a;}
+      .pl{font-size:16px;font-weight:700;fill:#161410;}
+      .un{font-size:11px;fill:#6e675a;}
+      .lbl{font-size:13px;fill:#161410;}
+      .val{font-size:13px;font-weight:700;fill:#161410;}
+      .del{font-size:12px;fill:#6e675a;}
+      .ax{font-size:11px;fill:#6e675a;}
+      .leg{font-size:12px;fill:#6e675a;}
+      .small{font-size:12px;fill:#6e675a;}
+      .micro{font-size:10.5px;fill:#6e675a;}
+    </style>
+  </defs>
+  <rect width="1180" height="592" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="536" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
+  <text x="58" y="64" class="mono tag">BORING-RECEIPTS · R5 · FLASH-ATTN ON/OFF</text>
+  <text x="58" y="112" class="mono title">flash-attn on/off</text>
+  <text x="58" y="140" class="mono sub">Llama-3.1-8B Q4_K_M · AYA-3090 · -fa 0 vs 1, at d0 and 16K</text>
+  <text x="58" y="190" class="mono pl">pp @ 16K</text>
+      <text x="58" y="206" class="mono un">t/s</text>
+      <text x="1090" y="190" class="mono un" text-anchor="end">↑ faster</text><text x="138" y="232" class="mono lbl" text-anchor="end">fa off</text>
+        <rect x="150" y="221" width="189.7" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="232" class="mono val" text-anchor="end">1278</text>
+        <text x="720" y="232" class="mono del">baseline</text><text x="138" y="256" class="mono lbl" text-anchor="end">fa on</text>
+        <rect x="150" y="245" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="256" class="mono val" text-anchor="end">2897</text>
+        <text x="720" y="256" class="mono del">+126.7%</text><text x="58" y="278" class="mono pl">tg @ 16K</text>
+      <text x="58" y="294" class="mono un">t/s</text>
+      <text x="1090" y="278" class="mono un" text-anchor="end">↑ faster</text><text x="138" y="320" class="mono lbl" text-anchor="end">fa off</text>
+        <rect x="150" y="309" width="308.9" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="320" class="mono val" text-anchor="end">74.2</text>
+        <text x="720" y="320" class="mono del">baseline</text><text x="138" y="344" class="mono lbl" text-anchor="end">fa on</text>
+        <rect x="150" y="333" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="344" class="mono val" text-anchor="end">103.3</text>
+        <text x="720" y="344" class="mono del">+39.2%</text><text x="58" y="366" class="mono pl">pp @ d0</text>
+      <text x="58" y="382" class="mono un">t/s</text>
+      <text x="1090" y="366" class="mono un" text-anchor="end">↑ faster</text><text x="138" y="408" class="mono lbl" text-anchor="end">fa off</text>
+        <rect x="150" y="397" width="386.8" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="408" class="mono val" text-anchor="end">4498</text>
+        <text x="720" y="408" class="mono del">baseline</text><text x="138" y="432" class="mono lbl" text-anchor="end">fa on</text>
+        <rect x="150" y="421" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="432" class="mono val" text-anchor="end">5000</text>
+        <text x="720" y="432" class="mono del">+11.2%</text><text x="58" y="454" class="mono pl">tg @ d0</text>
+      <text x="58" y="470" class="mono un">t/s</text>
+      <text x="1090" y="454" class="mono un" text-anchor="end">↑ faster</text><text x="138" y="496" class="mono lbl" text-anchor="end">fa off</text>
+        <rect x="150" y="485" width="412.1" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="496" class="mono val" text-anchor="end">133.6</text>
+        <text x="720" y="496" class="mono del">baseline</text><text x="138" y="520" class="mono lbl" text-anchor="end">fa on</text>
+        <rect x="150" y="509" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="520" class="mono val" text-anchor="end">139.4</text>
+        <text x="720" y="520" class="mono del">+4.3%</text>
+  <text x="58" y="574" class="mono micro">the gain is small at d0 (+11% pp / +4% tg) but large at 16K (+127% pp / +39% tg) — see the full curve in R6.</text>
+</svg>

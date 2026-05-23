@@ -15,6 +15,8 @@ context already sits in the KV cache.
 
 ## Delta sheet — speed vs context
 
+![delta sheet](../docs/assets/delta-r3-context-wall.svg)
+
 ```
 GATE: n/a (throughput/capacity only — no quality probe yet; see next step)
 

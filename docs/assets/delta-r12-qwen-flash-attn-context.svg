@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="686" viewBox="0 0 1180 686" role="img" aria-label="it generalizes">
+  <defs>
+    <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+      .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
+      .title{font-size:38px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:15px;fill:#6e675a;}
+      .pl{font-size:16px;font-weight:700;fill:#161410;}
+      .un{font-size:11px;fill:#6e675a;}
+      .lbl{font-size:13px;fill:#161410;}
+      .val{font-size:13px;font-weight:700;fill:#161410;}
+      .del{font-size:12px;fill:#6e675a;}
+      .ax{font-size:11px;fill:#6e675a;}
+      .leg{font-size:12px;fill:#6e675a;}
+      .small{font-size:12px;fill:#6e675a;}
+      .micro{font-size:10.5px;fill:#6e675a;}
+    </style>
+  </defs>
+  <rect width="1180" height="686" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="630" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
+  <text x="58" y="64" class="mono tag">BORING-RECEIPTS · R12 · FLASH-ATTN × CONTEXT (QWEN)</text>
+  <text x="58" y="112" class="mono title">it generalizes</text>
+  <text x="58" y="140" class="mono sub">Qwen2.5-7B Q4_K_M · AYA-3090 · fa off vs on, depth 0/16K/64K</text>
+  <text x="58" y="198" class="mono pl">tg  decode</text>
+      <text x="58" y="214" class="mono un">t/s</text><line x1="90" y1="214" x2="90" y2="346" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="346" x2="1120" y2="346" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="362" class="mono ax" text-anchor="middle">0</text><text x="605" y="362" class="mono ax" text-anchor="middle">16K</text><text x="1120" y="362" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,228.1 605.0,273.4 1120.0,324.1" fill="none" stroke="#6e675a" stroke-width="2.2" /><circle cx="90.0" cy="228.1" r="3.2" fill="#6e675a"/><circle cx="605.0" cy="273.4" r="3.2" fill="#6e675a"/><circle cx="1120.0" cy="324.1" r="3.2" fill="#6e675a"/><text x="1126" y="328.1434685143672" class="mono leg" fill="#6e675a">fa off</text><text x="90" y="220.14285714285717" class="mono ax" fill="#6e675a" text-anchor="middle">140</text><text x="605" y="265.36906460158957" class="mono ax" fill="#6e675a" text-anchor="middle">86</text><text x="1120" y="316.1434685143672" class="mono ax" fill="#6e675a" text-anchor="middle">26</text><polyline points="90.0,233.3 605.0,246.7 1120.0,273.3" fill="none" stroke="#356b46" stroke-width="2.2" stroke-dasharray="1 0"/><circle cx="90.0" cy="233.3" r="3.2" fill="#356b46"/><circle cx="605.0" cy="246.7" r="3.2" fill="#356b46"/><circle cx="1120.0" cy="273.3" r="3.2" fill="#356b46"/><text x="1126" y="277.2850010189525" class="mono leg" fill="#356b46">fa on</text><text x="90" y="225.27073568371713" class="mono ax" fill="#356b46" text-anchor="middle">134</text><text x="605" y="238.720908905645" class="mono ax" fill="#356b46" text-anchor="middle">118</text><text x="1120" y="265.2850010189525" class="mono ax" fill="#356b46" text-anchor="middle">87</text><text x="58" y="434" class="mono pl">pp  prefill</text>
+      <text x="58" y="450" class="mono un">t/s</text><line x1="90" y1="450" x2="90" y2="582" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="582" x2="1120" y2="582" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="598" class="mono ax" text-anchor="middle">0</text><text x="605" y="598" class="mono ax" text-anchor="middle">16K</text><text x="1120" y="598" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,464.1 605.0,544.2 1120.0,573.8" fill="none" stroke="#6e675a" stroke-width="2.2" /><circle cx="90.0" cy="464.1" r="3.2" fill="#6e675a"/><circle cx="605.0" cy="544.2" r="3.2" fill="#6e675a"/><circle cx="1120.0" cy="573.8" r="3.2" fill="#6e675a"/><text x="1126" y="577.7991570992589" class="mono leg" fill="#6e675a">fa off</text><text x="90" y="456.14285714285717" class="mono ax" fill="#6e675a" text-anchor="middle">4915</text><text x="605" y="536.2329603255341" class="mono ax" fill="#6e675a" text-anchor="middle">1575</text><text x="1120" y="565.7991570992589" class="mono ax" fill="#6e675a" text-anchor="middle">342</text><polyline points="90.0,465.7 605.0,523.3 1120.0,549.2" fill="none" stroke="#356b46" stroke-width="2.2" stroke-dasharray="1 0"/><circle cx="90.0" cy="465.7" r="3.2" fill="#356b46"/><circle cx="605.0" cy="523.3" r="3.2" fill="#356b46"/><circle cx="1120.0" cy="549.2" r="3.2" fill="#356b46"/><text x="1126" y="553.1726493242261" class="mono leg" fill="#356b46">fa on</text><text x="90" y="457.70149687545415" class="mono ax" fill="#356b46" text-anchor="middle">4850</text><text x="605" y="515.2992297631158" class="mono ax" fill="#356b46" text-anchor="middle">2448</text><text x="1120" y="541.1726493242261" class="mono ax" fill="#356b46" text-anchor="middle">1369</text>
+  <text x="58" y="648" class="mono small">same shape as Llama (R6): 64K decode +233% (&gt;Llama +185%); break-even at d0 (−4%, noise).</text><text x="58" y="668" class="mono micro">flash-attn-scales-with-context confirmed on a 2nd architecture — it is about attention cost, not one model.</text>
+</svg>

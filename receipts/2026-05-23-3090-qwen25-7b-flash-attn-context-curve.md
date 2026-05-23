@@ -15,6 +15,8 @@ quant trade-off.
 
 ## Delta sheet — flash-attn off → on, Qwen2.5-7B
 
+![delta sheet](../docs/assets/delta-r12-qwen-flash-attn-context.svg)
+
 ```
             tg decode t/s              pp prefill t/s
 n_ctx     fa0     fa1     Δ          fa0     fa1     Δ

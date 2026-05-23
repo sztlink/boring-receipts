@@ -15,6 +15,8 @@ fa-off curve) and the long-context case for R5 (flash-attn is a free win).
 
 ## Delta sheet — flash-attn off (R3) → on (R6)
 
+![delta sheet](../docs/assets/delta-r6-flash-attn-context.svg)
+
 ```
             tg decode t/s              pp prefill t/s
 n_ctx     fa0     fa1     Δ          fa0     fa1     Δ

@@ -15,6 +15,8 @@ quantization or of one model.
 
 ## Qwen2.5-7B quant ladder (fa on, dedicated)
 
+![delta sheet](../docs/assets/delta-r10-qwen-quant-ladder.svg)
+
 | quant | size | pp512 t/s | tg128 t/s | VRAM peak | PPL | Δ-PPL vs Q8 |
 |---|---|---|---|---|---|---|
 | Q4_K_M | 4.36 GiB | 5382 | **144.0** | 5.0 GiB | 8.0193 | +1.5% |

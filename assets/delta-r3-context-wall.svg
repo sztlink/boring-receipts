@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="686" viewBox="0 0 1180 686" role="img" aria-label="context curve">
+  <defs>
+    <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+      .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
+      .title{font-size:38px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:15px;fill:#6e675a;}
+      .pl{font-size:16px;font-weight:700;fill:#161410;}
+      .un{font-size:11px;fill:#6e675a;}
+      .lbl{font-size:13px;fill:#161410;}
+      .val{font-size:13px;font-weight:700;fill:#161410;}
+      .del{font-size:12px;fill:#6e675a;}
+      .ax{font-size:11px;fill:#6e675a;}
+      .leg{font-size:12px;fill:#6e675a;}
+      .small{font-size:12px;fill:#6e675a;}
+      .micro{font-size:10.5px;fill:#6e675a;}
+    </style>
+  </defs>
+  <rect width="1180" height="686" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="630" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
+  <text x="58" y="64" class="mono tag">BORING-RECEIPTS · R3 · CONTEXT WALL</text>
+  <text x="58" y="112" class="mono title">context curve</text>
+  <text x="58" y="140" class="mono sub">Llama-3.1-8B Q4_K_M · AYA-3090 · prefill depth 0→64K · f16 KV, fa off</text>
+  <text x="58" y="198" class="mono pl">tg  decode</text>
+      <text x="58" y="214" class="mono un">t/s · ↓ collapses with context</text><line x1="90" y1="214" x2="90" y2="346" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="346" x2="1120" y2="346" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="362" class="mono ax" text-anchor="middle">0</text><text x="347.5" y="362" class="mono ax" text-anchor="middle">4K</text><text x="605" y="362" class="mono ax" text-anchor="middle">16K</text><text x="862.5" y="362" class="mono ax" text-anchor="middle">32K</text><text x="1120" y="362" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,228.1 347.5,246.9 605.0,280.8 862.5,311.4 1120.0,327.8" fill="none" stroke="#3a352c" stroke-width="2.2" /><circle cx="90.0" cy="228.1" r="3.2" fill="#3a352c"/><circle cx="347.5" cy="246.9" r="3.2" fill="#3a352c"/><circle cx="605.0" cy="280.8" r="3.2" fill="#3a352c"/><circle cx="862.5" cy="311.4" r="3.2" fill="#3a352c"/><circle cx="1120.0" cy="327.8" r="3.2" fill="#3a352c"/><text x="1126" y="331.792980945204" class="mono leg" fill="#3a352c">tg</text><text x="90" y="220.14285714285717" class="mono ax" fill="#3a352c" text-anchor="middle">133</text><text x="347.5" y="238.88276456023254" class="mono ax" fill="#3a352c" text-anchor="middle">112</text><text x="605" y="272.80999031112066" class="mono ax" fill="#3a352c" text-anchor="middle">73</text><text x="862.5" y="303.36225643233934" class="mono ax" fill="#3a352c" text-anchor="middle">39</text><text x="1120" y="319.792980945204" class="mono ax" fill="#3a352c" text-anchor="middle">21</text><text x="58" y="434" class="mono pl">pp  prefill</text>
+      <text x="58" y="450" class="mono un">t/s · ↓ collapses even faster</text><line x1="90" y1="450" x2="90" y2="582" stroke="#cdbe9f" stroke-width="1"/>
+      <line x1="90" y1="582" x2="1120" y2="582" stroke="#1c1a15" stroke-width="1.2"/><text x="90" y="598" class="mono ax" text-anchor="middle">0</text><text x="347.5" y="598" class="mono ax" text-anchor="middle">4K</text><text x="605" y="598" class="mono ax" text-anchor="middle">16K</text><text x="862.5" y="598" class="mono ax" text-anchor="middle">32K</text><text x="1120" y="598" class="mono ax" text-anchor="middle">64K</text><polyline points="90.0,464.1 347.5,509.7 605.0,548.6 862.5,568.0 1120.0,575.0" fill="none" stroke="#2f5f87" stroke-width="2.2" /><circle cx="90.0" cy="464.1" r="3.2" fill="#2f5f87"/><circle cx="347.5" cy="509.7" r="3.2" fill="#2f5f87"/><circle cx="605.0" cy="548.6" r="3.2" fill="#2f5f87"/><circle cx="862.5" cy="568.0" r="3.2" fill="#2f5f87"/><circle cx="1120.0" cy="575.0" r="3.2" fill="#2f5f87"/><text x="1126" y="578.9991067440822" class="mono leg" fill="#2f5f87">pp</text><text x="90" y="456.14285714285717" class="mono ax" fill="#2f5f87" text-anchor="middle">4478</text><text x="347.5" y="501.67498245390163" class="mono ax" fill="#2f5f87" text-anchor="middle">2748</text><text x="605" y="540.6273208702864" class="mono ax" fill="#2f5f87" text-anchor="middle">1268</text><text x="862.5" y="559.9982134881643" class="mono ax" fill="#2f5f87" text-anchor="middle">532</text><text x="1120" y="566.9991067440822" class="mono ax" fill="#2f5f87" text-anchor="middle">266</text>
+  <text x="58" y="648" class="mono small">both prefill and decode collapse with depth (pp −94%, tg −85% by 64K) — the bottleneck is attention over the growing KV cache.</text><text x="58" y="668" class="mono micro">decode at 64K is ~20 t/s, the honest number a "128K context!" claim hides. levers: flash-attn (R6), KV-quant (BLOCKED, R4).</text>
+</svg>

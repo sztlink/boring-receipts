@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="580" viewBox="0 0 1180 580" role="img" aria-label="5-model library">
+  <defs>
+    <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
+    </pattern>
+    <style>
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+      .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
+      .title{font-size:38px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:15px;fill:#6e675a;}
+      .pl{font-size:16px;font-weight:700;fill:#161410;}
+      .un{font-size:11px;fill:#6e675a;}
+      .lbl{font-size:13px;fill:#161410;}
+      .val{font-size:13px;font-weight:700;fill:#161410;}
+      .del{font-size:12px;fill:#6e675a;}
+      .ax{font-size:11px;fill:#6e675a;}
+      .leg{font-size:12px;fill:#6e675a;}
+      .small{font-size:12px;fill:#6e675a;}
+      .micro{font-size:10.5px;fill:#6e675a;}
+    </style>
+  </defs>
+  <rect width="1180" height="580" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="524" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
+  <text x="58" y="64" class="mono tag">BORING-RECEIPTS · MODEL LIBRARY</text>
+  <text x="58" y="112" class="mono title">5-model library</text>
+  <text x="58" y="140" class="mono sub">Q4_K_M · AYA-3090 · fa on · dedicated · 7.25B → 14.77B</text>
+  <text x="58" y="190" class="mono pl">tg  decode</text>
+      <text x="58" y="206" class="mono un">t/s · ↑ faster</text>
+      <text x="1090" y="190" class="mono un" text-anchor="end">↓ tracks params</text><text x="138" y="232" class="mono lbl" text-anchor="end">Mistral-7B</text>
+        <rect x="150" y="221" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="232" class="mono val" text-anchor="end">149.2</text>
+        <text x="720" y="232" class="mono del">baseline</text><text x="138" y="256" class="mono lbl" text-anchor="end">Qwen2.5-7B</text>
+        <rect x="150" y="245" width="418.5" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="256" class="mono val" text-anchor="end">145.2</text>
+        <text x="720" y="256" class="mono del">-2.7%</text><text x="138" y="280" class="mono lbl" text-anchor="end">Llama-3.1-8B</text>
+        <rect x="150" y="269" width="402.9" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="280" class="mono val" text-anchor="end">139.8</text>
+        <text x="720" y="280" class="mono del">-6.3%</text><text x="138" y="304" class="mono lbl" text-anchor="end">Gemma-2-9B</text>
+        <rect x="150" y="293" width="296.3" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="304" class="mono val" text-anchor="end">102.8</text>
+        <text x="720" y="304" class="mono del">-31.1%</text><text x="138" y="328" class="mono lbl" text-anchor="end">Qwen2.5-14B</text>
+        <rect x="150" y="317" width="222.5" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="328" class="mono val" text-anchor="end">77.2</text>
+        <text x="720" y="328" class="mono del">-48.3%</text><text x="58" y="350" class="mono pl">VRAM peak</text>
+      <text x="58" y="366" class="mono un">GiB · ↓ leaner</text>
+      <text x="1090" y="350" class="mono un" text-anchor="end">↑ grows w/ size</text><text x="138" y="392" class="mono lbl" text-anchor="end">Mistral-7B</text>
+        <rect x="150" y="381" width="229.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="392" class="mono val" text-anchor="end">4.9</text>
+        <text x="720" y="392" class="mono del">baseline</text><text x="138" y="416" class="mono lbl" text-anchor="end">Qwen2.5-7B</text>
+        <rect x="150" y="405" width="247.7" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="416" class="mono val" text-anchor="end">5.3</text>
+        <text x="720" y="416" class="mono del">+8.2%</text><text x="138" y="440" class="mono lbl" text-anchor="end">Llama-3.1-8B</text>
+        <rect x="150" y="429" width="261.7" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="440" class="mono val" text-anchor="end">5.6</text>
+        <text x="720" y="440" class="mono del">+14.3%</text><text x="138" y="464" class="mono lbl" text-anchor="end">Gemma-2-9B</text>
+        <rect x="150" y="453" width="322.5" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="464" class="mono val" text-anchor="end">6.9</text>
+        <text x="720" y="464" class="mono del">+40.8%</text><text x="138" y="488" class="mono lbl" text-anchor="end">Qwen2.5-14B</text>
+        <rect x="150" y="477" width="430.0" height="14" fill="#3a352c" opacity="0.9"/>
+        <text x="640" y="488" class="mono val" text-anchor="end">9.2</text>
+        <text x="720" y="488" class="mono del">+87.8%</text>
+  <text x="58" y="542" class="mono small">decode tracks parameter count within an architecture; Gemma-2-9B drops more than its params imply (heavier arch).</text><text x="58" y="562" class="mono micro">prefill (not shown) does NOT track size as cleanly — it is compute/architecture-bound. PPL not cross-family comparable.</text>
+</svg>
