@@ -1,0 +1,63 @@
+﻿[2026-05-23 11:17:59] BORING_KV_SOURCE_START
+[2026-05-23 11:17:59] HOST=Sztutman USER=user
+[2026-05-23 11:17:59] MODEL=C:\Users\user\boring\models\Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+[2026-05-23 11:17:59] NVIDIA-SMI
+NVIDIA GeForce RTX 3090, 566.14, 24576 MiB, 609 MiB, 0 %, 45
+
+[2026-05-23 11:17:59] TOOL git = C:\Program Files\Git\cmd\git.exe
+[2026-05-23 11:17:59] TOOL cmake = C:\Program Files\CMake\bin\cmake.exe
+[2026-05-23 11:17:59] TOOL cl = C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64\cl.exe
+[2026-05-23 11:17:59] TOOL nvcc = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe
+[2026-05-23 11:17:59] SOURCE_EXISTS C:\Users\user\boring\kvdtype-source-build-20260523\llama.cpp
+[2026-05-23 11:17:59] GIT branch=master commit=b0df4c0
+[2026-05-23 11:17:59] STEP cmake-configure :: cmake.exe -S . -B "C:\Users\user\boring\kvdtype-source-build-20260523\llama.cpp\build-nmake-cuda-release" -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DLLAMA_CURL=OFF -DCMAKE_CUDA_COMPILER="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc.exe"
+-- The C compiler identification is MSVC 19.41.34120.0
+-- The CXX compiler identification is MSVC 19.41.34120.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe - broken
+-- Configuring incomplete, errors occurred!
+
+CMake Error at C:/Program Files/CMake/share/cmake-3.30/Modules/CMakeTestCCompiler.cmake:67 (message):
+  The C compiler
+
+    "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.41.34120/bin/Hostx64/x64/cl.exe"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: 'C:/Users/user/boring/kvdtype-source-build-20260523/llama.cpp/build-nmake-cuda-release/CMakeFiles/CMakeScratch/TryCompile-a491rk'
+
+    Run Build Command(s): "C:/Program Files/CMake/bin/cmake.exe" -E env VERBOSE=1 nmake -f Makefile /nologo cmTC_6ac36\fast
+    	"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64\nmake.exe"  -f CMakeFiles\cmTC_6ac36.dir\build.make /nologo -L                  CMakeFiles\cmTC_6ac36.dir\build
+    Building C object CMakeFiles/cmTC_6ac36.dir/testCCompiler.c.obj
+    	"C:\Program Files\CMake\bin\cmake.exe" -E cmake_cl_compile_depends --dep-file=CMakeFiles\cmTC_6ac36.dir\testCCompiler.c.obj.d --working-dir=C:\Users\user\boring\kvdtype-source-build-20260523\llama.cpp\build-nmake-cuda-release\CMakeFiles\CMakeScratch\TryCompile-a491rk --filter-prefix="Note: including file: " -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1441~1.341\bin\Hostx64\x64\cl.exe @C:\Users\user\AppData\Local\Temp\nm66FA.tmp
+    testCCompiler.c
+    Linking C executable cmTC_6ac36.exe
+    	"C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_6ac36.dir --rc=rc --mt=CMAKE_MT-NOTFOUND --manifests -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1441~1.341\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_6ac36.dir\objects1.rsp @C:\Users\user\AppData\Local\Temp\nm6759.tmp
+    Visual Studio Incremental Link with embedded manifests
+    Create CMakeFiles\cmTC_6ac36.dir/manifest.rc
+    Create empty: CMakeFiles\cmTC_6ac36.dir/embed.manifest
+    RC Pass 1:
+    rc /fo CMakeFiles\cmTC_6ac36.dir/manifest.res CMakeFiles\cmTC_6ac36.dir/manifest.rc
+    RC Pass 1: command "rc /fo CMakeFiles\cmTC_6ac36.dir/manifest.res CMakeFiles\cmTC_6ac36.dir/manifest.rc" failed (exit code 0) with the following output:
+    no such file or directoryNMAKE : fatal error U1077: '"C:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_6ac36.dir --rc=rc --mt=CMAKE_MT-NOTFOUND --manifests -- C:\PROGRA~1\MIB055~1\2022\COMMUN~1\VC\Tools\MSVC\1441~1.341\bin\Hostx64\x64\link.exe /nologo @CMakeFiles\cmTC_6ac36.dir\objects1.rsp @C:\Users\user\AppData\Local\Temp\nm6759.tmp' : return code '0xffffffff'
+    Stop.
+    NMAKE : fatal error U1077: '"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\bin\Hostx64\x64\nmake.exe"  -f CMakeFiles\cmTC_6ac36.dir\build.make /nologo -L                  CMakeFiles\cmTC_6ac36.dir\build' : return code '0x2'
+    Stop.
+
+
+
+
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:2 (project)
+
+
+
+[2026-05-23 11:18:01] STEP_EXIT cmake-configure code=
+[2026-05-23 11:18:01] BORING_KV_SOURCE_FAILED step cmake-configure failed code 
+㉛ⴳ慍⵹㘲ㄠ㨱㠱㌺⸳㠴⁝佂䥒䝎䭟彖啂䱉彄䅂彔呓剁⁔਍⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪਍⨪嘠獩慵⁬瑓摵潩㈠㈰′敄敶潬数⁲潃浭湡⁤牐浯瑰瘠㜱ㄮ⸱ഴ⨊‪潃祰楲桧⁴挨 〲㈲䴠捩潲潳瑦䌠牯潰慲楴湯਍⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪⨪਍

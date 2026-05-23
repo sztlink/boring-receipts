@@ -111,7 +111,7 @@ no such file or directory
 Primary log:
 
 ```txt
-logs/2026-05-23-3090-llama-cpp-source-build-blocked/build-attempt.log
+logs/2026-05-23-3090-llama-cpp-source-build-blocked/build-attempt.txt
 logs/2026-05-23-3090-llama-cpp-source-build-blocked/summary.json
 ```
 

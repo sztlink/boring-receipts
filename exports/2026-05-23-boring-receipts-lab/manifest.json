@@ -1,7 +1,7 @@
 {
   "schema": "boring-receipts-preservation-package-v1",
   "package": "2026-05-23-boring-receipts-lab",
-  "created": "2026-05-23T14:23:04.427Z",
+  "created": "2026-05-23T14:23:23.838Z",
   "source": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "boundary": "Static preservation package: Markdown receipts, public HTML exhibit, JSON index, SVG assets, scripts and checksums. External binaries/models/datasets are not bundled.",
@@ -53,8 +53,8 @@
     },
     {
       "path": "PRESERVATION.md",
-      "bytes": 3040,
-      "sha256": "16c1f621faf8cb313f1a2749a2f29f5586de6cb09bc607f731c6c76e4432f4ee"
+      "bytes": 3058,
+      "sha256": "78a3041c23344718d7f8c327168e72229109ebc1a8d97bcc1bbdfaec4e72932f"
     },
     {
       "path": "PROCESS-INDEX.md",
@@ -182,7 +182,7 @@
       "sha256": "6da6e7063aeaa63711ed02d1626b57f6077c9cde398e791ad73fac6abafb72d8"
     },
     {
-      "path": "logs/2026-05-23-3090-llama-cpp-source-build-blocked/build-attempt.log",
+      "path": "logs/2026-05-23-3090-llama-cpp-source-build-blocked/build-attempt.txt",
       "bytes": 5207,
       "sha256": "6f2166ca82cfa8eee4bc179a528ffbea03d3ee4bdc27540a14f36cf0d4a68b96"
     },
@@ -219,7 +219,7 @@
     {
       "path": "receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md",
       "bytes": 4663,
-      "sha256": "9160f13670bc96d77c5b180ad744346c914bfd58e1e1ad866e581a50436add34"
+      "sha256": "0fbc4ef18b4a7774b9f6603eeaed611251aaa6a7f6ae5265b55d8e781cbce45c"
     },
     {
       "path": "receipts/2026-05-23-3090-llama31-8b-context-sweep.md",
