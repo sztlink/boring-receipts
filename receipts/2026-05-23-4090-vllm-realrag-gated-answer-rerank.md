@@ -7,7 +7,7 @@ Research sibling receipt. This cites the RealRAG/EPKV probe program in
 
 | field | value |
 |---|---|
-| **status** | **PASS** for confidence-gated answer rerank over entity-hop path prompt |
+| **status** | **PASS on 100-case slice; 300-case follow-up is MIXED / not robust** |
 | **rung** | research sibling / RealRAG behavior receipt |
 | **node** | AYA-4090 |
 | **date** | 2026-05-23 |
@@ -22,6 +22,9 @@ and the verifier has high confidence in a non-overlapping answer.
 That confidence gate adds two exact-match wins and zero losses over the direct
 entity-hop path prompt on the 100-case 2Wiki slice.
 
+300-case follow-up: the positive signal does **not** robustly scale. Gated rerank
+is +1 EM over path prompt but introduces 2 EM losses.
+
 ## Target
 
 | field | value |
@@ -32,6 +35,7 @@ entity-hop path prompt on the 100-case 2Wiki slice.
 | repo | `git@github.com:sztlink/turboquant-cuda-bench.git` |
 | branch | `main` |
 | commit | `dce28e4` — `Add confidence-gated entity-hop answer rerank` |
+| follow-up commit | `55fd4b5` — `Scale entity-hop gated rerank to 300 cases` |
 | dataset | local 2Wiki dev slice, first 100 compositional/inference records with ≥2 evidences |
 | baseline | RS1 entity-hop path prompt and BM25→BGE strong baseline |
 
@@ -112,8 +116,9 @@ A third override changed wrong→wrong without affecting EM.
 |---|---|
 | gate version | `realrag-rs2` |
 | signal | EM / contains / token-F1 + win/loss vs RS1 |
-| criterion | beat RS1 entity-hop path prompt without EM losses |
-| passed | **true**: EM 0.270 vs 0.250; F1 0.345 vs 0.330; losses 0 |
+| 100-case criterion | beat RS1 entity-hop path prompt without EM losses |
+| 100-case passed | **true**: EM 0.270 vs 0.250; F1 0.345 vs 0.330; losses 0 |
+| 300-case follow-up | **mixed / not robust**: EM 0.223 vs 0.220; F1 0.333 vs 0.333; wins 3, losses 2 |
 
 ## Evidence
 
@@ -123,13 +128,17 @@ Research sibling artifacts:
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-100.md
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-100/summary.json
 bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-100/summary.json
+
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/ENTITY-HOP-ANSWER-RERANK-300.md
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-300/summary.json
+bench/epkv-live-probe-v0-2026-05-21/sprint-12h/entity-hop-answer-rerank-gated-300/summary.json
 ```
 
 ## Caveats
 
 - This is still a 100-case local 2Wiki slice, not a general RAG claim.
 - The verifier is another LLM call; this is quality/control-plane evidence, not a latency receipt.
-- The gate is postprocessed from verifier confidence and string-overlap heuristics; it needs a 300-case run before becoming canonical.
+- The gate is postprocessed from verifier confidence and string-overlap heuristics; the 300-case follow-up shows that `confidence=high` is not calibrated enough.
 - Oracle compact-evidence ECD remains much stronger (EM ≈0.91), but that is a control upper bound, not natural retrieval.
 
 ## Interpretation
@@ -149,12 +158,13 @@ path answer first -> verifier only on disagreement -> conservative exact-span ga
 The lesson is negative and positive:
 
 - negative: unconditional sampler bias and strict single-candidate ECD lose cases;
-- positive: confidence-gated answer control can add wins without losses.
+- positive: confidence-gated answer control can add wins;
+- 300-case correction: the current gate does not preserve the zero-loss property.
 
 ## Next step
 
 ```txt
-scale RS2 to 300 cases
-add exact-span preference + abstention features
+learn/select the override policy instead of trusting verifier confidence string
+add exact-span preservation + answer-type checks + abstention features
 only then revisit conditional sampler policy
 ```
