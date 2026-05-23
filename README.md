@@ -2,6 +2,9 @@
 
 > Send branch + command shape. We return boring receipts.
 
+**Live:** https://sztlink.github.io/boring-receipts/ ·
+**Research sibling:** [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench)
+
 A NVIDIA validation node for the Waffle/TurboQuant community. No hype, no vague
 benchmark claims — just verifiable receipts: repo/branch/commit, build flags,
 OS/driver/CUDA, GPU/VRAM, exact command, model/quant/context, tok/s, TTFT,
