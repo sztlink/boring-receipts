@@ -158,6 +158,15 @@
       "gesture": "long-context KV dtype curve: q8/q8 slower with depth; q8/q4 exits -1 before 32K"
     },
     {
+      "id": "R16",
+      "file": "receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "context-capacity",
+      "status": "PASS_TO_524K_STALLED_AT_786K",
+      "gesture": "Qwen2.5-7B q4/q4 KV beyond-128K ramp: 524K pass, 786K stall, 1M not reached"
+    },
+    {
       "id": "RS1",
       "file": "receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md",
       "date": "2026-05-23",

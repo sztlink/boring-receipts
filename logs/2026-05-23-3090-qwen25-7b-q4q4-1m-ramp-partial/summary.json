@@ -1,0 +1,55 @@
+{
+  "receipt": "2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial",
+  "status": "PASS_TO_524K_STALLED_AT_786K",
+  "model": "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+  "node": "AYA-3090",
+  "engine": "llama.cpp b9286 patched source",
+  "command": "llama-bench -ngl 99 -fa 1 -ctk q4_0 -ctv q4_0 -p 32 -n 16 -d <depth> -r 1 -o jsonl",
+  "rows": [
+    {
+      "depth": 131072,
+      "status": "PASS",
+      "pp": 557.803231,
+      "tg": 28.622873,
+      "pp_std": 0,
+      "tg_std": 0,
+      "model": "qwen2 7B Q4_K - Medium",
+      "params": 7615616512,
+      "kv": "q4_0/q4_0",
+      "test_time": "2026-05-23T19:12:42Z"
+    },
+    {
+      "depth": 262144,
+      "status": "PASS",
+      "pp": 318.540448,
+      "tg": 15.419441,
+      "pp_std": 0,
+      "tg_std": 0,
+      "model": "qwen2 7B Q4_K - Medium",
+      "params": 7615616512,
+      "kv": "q4_0/q4_0",
+      "test_time": "2026-05-23T19:14:21Z"
+    },
+    {
+      "depth": 524288,
+      "status": "PASS",
+      "pp": 171.374466,
+      "tg": 8.00856,
+      "pp_std": 0,
+      "tg_std": 0,
+      "model": "qwen2 7B Q4_K - Medium",
+      "params": 7615616512,
+      "kv": "q4_0/q4_0",
+      "test_time": "2026-05-23T19:20:34Z"
+    },
+    {
+      "depth": 786432,
+      "status": "NO_ROW"
+    },
+    {
+      "depth": 1048576,
+      "status": "NO_ROW"
+    }
+  ],
+  "run_log": "R16_V3_START 23-May-26 16:12:39.86 \r\nMODEL=C:\\Users\\user\\boring\\models\\Qwen2.5-7B-Instruct-Q4_K_M.gguf \r\nBIN=C:\\Users\\user\\boring\\kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523\\build\\bin \r\nDEPTH 131072 START 23-May-26 16:12:40.17 \r\nDEPTH 131072 EXIT 0 \r\nDEPTH 262144 START 23-May-26 16:12:40.17 \r\nDEPTH 262144 EXIT 0 \r\nDEPTH 524288 START 23-May-26 16:12:40.17 \r\nDEPTH 524288 EXIT 0 \r\nDEPTH 786432 START 23-May-26 16:12:40.17 \r\n"
+}

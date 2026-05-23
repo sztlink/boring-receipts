@@ -34,11 +34,11 @@ family** (e.g. Qwen2.5-7B 8.02 vs Qwen2.5-14B 6.13), never across families.
    f16 at depth 0 to 0.69x at 64K. q8/q4 becomes pathological: 1.71 tok/s at 16K
    and `EXIT -1` before any 32K row. (R4, R14, R15)
 
-3. **The long-context wall.** On the context axis, **both** prefill and decode
-   collapse with depth (pp −94%, tg −85% by 64K with f16 KV, fa off) - the
-   bottleneck is attention over the growing KV cache, not the weights. "128K
-   context!" hides a ~20 t/s decode on a 3090; flash-attn (finding 1) and KV-quant
-   (blocked, finding 2) are the two levers against it. (R3)
+3. **The long-context wall now has a beyond-128K receipt.** On the context axis,
+   **both** prefill and decode collapse with depth (pp −94%, tg −85% by 64K with
+   f16 KV, fa off). With q4/q4 KV on Qwen2.5-7B, a 3090 reaches 524K, but decode is
+   only ~8 tok/s there and 786K stalls before emitting a row. "1M context" remains
+   unproven locally. (R3, R16)
 
 4. **An idle resident process is a VRAM-capacity tax, not a throughput tax.** With
    ComfyUI resident (~1.2 GB idle) vs dedicated (687 MiB idle), throughput is
@@ -71,6 +71,8 @@ The archive deliberately keeps resistance visible:
   q8/q8 is slower than f16 and q8/q4 strongly regresses in the short-context test.
 - **R15 - KV dtype long-context timeout:** q8/q8 completes 64K but gets worse vs f16
   with depth; q8/q4 exits `-1` before the 32K row.
+- **R16 - Qwen2.5-7B 1M ramp partial:** q4/q4 KV reaches 524K on a 3090, but
+  786K stalls and 1M is not reached.
 - **RS1 - mixed:** entity-hop path construction works, strict single-candidate ECD
   fails.
 - **RS2 - N=500 NO DELTA:** the 100-case gated-rerank gain does not scale; direct
@@ -88,4 +90,6 @@ The open frontier is still the **KV-dtype axis** (the heart of the TurboQuant
 comparison). R14 makes the axis runnable with a patched source build, and R15 shows
 that the long-context curve is also negative/partial for this command shape. The
 next real move is source/kernel inspection, an upstream-clean CUDA 12.x build, or
-an external branch-and-command request, not another blind rerun.
+an external branch-and-command request. For beyond-128K context specifically, the
+next useful target is Qwen3.6-27B or a known long-context fork with a quality gate,
+not another blind Qwen2.5-7B capacity rerun.

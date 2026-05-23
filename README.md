@@ -120,8 +120,11 @@ to start with:
   relative to f16 as depth grows; q8/q4 becomes pathological and exits `-1`
   before the 32K row.
   [`receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md)
+- **R16 - Qwen2.5-7B 1M ramp partial** - q4/q4 KV reaches 524K on a 3090, but
+  decode is ~8 tok/s there and 786K stalls before emitting a row.
+  [`receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md`](receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md)
 
-14 runtime receipts (R1–R15, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
+15 runtime receipts (R1–R16, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
 (Mistral, Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling
 receipts citing the RealRAG/EPKV probe family in
 [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench). All under
