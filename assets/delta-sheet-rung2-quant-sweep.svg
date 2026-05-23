@@ -1,52 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-label="boring receipts delta sheet rung 2 weight quant sweep">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="952" viewBox="0 0 1180 952" role="img" aria-label="boring receipts delta sheet rung 2 weight quant sweep">
   <defs>
     <pattern id="g" width="32" height="32" patternUnits="userSpaceOnUse">
-      <rect width="32" height="32" fill="#f3ead7"/>
-      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#d8c9aa" stroke-width="0.6" opacity="0.22"/>
+      <rect width="32" height="32" fill="#f1ece0"/>
+      <path d="M0 8h32M0 23h32M7 0v32M24 0v32" stroke="#cdbe9f" stroke-width="0.6" opacity="0.22"/>
     </pattern>
     <style>
       .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
       .tag{font-size:13px;font-weight:700;letter-spacing:2.2px;fill:#a33a2b;}
-      .title{font-size:40px;font-weight:800;letter-spacing:-1.5px;fill:#171717;}
-      .sub{font-size:17px;fill:#5f594f;}
-      .label{font-size:15px;fill:#171717;}
-      .small{font-size:13px;fill:#5f594f;}
-      .micro{font-size:11px;fill:#5f594f;letter-spacing:1px;}
+      .title{font-size:40px;font-weight:800;letter-spacing:-1.5px;fill:#161410;}
+      .sub{font-size:16px;fill:#6e675a;}
+      .leg{font-size:12.5px;fill:#6e675a;}
+      .mlabel{font-size:17px;fill:#161410;font-weight:700;}
+      .unit{font-size:12px;fill:#6e675a;}
+      .dir{font-size:13px;fill:#6e675a;}
+      .q{font-size:14px;fill:#161410;}
+      .val{font-size:14px;fill:#161410;font-weight:700;}
+      .del{font-size:13px;fill:#6e675a;}
+      .small{font-size:12.5px;fill:#6e675a;}
+      .micro{font-size:11px;fill:#6e675a;}
     </style>
   </defs>
-  <rect width="1200" height="720" fill="url(#g)"/>
-  <rect x="28" y="28" width="1144" height="664" fill="none" stroke="#24221e" stroke-width="1.5"/>
+  <rect width="1180" height="952" fill="url(#g)"/>
+  <rect x="28" y="28" width="1124" height="896" fill="none" stroke="#1c1a15" stroke-width="1.5"/>
   <text x="58" y="66" class="mono tag">BORING-RECEIPTS · RUNG 2 · WEIGHT-QUANT SWEEP</text>
-  <text x="58" y="118" class="mono title">delta sheet</text>
-  <text x="58" y="148" class="mono sub">Llama-3.1-8B · AYA-3090 · baseline Q4_K_M · llama.cpp b9286</text>
+  <text x="58" y="116" class="mono title">delta sheet</text>
+  <text x="58" y="146" class="mono sub">Llama-3.1-8B · AYA-3090 · llama.cpp b9286 · three weight quants</text>
 
-  <rect x="58" y="172" width="1084" height="44" fill="#f3ead7" stroke="#2f7d4f" stroke-width="1.6"/>
-  <text x="78" y="200" class="mono label" fill="#2f7d4f">GATE: PASS</text>
-  <text x="300" y="200" class="mono small">all quants PPL Δ &lt; 5% (Q4 +2.3% · Q5 +0.9%) — none broke the model · gate-v1</text>
+  <rect x="58" y="170" width="1064" height="42" fill="#f1ece0" stroke="#356b46" stroke-width="1.6"/>
+  <text x="78" y="197" class="mono mlabel" fill="#356b46">GATE: PASS</text>
+  <text x="300" y="197" class="mono small">PPL Δ &lt; 5% vs Q8_0 — none broke the model (Q4 +2.3% · Q5 +0.9%) · gate-v1</text>
+
+  <text x="58" y="244" class="mono leg">Q4_K_M · Q5_K_M · Q8_0 weight quants · bar length = value · delta vs Q4 baseline (PPL vs Q8 ref)</text>
 
   
-    <text x="58" y="274" class="mono label">tg  decode  t/s</text>
-    <line x1="470" y1="264" x2="470" y2="336" stroke="#24221e" stroke-width="1.4" stroke-dasharray="3 3"/>
-    <text x="470" y="256" class="mono micro" text-anchor="middle">baseline 0</text>
-    <circle cx="470" cy="279" r="4" fill="#171717"/><text x="478" y="283" class="mono small" text-anchor="start">Q4 131.9  0%</text><rect x="374.8076923076923" y="294" width="95.1923076923077" height="14" fill="#3a352c" opacity="0.9"/><text x="366.8076923076923" y="305" class="mono small" text-anchor="end">Q5 118.7  -10.0%</text><rect x="170" y="316" width="300" height="14" fill="#3a352c" opacity="0.9"/><text x="162" y="327" class="mono small" text-anchor="end">Q8 90.3  -31.5%</text>
-    <rect x="1080" y="276" width="12" height="34" fill="#2f5f87" opacity="0.85"/><rect x="1098" y="284.88461538461536" width="12" height="25.115384615384617" fill="#2f5f87" opacity="0.85"/><rect x="1116" y="304" width="12" height="6" fill="#2f5f87" opacity="0.85"/>
+    <text x="58" y="300" class="mono mlabel">tg  decode</text>
+    <text x="58" y="316" class="mono unit">t/s</text>
+    <text x="1090" y="300" class="mono dir" text-anchor="end">↑ higher = faster</text>
+      <text x="98" y="343" class="mono q" text-anchor="end">Q4</text>
+      <rect x="128" y="332" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="343" class="mono val" text-anchor="end">131.9</text>
+      <text x="702" y="343" class="mono del">baseline</text>
+      <text x="98" y="369" class="mono q" text-anchor="end">Q5</text>
+      <rect x="128" y="358" width="378.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="369" class="mono val" text-anchor="end">118.7</text>
+      <text x="702" y="369" class="mono del">-10.0%</text>
+      <text x="98" y="395" class="mono q" text-anchor="end">Q8</text>
+      <rect x="128" y="384" width="287.5" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="395" class="mono val" text-anchor="end">90.3</text>
+      <text x="702" y="395" class="mono del">-31.5%</text>
   
-    <text x="58" y="382" class="mono label">pp  prefill t/s</text>
-    <line x1="470" y1="372" x2="470" y2="444" stroke="#24221e" stroke-width="1.4" stroke-dasharray="3 3"/>
-    <text x="470" y="364" class="mono micro" text-anchor="middle">baseline 0</text>
-    <circle cx="470" cy="387" r="4" fill="#171717"/><text x="478" y="391" class="mono small" text-anchor="start">Q4 4459  0%</text><rect x="446.10795797608984" y="402" width="23.892042023910154" height="14" fill="#3a352c" opacity="0.9"/><text x="438.10795797608984" y="413" class="mono small" text-anchor="end">Q5 4347  -2.5%</text><rect x="470" y="424" width="17.7057097141477" height="14" fill="#3a352c" opacity="0.9"/><text x="495.7057097141477" y="435" class="mono small" text-anchor="start">Q8 4542  +1.9%</text>
-    <rect x="1080" y="395.9179487179487" width="12" height="22.08205128205128" fill="#2f5f87" opacity="0.85"/><rect x="1098" y="412" width="12" height="6" fill="#2f5f87" opacity="0.85"/><rect x="1116" y="384" width="12" height="34" fill="#2f5f87" opacity="0.85"/>
+    <text x="58" y="444" class="mono mlabel">pp  prefill</text>
+    <text x="58" y="460" class="mono unit">t/s</text>
+    <text x="1090" y="444" class="mono dir" text-anchor="end">↑ higher = faster</text>
+      <text x="98" y="487" class="mono q" text-anchor="end">Q4</text>
+      <rect x="128" y="476" width="412.3" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="487" class="mono val" text-anchor="end">4459</text>
+      <text x="702" y="487" class="mono del">baseline</text>
+      <text x="98" y="513" class="mono q" text-anchor="end">Q5</text>
+      <rect x="128" y="502" width="402.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="513" class="mono val" text-anchor="end">4347</text>
+      <text x="702" y="513" class="mono del">-2.5%</text>
+      <text x="98" y="539" class="mono q" text-anchor="end">Q8</text>
+      <rect x="128" y="528" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="539" class="mono val" text-anchor="end">4542</text>
+      <text x="702" y="539" class="mono del">+1.9%</text>
   
-    <text x="58" y="490" class="mono label">VRAM peak  GiB</text>
-    <line x1="470" y1="480" x2="470" y2="552" stroke="#24221e" stroke-width="1.4" stroke-dasharray="3 3"/>
-    <text x="470" y="472" class="mono micro" text-anchor="middle">baseline 0</text>
-    <circle cx="470" cy="495" r="4" fill="#171717"/><text x="478" y="499" class="mono small" text-anchor="start">Q4 6  0%</text><rect x="470" y="510" width="65.62500000000003" height="14" fill="#3a352c" opacity="0.9"/><text x="543.625" y="521" class="mono small" text-anchor="start">Q5 6.7  +11.7%</text><rect x="470" y="532" width="300" height="14" fill="#3a352c" opacity="0.9"/><text x="778" y="543" class="mono small" text-anchor="start">Q8 9.2  +53.3%</text>
-    <rect x="1080" y="520" width="12" height="6" fill="#2f5f87" opacity="0.85"/><rect x="1098" y="513.875" width="12" height="12.125000000000004" fill="#2f5f87" opacity="0.85"/><rect x="1116" y="492" width="12" height="34" fill="#2f5f87" opacity="0.85"/>
+    <text x="58" y="588" class="mono mlabel">VRAM peak</text>
+    <text x="58" y="604" class="mono unit">GiB</text>
+    <text x="1090" y="588" class="mono dir" text-anchor="end">↓ lower = leaner</text>
+      <text x="98" y="631" class="mono q" text-anchor="end">Q4</text>
+      <rect x="128" y="620" width="273.9" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="631" class="mono val" text-anchor="end">6.0</text>
+      <text x="702" y="631" class="mono del">baseline</text>
+      <text x="98" y="657" class="mono q" text-anchor="end">Q5</text>
+      <rect x="128" y="646" width="305.9" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="657" class="mono val" text-anchor="end">6.7</text>
+      <text x="702" y="657" class="mono del">+11.7%</text>
+      <text x="98" y="683" class="mono q" text-anchor="end">Q8</text>
+      <rect x="128" y="672" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="683" class="mono val" text-anchor="end">9.2</text>
+      <text x="702" y="683" class="mono del">+53.3%</text>
+  
+    <text x="58" y="732" class="mono mlabel">PPL  quality</text>
+    <text x="58" y="748" class="mono unit"></text>
+    <text x="1090" y="732" class="mono dir" text-anchor="end">↓ lower = better (Q8 ref)</text>
+      <text x="98" y="775" class="mono q" text-anchor="end">Q4</text>
+      <rect x="128" y="764" width="420.0" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="775" class="mono val" text-anchor="end">7.50</text>
+      <text x="702" y="775" class="mono del">+2.3%</text>
+      <text x="98" y="801" class="mono q" text-anchor="end">Q5</text>
+      <rect x="128" y="790" width="414.1" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="801" class="mono val" text-anchor="end">7.39</text>
+      <text x="702" y="801" class="mono del">+0.9%</text>
+      <text x="98" y="827" class="mono q" text-anchor="end">Q8</text>
+      <rect x="128" y="816" width="410.4" height="15" fill="#3a352c" opacity="0.9"/>
+      <text x="620" y="827" class="mono val" text-anchor="end">7.33</text>
+      <text x="702" y="827" class="mono del">ref</text>
 
-  <line x1="58" y1="582" x2="1142" y2="582" stroke="#d8c9aa" stroke-width="1"/>
-  <text x="58" y="608" class="mono small">decode (tg) collapses with bits — memory-bound. prefill (pp) is flat — compute-bound. the divergence is the thesis.</text>
-  <text x="58" y="632" class="mono small">trade-off, sayable in full: Q4 is +31.5% faster decode &amp; −35% VRAM vs Q8, costing +2.3% PPL — within the gate.</text>
-  <text x="58" y="658" class="mono micro">bars = delta vs baseline Q4 (shared speed scale) · sparkbars = shape · zero is a dead line · color marks series, never verdict</text>
-  <text x="58" y="682" class="mono micro">reproduce: llama-bench -m {Q4,Q5,Q8} -ngl 99 -p 512 -n 128 -r 5 · gate: llama-perplexity -f wiki.test.raw · receipt: receipts/2026-05-22-3090-llama31-8b-quant-sweep.md</text>
+  <line x1="58" y1="854" x2="1122" y2="854" stroke="#cdbe9f" stroke-width="1"/>
+  <text x="58" y="878" class="mono small">tg (decode) falls hard with bits — memory-bound. pp (prefill) is flat — compute-bound. that divergence is the thesis.</text>
+  <text x="58" y="898" class="mono small">trade-off, sayable in full: Q4 is +31.5% faster decode &amp; −35% VRAM vs Q8, costing +2.3% PPL — within the gate.</text>
+  <text x="58" y="918" class="mono micro">reproduce: llama-bench -m {Q4,Q5,Q8} -ngl 99 -p 512 -n 128 -r 5 · gate: llama-perplexity -f wiki.test.raw</text>
 </svg>
