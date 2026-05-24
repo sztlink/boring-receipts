@@ -1,0 +1,25 @@
+2026-05-24T10:17:22.437Z R17_SERVER_PASSKEY_START
+2026-05-24T10:17:22.445Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen2.5-7B-Instruct-Q4_K_M.gguf -ngl 99 -fa on -ctk q4_0 -ctv q4_0 -c 131072 --host 127.0.0.1 --port 18017 -np 1 --alias r17-qwen25-7b-q4km --jinja --slots
+2026-05-24T10:17:22.451Z SERVER_PID 2741388
+2026-05-24T10:17:22.502Z HEALTH_WAIT fetch failed
+2026-05-24T10:17:32.516Z HEALTH 200 {"status":"ok"}
+2026-05-24T10:17:32.523Z CASE_START id=32k-ish-begin words=24000 pos=0.1 passkey=730000 chars=170732
+2026-05-24T10:17:39.741Z CASE_DONE id=32k-ish-begin ok=false answer="about machines about clay about about about about about machines about about about about machines about" elapsed=7s
+2026-05-24T10:17:39.742Z CASE_START id=32k-ish-middle words=24000 pos=0.5 passkey=730137 chars=170732
+2026-05-24T10:17:46.320Z CASE_DONE id=32k-ish-middle ok=false answer="note about about about about about about about about about about about about about about about" elapsed=7s
+2026-05-24T10:17:46.322Z CASE_START id=32k-ish-end words=24000 pos=0.9 passkey=730274 chars=170732
+2026-05-24T10:17:50.494Z CASE_DONE id=32k-ish-end ok=false answer="about about about about about about about about about about about about about about about about" elapsed=4s
+2026-05-24T10:17:50.497Z CASE_START id=64k-ish-begin words=48000 pos=0.1 passkey=730411 chars=341132
+2026-05-24T10:17:50.708Z CASE_DONE id=64k-ish-begin ok=false answer="" elapsed=0s
+2026-05-24T10:17:50.711Z CASE_START id=64k-ish-middle words=48000 pos=0.5 passkey=730548 chars=341132
+2026-05-24T10:17:50.824Z CASE_DONE id=64k-ish-middle ok=false answer="" elapsed=0s
+2026-05-24T10:17:50.827Z CASE_START id=64k-ish-end words=48000 pos=0.9 passkey=730685 chars=341132
+2026-05-24T10:17:50.941Z CASE_DONE id=64k-ish-end ok=false answer="" elapsed=0s
+2026-05-24T10:17:50.948Z CASE_START id=128k-ish-begin words=96000 pos=0.1 passkey=730822 chars=681932
+2026-05-24T10:17:51.172Z CASE_DONE id=128k-ish-begin ok=false answer="" elapsed=0s
+2026-05-24T10:17:51.178Z CASE_START id=128k-ish-middle words=96000 pos=0.5 passkey=730959 chars=681932
+2026-05-24T10:17:51.405Z CASE_DONE id=128k-ish-middle ok=false answer="" elapsed=0s
+2026-05-24T10:17:51.411Z CASE_START id=128k-ish-end words=96000 pos=0.9 passkey=731096 chars=681932
+2026-05-24T10:17:51.639Z CASE_DONE id=128k-ish-end ok=false answer="" elapsed=0s
+2026-05-24T10:17:51.640Z R17_SERVER_PASSKEY_DONE pass=0/9
+2026-05-24T10:17:52.202Z SERVER_EXIT code=null sig=SIGTERM
