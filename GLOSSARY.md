@@ -60,6 +60,29 @@ decode, trading a little quality. Names like `Q4_K_M` mean: 4 bits per weight,
 The single-file model format llama.cpp loads. A quantized model ships as one
 `.gguf` you download and point the binary at.
 
+## BF16 / FP16 / F16
+
+16-bit floating-point model precision. `BF16` usually means bfloat16 weights in
+PyTorch/vLLM/SGLang-style stacks; `FP16`/`F16` means IEEE half precision and is
+also the name llama.cpp uses for unquantized tensors and KV cache. BF16 27B is a
+large-memory reference mode: roughly 54 GB of weights before KV cache and
+runtime overhead.
+
+## Q8_0 / q8_0 / Q4_K_M
+
+Quantization names. Uppercase forms like `Q4_K_M` usually refer to GGUF **weight**
+quantization. Lowercase `q8_0`/`q4_0` often appears in llama.cpp flags for
+**runtime tensor or KV-cache dtype**, for example `-ctk q8_0 -ctv q8_0`.
+A receipt should say whether the quant applies to weights, K cache, V cache, or
+logits; those are different claims.
+
+## KV cache / K cache / V cache
+
+The memory of prior attention keys and values that lets the model continue a
+long context without recomputing every previous token. It grows with context
+length and can dominate VRAM after the weights already fit. `K` is usually more
+quant-sensitive than `V`, so receipts report `-ctk` and `-ctv` separately.
+
 ## ngl / n-gpu-layers
 
 `-ngl N` = how many model layers to offload to the GPU. `-ngl 99` means "all of
@@ -108,6 +131,33 @@ A minimal correctness check (or a reproduced failure) proving the run produced
 
 A specific machine that produces receipts (e.g. `AYA-3090`). Named so a receipt
 ties to exact hardware, driver and OS - and so a second node can try to reproduce it.
+
+## CUDA
+
+NVIDIA's GPU compute stack. If a receipt says CUDA, the relevant hardware is an
+NVIDIA GPU and the run is shaped by CUDA kernels, driver version, VRAM, and power
+limits. Consumer examples here are RTX 3090/4090; datacenter examples are
+A100/H100/H200/B200.
+
+## Metal
+
+Apple's GPU compute API. In local LLM receipts it usually means llama.cpp or a
+similar runtime using Apple Silicon unified memory instead of discrete NVIDIA
+VRAM. A large Mac can fit BF16 models that do not fit a 24 GB NVIDIA card, but
+speed/throughput is a separate measurement.
+
+## MLX
+
+Apple's machine-learning framework for Apple Silicon. MLX models can use unified
+memory and are not the same runtime as llama.cpp/GGUF. If a receipt says MLX, do
+not assume GGUF flags such as `-ctk q8_0` apply unless the harness explicitly
+bridges them.
+
+## A100 / H100 / H200 / B200
+
+NVIDIA datacenter GPUs. They matter in receipts because 80 GB+ VRAM can run BF16
+27B-class models plus long KV cache directly, while a 24 GB 3090/4090 usually
+needs weight quantization such as Q4_K_M.
 
 ## command shape
 
