@@ -212,6 +212,15 @@
       "gesture": "Huihui Qwen3.6-27B abliterated Q4_K_M scored 5/5 on AIME26 smoke with --reasoning off"
     },
     {
+      "id": "R21",
+      "file": "receipts/2026-05-24-3090-aime26-smoke-stock-vs-huihui-qwen36-27b-q4km.md",
+      "date": "2026-05-24",
+      "node": "AYA-3090",
+      "category": "reasoning-aime",
+      "status": "SMOKE_TIE_5_OF_5_STOCK_AND_HUIHUI",
+      "gesture": "stock and Huihui Qwen3.6-27B Q4_K_M both scored 5/5 on AIME26 smoke with --reasoning off"
+    },
+    {
       "id": "RS1",
       "file": "receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md",
       "date": "2026-05-23",

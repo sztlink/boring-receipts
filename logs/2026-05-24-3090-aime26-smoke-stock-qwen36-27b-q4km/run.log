@@ -1,0 +1,17 @@
+2026-05-24T15:38:50.023Z AIME_RUN_START label=R21-smoke-stock-qwen36-27b-q4km-reasoning-off
+2026-05-24T15:38:50.026Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen3.6-27B-Q4_K_M.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18022 -np 1 --alias stock-qwen36-27b-q4km --jinja --slots --reasoning off
+2026-05-24T15:38:50.031Z SERVER_PID 3457340
+2026-05-24T15:38:50.058Z HEALTH_WAIT fetch failed
+2026-05-24T15:39:00.070Z HEALTH 200 {"status":"ok"}
+2026-05-24T15:39:00.071Z CASE_START 1 expected=277
+2026-05-24T15:39:23.280Z CASE_DONE 1 correct=true pred=277 expected=277 elapsed=23s
+2026-05-24T15:39:23.280Z CASE_START 2 expected=62
+2026-05-24T15:40:47.051Z CASE_DONE 2 correct=true pred=62 expected=62 elapsed=84s
+2026-05-24T15:40:47.052Z CASE_START 3 expected=79
+2026-05-24T15:41:20.755Z CASE_DONE 3 correct=true pred=79 expected=79 elapsed=34s
+2026-05-24T15:41:20.755Z CASE_START 4 expected=70
+2026-05-24T15:42:40.424Z CASE_DONE 4 correct=true pred=70 expected=70 elapsed=80s
+2026-05-24T15:42:40.425Z CASE_START 5 expected=65
+2026-05-24T15:44:37.385Z CASE_DONE 5 correct=true pred=65 expected=65 elapsed=117s
+2026-05-24T15:44:37.386Z AIME_RUN_DONE score=5/5
+2026-05-24T15:44:39.366Z SERVER_EXIT code=null sig=SIGTERM
