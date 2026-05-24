@@ -1,0 +1,17 @@
+2026-05-24T14:28:34.513Z AIME_RUN_START label=R20-smoke-huihui-qwen36-27b-abl-q4km
+2026-05-24T14:28:34.516Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/huihui-qwen3.6-27b-abliterated-q4_k_m.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18020 -np 1 --alias huihui-qwen36-27b-abl-q4km --jinja --slots
+2026-05-24T14:28:34.537Z SERVER_PID 502344
+2026-05-24T14:28:34.564Z HEALTH_WAIT fetch failed
+2026-05-24T14:28:44.573Z HEALTH 200 {"status":"ok"}
+2026-05-24T14:28:44.573Z CASE_START 1 expected=277
+2026-05-24T14:30:29.902Z CASE_DONE 1 correct=false pred= expected=277 elapsed=105s
+2026-05-24T14:30:29.902Z CASE_START 2 expected=62
+2026-05-24T14:32:26.461Z CASE_DONE 2 correct=false pred= expected=62 elapsed=117s
+2026-05-24T14:32:26.462Z CASE_START 3 expected=79
+2026-05-24T14:34:32.726Z CASE_DONE 3 correct=false pred= expected=79 elapsed=126s
+2026-05-24T14:34:32.726Z CASE_START 4 expected=70
+2026-05-24T14:36:44.693Z CASE_DONE 4 correct=false pred= expected=70 elapsed=132s
+2026-05-24T14:36:44.693Z CASE_START 5 expected=65
+2026-05-24T14:39:01.265Z CASE_DONE 5 correct=false pred= expected=65 elapsed=137s
+2026-05-24T14:39:01.266Z AIME_RUN_DONE score=0/5
+2026-05-24T14:39:03.387Z SERVER_EXIT code=null sig=SIGTERM

@@ -127,3 +127,11 @@ gate, not another blind Qwen2.5-7B capacity rerun.
 - **node:** AYA-3090
 - **receipt:** `receipts/2026-05-24-3090-aime26-smoke-qwen25-14b.md`
 - **meaning:** AIME is now a Boring Receipts reasoning axis. Harness validated on first five AIME 2026 problems with Qwen2.5-14B Q4_K_M: 2/5 correct. This is not yet a Bunn reproduction; it sets the local baseline and scoring surface for stock-vs-ablated Qwen3.6-27B.
+
+
+## R20 — Huihui Qwen3.6-27B abliterated AIME smoke
+
+- **status:** AIME_SMOKE_5_OF_5_WITH_REASONING_OFF
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-24-3090-aime26-smoke-huihui-qwen36-27b-abl-q4km.md`
+- **meaning:** Huihui Qwen3.6-27B abliterated Q4_K_M scored 5/5 on the first five AIME 2026 problems through llama-server with `--reasoning off`, outperforming the Qwen2.5-14B local baseline (2/5). Default reasoning mode produced empty content and exhausted the token budget, so `--reasoning off` is a serving requirement for bounded smoke scoring.

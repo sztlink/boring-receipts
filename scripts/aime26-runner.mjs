@@ -68,10 +68,13 @@ async function runCase(item, idx) {
     rec.raw = txt.slice(0, 12000);
     try {
       const j = JSON.parse(txt);
-      rec.content = j.choices?.[0]?.message?.content?.trim() || '';
+      const msg = j.choices?.[0]?.message || {};
+      rec.content = (msg.content || '').trim();
+      rec.reasoning_content = (msg.reasoning_content || '').trim();
+      rec.scored_text = rec.content || rec.reasoning_content || '';
       rec.usage = j.usage || null;
     } catch (e) { rec.parseError = e.message; rec.content = txt.slice(0, 4000); }
-    rec.predicted = extractAnswer(rec.content);
+    rec.predicted = extractAnswer(rec.scored_text || rec.content || rec.reasoning_content);
     rec.correct = rec.predicted === rec.expected;
   } catch (e) {
     rec.error = e.name + ': ' + e.message;
