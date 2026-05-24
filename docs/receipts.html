@@ -110,6 +110,47 @@ gate-v1 PASS</span>
     (EM 0.216 vs 0.216; wins 2, losses 2). ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">full receipt RS2</a></p>
 
+    <h2>Receipt ledger</h2>
+    <p class="small">Filters are exact; semantic mode is only a discovery layer. The cited receipt file remains the source of truth.</p>
+    <div class="filters" id="receipt-filters">
+      <div class="row">
+        <label>search
+          <input id="receipt-q" type="search" placeholder="AIME, q8_0, Bunn, 524K, passkey, unsafe harness…">
+        </label>
+        <label>mode
+          <select id="receipt-mode">
+            <option value="text">text</option>
+            <option value="semantic">semantic map</option>
+          </select>
+        </label>
+        <label>axis
+          <select id="receipt-category"></select>
+        </label>
+        <label>status
+          <select id="receipt-status">
+            <option value="">all statuses</option>
+            <option value="pass">pass</option>
+            <option value="negative">negative / no-delta</option>
+            <option value="blocked">blocked</option>
+            <option value="partial">partial / timeout / wall</option>
+            <option value="mixed">mixed</option>
+          </select>
+        </label>
+        <label>node
+          <select id="receipt-node"></select>
+        </label>
+        <label>&nbsp;
+          <button id="receipt-clear" type="button">clear</button>
+        </label>
+      </div>
+    </div>
+    <div class="result-meta"><span id="receipt-count">loading receipts…</span><span>score appears only when searching</span></div>
+    <p class="semantic-note" id="semantic-note" hidden>Semantic mode expands the query through a small versioned concept map (AIME/Bunn, KV cache, context capacity, quality, negative evidence, RealRAG). It suggests candidates; it does not rank truth.</p>
+    <div class="tw"><table class="grid" id="receipt-ledger">
+      <thead><tr><th>ID</th><th>Date</th><th>Axis</th><th>Node</th><th>Status</th><th>Gesture</th><th>Score</th></tr></thead>
+      <tbody id="receipt-results"><tr><td colspan="7">loading…</td></tr></tbody>
+    </table></div>
+
     <h2>Read the doctrine</h2>
     <ul>
       <li><a href="how-to-read.html">HOW TO READ</a> - claim, target, command, environment, results, gate, evidence, non-claim, next step</li>
@@ -129,4 +170,6 @@ gate-v1 PASS</span>
   </div>
 </div>
 <script src="deco.js"></script>
+<script src="receipts-search.js"></script>
+<script src="receipts-ui.js"></script>
 </body></html>

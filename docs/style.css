@@ -102,6 +102,17 @@ table.grid{font-size:13px}
 table.grid th,table.grid td{border:1px solid var(--line);white-space:normal}
 table.grid th{background:var(--tint)}
 
+.filters{border:1px solid var(--line);background:var(--tint);padding:12px;margin:12px 0 14px}
+.filters .row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr auto;gap:8px;align-items:end}
+.filters label{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.filters input,.filters select,.filters button{width:100%;font:inherit;font-size:12px;color:var(--ink);background:rgba(244,238,221,.72);border:1px solid var(--faint);padding:6px 7px;border-radius:0}
+.filters button{cursor:pointer;color:var(--blue)}
+.filters button:hover{border-color:var(--line)}
+.result-meta{display:flex;justify-content:space-between;gap:12px;margin:8px 0 6px;color:var(--muted);font-size:11px}
+.semantic-note{border-left:3px solid var(--blue);padding-left:10px;color:var(--muted);font-size:11px;max-width:none}
+#receipt-ledger .gesture{white-space:normal;min-width:280px}
+#receipt-ledger td:nth-child(7),#receipt-ledger th:nth-child(7){text-align:right;color:var(--muted)}
+
 /* Gate states read as printed stamps: a struck glyph + weight, not colour alone. */
 .gp,.pass{color:var(--green)}.warn{color:var(--yellow)}.gb{color:var(--blue)}
 td.gp,td.pass,td.warn,td.gb{font-weight:700;letter-spacing:.3px}
@@ -133,6 +144,10 @@ td.gb::before{content:"\2248\00a0"}                                       /* ≈
   .tw td{white-space:normal;border:0;padding:3px 0;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .tw td::before{content:attr(data-l);color:var(--muted);flex-shrink:0}
   .tw td:empty{display:none}
+  .filters .row{grid-template-columns:1fr}
+  .result-meta{display:block}
+  #receipt-ledger .gesture{min-width:0}
+  #receipt-ledger td:nth-child(7),#receipt-ledger th:nth-child(7){text-align:left}
   /* stacked cards have vertical room: restore HW/Mode hidden on the desktop preview */
   #receipts td:nth-child(5),#receipts td:nth-child(6){display:flex}
 }
