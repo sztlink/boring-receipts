@@ -143,3 +143,11 @@ gate, not another blind Qwen2.5-7B capacity rerun.
 - **node:** AYA-3090
 - **receipt:** `receipts/2026-05-24-3090-aime26-smoke-stock-vs-huihui-qwen36-27b-q4km.md`
 - **meaning:** stock Qwen3.6-27B Q4_K_M and Huihui Qwen3.6-27B abliterated Q4_K_M both scored 5/5 on the first five AIME 2026 problems with the same `--reasoning off` llama-server harness. The smoke confirms the 27B tier is strong locally but does not yet show ablated > stock.
+
+
+## R22 — full AIME stock vs Huihui Qwen3.6-27B
+
+- **status:** STOCK_17_OF_30__HUIHUI_15_OF_30__NO_ABLATED_WIN_LOCAL_GGUF
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-24-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km.md`
+- **meaning:** On local Q4_K_M GGUF with llama-server, f16 KV, 4096 completion tokens and `--reasoning off`, stock Qwen3.6-27B scored 17/30 and Huihui abliterated scored 15/30 on AIME 2026. This does not reproduce Bunn's ablated>stock direction; it contextualizes it as not transferring trivially to our quantized setup.
