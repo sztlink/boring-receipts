@@ -119,3 +119,11 @@ gate, not another blind Qwen2.5-7B capacity rerun.
 - **node:** AYA-3090
 - **receipt:** `receipts/2026-05-24-3090-qwen25-7b-q4q4-server-passkey-negative.md`
 - **meaning:** the safer `llama-server` + HTTP harness ran and cleaned up, but did not produce a positive quality result. Three ~24k-token passkey cases failed retrieval; six larger cases were rejected because the server capped Qwen2.5-7B slot context to 32K despite `-c 131072`.
+
+
+## R19 — AIME 2026 reasoning smoke
+
+- **status:** AIME_AXIS_ADDED__SMOKE_2_OF_5
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-24-3090-aime26-smoke-qwen25-14b.md`
+- **meaning:** AIME is now a Boring Receipts reasoning axis. Harness validated on first five AIME 2026 problems with Qwen2.5-14B Q4_K_M: 2/5 correct. This is not yet a Bunn reproduction; it sets the local baseline and scoring surface for stock-vs-ablated Qwen3.6-27B.

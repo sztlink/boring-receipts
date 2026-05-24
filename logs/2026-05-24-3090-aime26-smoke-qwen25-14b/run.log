@@ -1,0 +1,17 @@
+2026-05-24T13:23:02.808Z AIME_RUN_START label=R19-smoke-qwen25-14b-q4km
+2026-05-24T13:23:02.811Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen2.5-14B-Instruct-Q4_K_M.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18019 -np 1 --alias qwen25-14b-q4km --jinja --slots
+2026-05-24T13:23:02.817Z SERVER_PID 3081780
+2026-05-24T13:23:02.844Z HEALTH_WAIT fetch failed
+2026-05-24T13:23:12.853Z HEALTH 200 {"status":"ok"}
+2026-05-24T13:23:12.853Z CASE_START 1 expected=277
+2026-05-24T13:23:24.914Z CASE_DONE 1 correct=true pred=277 expected=277 elapsed=12s
+2026-05-24T13:23:24.915Z CASE_START 2 expected=62
+2026-05-24T13:23:41.301Z CASE_DONE 2 correct=false pred=20 expected=62 elapsed=16s
+2026-05-24T13:23:41.301Z CASE_START 3 expected=79
+2026-05-24T13:23:50.430Z CASE_DONE 3 correct=false pred=241 expected=79 elapsed=9s
+2026-05-24T13:23:50.430Z CASE_START 4 expected=70
+2026-05-24T13:23:59.404Z CASE_DONE 4 correct=false pred=64 expected=70 elapsed=9s
+2026-05-24T13:23:59.404Z CASE_START 5 expected=65
+2026-05-24T13:24:12.999Z CASE_DONE 5 correct=true pred=65 expected=65 elapsed=14s
+2026-05-24T13:24:13.000Z AIME_RUN_DONE score=2/5
+2026-05-24T13:24:13.972Z SERVER_EXIT code=null sig=SIGTERM

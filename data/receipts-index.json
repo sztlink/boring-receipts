@@ -194,6 +194,15 @@
       "gesture": "TurboQuant+ Qwen3.6-35B-A3B ctx512 KLD receipt; ctx16K KLD-base path blocked by logit-file scale"
     },
     {
+      "id": "R19",
+      "file": "receipts/2026-05-24-3090-aime26-smoke-qwen25-14b.md",
+      "date": "2026-05-24",
+      "node": "AYA-3090",
+      "category": "reasoning-aime",
+      "status": "AIME_AXIS_ADDED__SMOKE_2_OF_5",
+      "gesture": "AIME 2026 reasoning axis added; Qwen2.5-14B smoke scored 2/5"
+    },
+    {
       "id": "RS1",
       "file": "receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md",
       "date": "2026-05-23",
