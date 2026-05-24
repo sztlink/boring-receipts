@@ -1,0 +1,9 @@
+R18 ctx512 chunks8 completed on AYA-3090 with TurboQuant+ tqp-v0.1.1 prebuilt after adding OpenSSL DLLs to prebuilt dir.
+Model: ggml-org/Qwen3.6-35B-A3B-GGUF / Qwen3.6-35B-A3B-Q8_0.gguf
+Size: 36,903,139,360 bytes
+Commands: llama-perplexity -c 512 --chunks 8 -ngl 99 -fa on; f16 base logits, q8_0 KLD, turbo3 KLD.
+Results:
+- f16 base PPL: 6.2041 +/- 0.33800
+- q8_0: PPL 6.199884 +/- 0.337390; KLD 0.005043 +/- 0.000390; RMS dp 1.806 +/- 0.088%; Same top p 97.010 +/- 0.377%
+- turbo3: PPL 6.318517 +/- 0.344833; KLD 0.020667 +/- 0.000880; RMS dp 4.039 +/- 0.178%; Same top p 93.529 +/- 0.545%
+Caveat: not identical to cited Qwen3.5/Qwopus numbers; this is Qwen3.6 public GGUF on RTX 3090 CUDA.

@@ -1,6 +1,6 @@
 {
   "schema": "boring-receipts-index-v1",
-  "updated": "2026-05-23",
+  "updated": "2026-05-24",
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
@@ -165,6 +165,24 @@
       "category": "context-capacity",
       "status": "PASS_TO_524K_OBSERVED_WALL_AT_786K",
       "gesture": "beyond-128K capacity ramp: Qwen2.5-7B q4/q4 KV passes 128K, 262K and 524K on one 3090; 786K is the wall"
+    },
+    {
+      "id": "R17",
+      "file": "receipts/2026-05-23-3090-qwen25-7b-q4q4-needle-harness-blocked.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "quality-harness",
+      "status": "BLOCKED_BY_UNSAFE_LLAMA_CLI_HARNESS",
+      "gesture": "long-context needle/passkey quality gate blocked by unsafe direct llama-cli SSH harness; no quality conclusion"
+    },
+    {
+      "id": "R18",
+      "file": "receipts/2026-05-23-3090-qwen36-a3b-turboquant-kld.md",
+      "date": "2026-05-23",
+      "node": "AYA-3090",
+      "category": "quality-kld",
+      "status": "PARTIAL_PASS_CTX512_KLD",
+      "gesture": "TurboQuant+ Qwen3.6-35B-A3B ctx512 KLD receipt; ctx16K KLD-base path blocked by logit-file scale"
     },
     {
       "id": "RS1",

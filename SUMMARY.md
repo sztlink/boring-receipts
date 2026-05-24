@@ -94,3 +94,20 @@ next real move is source/kernel inspection, an upstream-clean CUDA 12.x build, o
 an external branch-and-command request. For beyond-128K context specifically, R16 establishes the local 3090 capacity ladder;
 the next useful target is Qwen3.6-27B or a known long-context fork with a quality
 gate, not another blind Qwen2.5-7B capacity rerun.
+
+
+## R18 — Qwen3.6-35B-A3B TurboQuant+ KLD
+
+- **status:** PARTIAL_PASS_CTX512_KLD / CTX16K_KLD_BLOCKED_BY_LOGIT_BASE_SIZE
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-23-3090-qwen36-a3b-turboquant-kld.md`
+- **ctx512:** q8_0 KLD 0.005043, same-top-p 97.010; turbo3 KLD 0.020667, same-top-p 93.529.
+- **ctx16K:** direct `--kl-divergence-base` attempt failed before result; recorded as harness/logit-base scale constraint, not a quality result.
+
+
+## R17 — long-context needle quality gate blocked
+
+- **status:** BLOCKED_BY_UNSAFE_LLAMA_CLI_HARNESS
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-23-3090-qwen25-7b-q4q4-needle-harness-blocked.md`
+- **meaning:** no quality conclusion. Direct `llama-cli` over SSH entered interactive/console-loop behavior, left a resident CUDA process, and required reboot. Next attempt must use `llama-server` + HTTP timeout, a bounded child-process harness, or a dedicated passkey tool.
