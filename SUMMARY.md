@@ -111,3 +111,11 @@ gate, not another blind Qwen2.5-7B capacity rerun.
 - **node:** AYA-3090
 - **receipt:** `receipts/2026-05-23-3090-qwen25-7b-q4q4-needle-harness-blocked.md`
 - **meaning:** no quality conclusion. Direct `llama-cli` over SSH entered interactive/console-loop behavior, left a resident CUDA process, and required reboot. Next attempt must use `llama-server` + HTTP timeout, a bounded child-process harness, or a dedicated passkey tool.
+
+
+## R17b — safe server passkey negative
+
+- **status:** SAFE_HARNESS_RAN__0_OF_9_PASS__SERVER_CTX_CAP_32K
+- **node:** AYA-3090
+- **receipt:** `receipts/2026-05-24-3090-qwen25-7b-q4q4-server-passkey-negative.md`
+- **meaning:** the safer `llama-server` + HTTP harness ran and cleaned up, but did not produce a positive quality result. Three ~24k-token passkey cases failed retrieval; six larger cases were rejected because the server capped Qwen2.5-7B slot context to 32K despite `-c 131072`.

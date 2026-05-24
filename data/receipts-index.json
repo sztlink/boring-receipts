@@ -176,6 +176,15 @@
       "gesture": "long-context needle/passkey quality gate blocked by unsafe direct llama-cli SSH harness; no quality conclusion"
     },
     {
+      "id": "R17b",
+      "file": "receipts/2026-05-24-3090-qwen25-7b-q4q4-server-passkey-negative.md",
+      "date": "2026-05-24",
+      "node": "AYA-3090",
+      "category": "quality-passkey",
+      "status": "SAFE_HARNESS_RAN__0_OF_9_PASS__SERVER_CTX_CAP_32K",
+      "gesture": "safe llama-server passkey harness ran; 24k retrieval failed and >32k rejected by server context cap"
+    },
+    {
       "id": "R18",
       "file": "receipts/2026-05-23-3090-qwen36-a3b-turboquant-kld.md",
       "date": "2026-05-23",
