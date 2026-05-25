@@ -298,6 +298,17 @@ window.BORING_RECEIPTS_INDEX = {
       "gesture": "gated rerank small-slice gain demoted by N=500 no-delta",
       "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md",
       "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md"
+    },
+    {
+      "id": "R24",
+      "file": "receipts/2026-05-24-4090-ds4-pr243-turbo3-cuda-build-regression.md",
+      "date": "2026-05-24",
+      "node": "AYA-4090",
+      "category": "runtime-build",
+      "status": "BUILD_AND_CUDA_REGRESSION_PASS__NO_MODEL_BENCH",
+      "gesture": "antirez/ds4#243 TurboQuant turbo3 CUDA build and regression pass on RTX 4090 sm_89",
+      "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-24-4090-ds4-pr243-turbo3-cuda-build-regression.md",
+      "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-24-4090-ds4-pr243-turbo3-cuda-build-regression.md"
     }
   ],
   "semanticMap": {
