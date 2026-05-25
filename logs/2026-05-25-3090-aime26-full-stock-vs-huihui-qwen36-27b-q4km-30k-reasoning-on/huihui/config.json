@@ -1,0 +1,25 @@
+{
+  "label": "R23b-full-huihui-qwen36-27b-abl-q4km-30k-reasoning-on-curl",
+  "root": "C:/Users/user/boring/aime26-r23b-full-huihui-qwen36-27b-abl-q4km-30k-reasoning-on-curl",
+  "bin": "C:/Users/user/boring/kvdtype-source-build-v8-b9286-vs2019-pdlpatch-20260523/build/bin",
+  "model": "C:/Users/user/boring/models/huihui-qwen3.6-27b-abliterated-q4_k_m.gguf",
+  "dataset": "C:/Users/user/boring/aime26/aime2026.jsonl",
+  "alias": "huihui-qwen36-27b-abl-q4km",
+  "port": 18028,
+  "ctx": 32768,
+  "ctk": "f16",
+  "ctv": "f16",
+  "ngl": 99,
+  "maxTokens": 30000,
+  "temperature": 0,
+  "topP": 0.95,
+  "seed": 42,
+  "limit": 30,
+  "offset": 0,
+  "caseTimeoutSec": 3600,
+  "serverLoadTimeoutSec": 1200,
+  "extraArgs": [
+    "--reasoning",
+    "on"
+  ]
+}

@@ -320,6 +320,17 @@ window.BORING_RECEIPTS_INDEX = {
       "gesture": "TheTom/ds4 pr/04 phase7 comp-cache CUDA build and regression pass on RTX 4090 sm_89",
       "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-4090-ds4-pr04-phase7-comp-cache-cuda-build-regression.md",
       "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-4090-ds4-pr04-phase7-comp-cache-cuda-build-regression.md"
+    },
+    {
+      "id": "R23",
+      "file": "receipts/2026-05-25-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km-30k-reasoning-on.md",
+      "date": "2026-05-25",
+      "node": "AYA-3090",
+      "category": "aime-reasoning",
+      "status": "STOCK_18_OF_30__HUIHUI_15_OF_30__NO_ABLATED_WIN_LOCAL_GGUF_30K_REASONING",
+      "gesture": "AIME 2026 full stock vs Huihui Qwen3.6 27B Q4_K_M reasoning-on 30k local GGUF comparison",
+      "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km-30k-reasoning-on.md",
+      "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km-30k-reasoning-on.md"
     }
   ],
   "semanticMap": {
