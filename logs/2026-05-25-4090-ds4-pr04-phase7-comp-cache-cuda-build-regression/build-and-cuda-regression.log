@@ -1,0 +1,63 @@
+JOB=ds4-pr04-4090-20260525-000433
+LOG=/home/felipe/ds4-lab/ds4-pr04-4090-20260525-000433.log
+2026-05-25T00:04:33-03:00
+DESKTOP-CTAHC6D
+Linux DESKTOP-CTAHC6D 6.6.114.1-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Mon Dec  1 20:46:23 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+               total        used        free      shared  buff/cache   available
+Mem:            31Gi       3.4Gi        27Gi        89Mi       985Mi        27Gi
+/dev/sdd       1007G  187G  769G  20% /
+NVIDIA GeForce RTX 4090, 595.79, 22133 MiB, 24564 MiB, 0 %, 40
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:58:59_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+Cloning into '/home/felipe/ds4-lab/ds4-pr04-phase7-comp-cache'...
+From https://github.com/TheTom/ds4
+ * branch            pr/04-phase7-comp-cache -> FETCH_HEAD
+ * [new branch]      pr/04-phase7-comp-cache -> thetom/pr/04-phase7-comp-cache
+Switched to a new branch 'pr-04-phase7-comp-cache'
+GIT_HEAD=ea322b5 Phase 7.4: drop float comp pool, pack stage->packed directly
+GIT_REMOTE=https://github.com/TheTom/ds4.git
+BUILD_START 2026-05-25T00:04:35-03:00
+rm -f ds4 ds4-server ds4-bench ds4-eval ds4-agent ds4_cpu ds4_native ds4_server_test ds4_test *.o tests/cuda_long_context_smoke tests/cuda_long_context_smoke.o
+make ds4 ds4-server ds4-bench ds4-eval ds4-agent CUDA_ARCH="sm_89"
+make[1]: Entering directory '/home/felipe/ds4-lab/ds4-pr04-phase7-comp-cache'
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_cli.o ds4_cli.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o linenoise.o linenoise.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4.o ds4.c
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -c -o ds4_cuda.o ds4_cuda.cu
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_server.o ds4_server.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_kvstore.o ds4_kvstore.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o rax.o rax.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_bench.o ds4_bench.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_eval.o ds4_eval.c
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -c -o ds4_agent.o ds4_agent.c
+ds4_agent.c: In function ‘run_agent’:
+ds4_agent.c:8884:21: warning: ignoring return value of ‘write’ declared with attribute ‘warn_unused_result’ [-Wunused-result]
+ 8884 |                     write(STDOUT_FILENO, "\a", 1);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o ds4 ds4_cli.o linenoise.o ds4.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o ds4-server ds4_server.o ds4_kvstore.o rax.o ds4.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o ds4-bench ds4_bench.o ds4.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o ds4-eval ds4_eval.o ds4.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o ds4-agent ds4_agent.o ds4_kvstore.o linenoise.o ds4.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+make[1]: Leaving directory '/home/felipe/ds4-lab/ds4-pr04-phase7-comp-cache'
+BUILD_DONE 2026-05-25T00:04:53-03:00
+-rwxr-xr-x 1 felipe felipe 11M May 25 00:04 ds4
+-rwxr-xr-x 1 felipe felipe 12M May 25 00:04 ds4-agent
+-rwxr-xr-x 1 felipe felipe 11M May 25 00:04 ds4-bench
+-rwxr-xr-x 1 felipe felipe 12M May 25 00:04 ds4-eval
+-rwxr-xr-x 1 felipe felipe 12M May 25 00:04 ds4-server
+CUDA_REGRESSION_START 2026-05-25T00:04:53-03:00
+cc -O3 -ffast-math -g -march=native -Wall -Wextra -std=c99 -D_GNU_SOURCE -fno-finite-math-only -I. -c -o tests/cuda_long_context_smoke.o tests/cuda_long_context_smoke.c
+/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/bin/nvcc -O3 -g -lineinfo --use_fast_math -arch=sm_89 -Xcompiler -march=native -Xcompiler -pthread -o tests/cuda_long_context_smoke tests/cuda_long_context_smoke.o ds4_cuda.o -lm -Xcompiler -pthread -L/home/felipe/vllm-lab/venv-tq-fresh-20260515/lib/python3.12/site-packages/nvidia/cu13/lib -L/usr/lib/wsl/lib -lcudart -lcublas
+./tests/cuda_long_context_smoke
+ds4: CUDA backend initialized on NVIDIA GeForce RTX 4090 (sm_89)
+cuda-regression: top-k n_comp=32768 n_tokens=32 elapsed=0.003s
+cuda long-context regression: OK
+CUDA_REGRESSION_DONE 2026-05-25T00:04:53-03:00
+NVIDIA GeForce RTX 4090, 595.79, 22133 MiB, 24564 MiB, 8 %, 40
+RESULT build_and_cuda_regression_ok
+LOG=/home/felipe/ds4-lab/ds4-pr04-4090-20260525-000433.log

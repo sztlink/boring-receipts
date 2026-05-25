@@ -1,6 +1,6 @@
 {
   "schema": "boring-receipts-index-v1",
-  "updated": "2026-05-24",
+  "updated": "2026-05-25",
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
@@ -255,6 +255,15 @@
       "category": "runtime-build",
       "status": "BUILD_AND_CUDA_REGRESSION_PASS__NO_MODEL_BENCH",
       "gesture": "antirez/ds4#243 TurboQuant turbo3 CUDA build and regression pass on RTX 4090 sm_89"
+    },
+    {
+      "id": "R25",
+      "file": "receipts/2026-05-25-4090-ds4-pr04-phase7-comp-cache-cuda-build-regression.md",
+      "date": "2026-05-25",
+      "node": "AYA-4090",
+      "category": "runtime-build",
+      "status": "BUILD_AND_CUDA_REGRESSION_PASS__NO_MODEL_BENCH",
+      "gesture": "TheTom/ds4 pr/04 phase7 comp-cache CUDA build and regression pass on RTX 4090 sm_89"
     }
   ]
 }
