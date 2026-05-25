@@ -342,6 +342,17 @@ window.BORING_RECEIPTS_INDEX = {
       "gesture": "AIME 2026 stock Qwen3.6 27B Q4_K_M bounded-thinking GAE grammar comparison arm",
       "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md",
       "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md"
+    },
+    {
+      "id": "R27",
+      "file": "receipts/2026-05-25-4090-thetom-vllm-clean-baseline-build-smoke.md",
+      "date": "2026-05-25",
+      "node": "AYA-4090",
+      "category": "runtime-build",
+      "status": "CLEAN_BUILD_AND_SERVER_SMOKE_PASS__NO_SERVICE_CHANGE",
+      "gesture": "clean TheTom vLLM TurboQuant baseline build and server smoke on RTX 4090 WSL2",
+      "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-4090-thetom-vllm-clean-baseline-build-smoke.md",
+      "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-4090-thetom-vllm-clean-baseline-build-smoke.md"
     }
   ],
   "semanticMap": {

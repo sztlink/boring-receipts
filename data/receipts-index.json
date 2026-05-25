@@ -282,6 +282,15 @@
       "category": "aime-reasoning",
       "status": "BOUNDED_THINKING_12_OF_30__GRAMMAR_FIRED_30_OF_30__LOWER_THAN_NO_THINK",
       "gesture": "AIME 2026 stock Qwen3.6 27B Q4_K_M bounded-thinking GAE grammar comparison arm"
+    },
+    {
+      "id": "R27",
+      "file": "receipts/2026-05-25-4090-thetom-vllm-clean-baseline-build-smoke.md",
+      "date": "2026-05-25",
+      "node": "AYA-4090",
+      "category": "runtime-build",
+      "status": "CLEAN_BUILD_AND_SERVER_SMOKE_PASS__NO_SERVICE_CHANGE",
+      "gesture": "clean TheTom vLLM TurboQuant baseline build and server smoke on RTX 4090 WSL2"
     }
   ]
 }
