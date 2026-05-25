@@ -1,0 +1,69 @@
+2026-05-25T14:05:51.744Z AIME_BOUNDED_RUN_START label=R24-full-stock-qwen36-27b-q4km-bounded-gae-4096
+2026-05-25T14:05:51.747Z GRAMMAR_FILE C:/Temp/gae-bounded.llamacpp.gbnf bytes=20289
+2026-05-25T14:05:51.747Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen3.6-27B-Q4_K_M.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18031 -np 1 --alias stock-qwen36-27b-q4km-bounded-gae --jinja --slots --reasoning on
+2026-05-25T14:05:51.754Z SERVER_PID 642460
+2026-05-25T14:05:51.780Z HEALTH_WAIT fetch failed
+2026-05-25T14:06:01.790Z HEALTH 200 {"status":"ok"}
+2026-05-25T14:06:01.791Z CASE_START 1 expected=277
+2026-05-25T14:06:22.204Z CASE_DONE 1 correct=true pred=277 expected=277 elapsed=20s finish=stop grammar=true
+2026-05-25T14:06:22.205Z CASE_START 2 expected=62
+2026-05-25T14:07:20.802Z CASE_DONE 2 correct=true pred=62 expected=62 elapsed=59s finish=stop grammar=true
+2026-05-25T14:07:20.802Z CASE_START 3 expected=79
+2026-05-25T14:07:58.310Z CASE_DONE 3 correct=true pred=79 expected=79 elapsed=38s finish=stop grammar=true
+2026-05-25T14:07:58.311Z CASE_START 4 expected=70
+2026-05-25T14:09:20.339Z CASE_DONE 4 correct=true pred=70 expected=70 elapsed=82s finish=stop grammar=true
+2026-05-25T14:09:20.339Z CASE_START 5 expected=65
+2026-05-25T14:09:58.528Z CASE_DONE 5 correct=true pred=65 expected=65 elapsed=38s finish=stop grammar=true
+2026-05-25T14:09:58.528Z CASE_START 6 expected=441
+2026-05-25T14:10:36.441Z CASE_DONE 6 correct=true pred=441 expected=441 elapsed=38s finish=stop grammar=true
+2026-05-25T14:10:36.441Z CASE_START 7 expected=396
+2026-05-25T14:12:21.591Z CASE_DONE 7 correct=true pred=396 expected=396 elapsed=105s finish=stop grammar=true
+2026-05-25T14:12:21.591Z CASE_START 8 expected=244
+2026-05-25T14:14:41.654Z CASE_DONE 8 correct=false pred=17 expected=244 elapsed=140s finish=length grammar=true
+2026-05-25T14:14:41.655Z CASE_START 9 expected=29
+2026-05-25T14:17:03.167Z CASE_DONE 9 correct=false pred=2 expected=29 elapsed=142s finish=length grammar=true
+2026-05-25T14:17:03.167Z CASE_START 10 expected=156
+2026-05-25T14:19:25.656Z CASE_DONE 10 correct=false pred=2 expected=156 elapsed=142s finish=length grammar=true
+2026-05-25T14:19:25.656Z CASE_START 11 expected=896
+2026-05-25T14:21:40.103Z CASE_DONE 11 correct=false pred=920 expected=896 elapsed=134s finish=stop grammar=true
+2026-05-25T14:21:40.103Z CASE_START 12 expected=161
+2026-05-25T14:24:03.313Z CASE_DONE 12 correct=false pred=1 expected=161 elapsed=143s finish=length grammar=true
+2026-05-25T14:24:03.313Z CASE_START 13 expected=39
+2026-05-25T14:26:27.223Z CASE_DONE 13 correct=false pred=50 expected=39 elapsed=144s finish=length grammar=true
+2026-05-25T14:26:27.223Z CASE_START 14 expected=681
+2026-05-25T14:28:51.204Z CASE_DONE 14 correct=false pred=5 expected=681 elapsed=144s finish=length grammar=true
+2026-05-25T14:28:51.204Z CASE_START 15 expected=83
+2026-05-25T14:31:15.990Z CASE_DONE 15 correct=false pred=5 expected=83 elapsed=145s finish=length grammar=true
+2026-05-25T14:31:15.991Z CASE_START 16 expected=178
+2026-05-25T14:31:53.588Z CASE_DONE 16 correct=true pred=178 expected=178 elapsed=38s finish=stop grammar=true
+2026-05-25T14:31:53.589Z CASE_START 17 expected=243
+2026-05-25T14:34:18.997Z CASE_DONE 17 correct=false pred=0 expected=243 elapsed=145s finish=length grammar=true
+2026-05-25T14:34:18.997Z CASE_START 18 expected=503
+2026-05-25T14:36:43.858Z CASE_DONE 18 correct=false pred=1 expected=503 elapsed=145s finish=length grammar=true
+2026-05-25T14:36:43.859Z CASE_START 19 expected=279
+2026-05-25T14:37:49.407Z CASE_DONE 19 correct=true pred=279 expected=279 elapsed=66s finish=stop grammar=true
+2026-05-25T14:37:49.407Z CASE_START 20 expected=190
+2026-05-25T14:38:52.019Z CASE_DONE 20 correct=true pred=190 expected=190 elapsed=63s finish=stop grammar=true
+2026-05-25T14:38:52.019Z CASE_START 21 expected=50
+2026-05-25T14:41:15.071Z CASE_DONE 21 correct=false pred=80 expected=50 elapsed=143s finish=length grammar=true
+2026-05-25T14:41:15.071Z CASE_START 22 expected=754
+2026-05-25T14:43:38.623Z CASE_DONE 22 correct=false pred=2 expected=754 elapsed=144s finish=length grammar=true
+2026-05-25T14:43:38.623Z CASE_START 23 expected=245
+2026-05-25T14:46:02.789Z CASE_DONE 23 correct=false pred=2 expected=245 elapsed=144s finish=length grammar=true
+2026-05-25T14:46:02.789Z CASE_START 24 expected=669
+2026-05-25T14:47:50.785Z CASE_DONE 24 correct=true pred=669 expected=669 elapsed=108s finish=stop grammar=true
+2026-05-25T14:47:50.785Z CASE_START 25 expected=850
+2026-05-25T14:49:27.347Z CASE_DONE 25 correct=true pred=850 expected=850 elapsed=97s finish=stop grammar=true
+2026-05-25T14:49:27.347Z CASE_START 26 expected=132
+2026-05-25T14:51:51.518Z CASE_DONE 26 correct=false pred=0 expected=132 elapsed=144s finish=length grammar=true
+2026-05-25T14:51:51.518Z CASE_START 27 expected=223
+2026-05-25T14:54:14.831Z CASE_DONE 27 correct=false pred=12 expected=223 elapsed=143s finish=length grammar=true
+2026-05-25T14:54:14.832Z CASE_START 28 expected=107
+2026-05-25T14:56:39.025Z CASE_DONE 28 correct=false pred=1 expected=107 elapsed=144s finish=length grammar=true
+2026-05-25T14:56:39.025Z CASE_START 29 expected=157
+2026-05-25T14:59:03.892Z CASE_DONE 29 correct=false pred=1 expected=157 elapsed=145s finish=length grammar=true
+2026-05-25T14:59:03.892Z CASE_START 30 expected=393
+2026-05-25T15:01:29.771Z CASE_DONE 30 correct=false pred=3 expected=393 elapsed=146s finish=length grammar=true
+2026-05-25T15:01:29.775Z AIME_BOUNDED_RUN_DONE score=12/30 grammar_fired=30/30
+2026-05-25T15:01:32.020Z SERVER_EXIT code=null sig=SIGTERM
+

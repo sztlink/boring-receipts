@@ -331,6 +331,17 @@ window.BORING_RECEIPTS_INDEX = {
       "gesture": "AIME 2026 full stock vs Huihui Qwen3.6 27B Q4_K_M reasoning-on 30k local GGUF comparison",
       "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km-30k-reasoning-on.md",
       "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-full-stock-vs-huihui-qwen36-27b-q4km-30k-reasoning-on.md"
+    },
+    {
+      "id": "R26",
+      "file": "receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md",
+      "date": "2026-05-25",
+      "node": "AYA-3090",
+      "category": "aime-reasoning",
+      "status": "BOUNDED_THINKING_12_OF_30__GRAMMAR_FIRED_30_OF_30__LOWER_THAN_NO_THINK",
+      "gesture": "AIME 2026 stock Qwen3.6 27B Q4_K_M bounded-thinking GAE grammar comparison arm",
+      "url": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md",
+      "localUrl": "https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md"
     }
   ],
   "semanticMap": {

@@ -273,6 +273,15 @@
       "category": "aime-reasoning",
       "status": "STOCK_18_OF_30__HUIHUI_15_OF_30__NO_ABLATED_WIN_LOCAL_GGUF_30K_REASONING",
       "gesture": "AIME 2026 full stock vs Huihui Qwen3.6 27B Q4_K_M reasoning-on 30k local GGUF comparison"
+    },
+    {
+      "id": "R26",
+      "file": "receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md",
+      "date": "2026-05-25",
+      "node": "AYA-3090",
+      "category": "aime-reasoning",
+      "status": "BOUNDED_THINKING_12_OF_30__GRAMMAR_FIRED_30_OF_30__LOWER_THAN_NO_THINK",
+      "gesture": "AIME 2026 stock Qwen3.6 27B Q4_K_M bounded-thinking GAE grammar comparison arm"
     }
   ]
 }
