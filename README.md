@@ -62,6 +62,7 @@ just a benchmark claim.
 - `receipt-template.yaml` - structured receipt skeleton.
 - `receipt-template.md` - human-readable receipt skeleton (for PR/Discord).
 - `receipts/` - completed receipts, one file per run.
+- `notes/` - small cross-receipt synthesis notes; interpretive, not receipts.
 - `GLOSSARY.md` - plain definitions of the terms used *in a receipt* (tok/s, pp/tg,
   TTFT, ITL, quant, ngl, VRAM peak, power…). The human layer that lets a beginner
   distrust a number. Research vocabulary lives in [`https://github.com/sztlink/turboquant-cuda-bench/blob/main/GLOSSARY.md`](https://github.com/sztlink/turboquant-cuda-bench/blob/main/GLOSSARY.md).
