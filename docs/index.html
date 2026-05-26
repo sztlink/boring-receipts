@@ -30,8 +30,8 @@
   <div class="content">
     <div class="topbar">
       <span class="glyphs">○&nbsp;○&nbsp;✕</span>
-      <span class="meta">JOB 0142 · NODE AYA-3090
-2026-05-23 · 18 RECEIPTS
+      <span class="meta" id="home-receipt-meta">JOB 0142 · LIVE INDEX
+loading receipts
 *BORING*  PG 1/1</span>
     </div>
 
@@ -51,32 +51,15 @@
 
       <main>
         <div class="panel" id="receipts">
-          <div class="panel-h"><span>Benchmark Receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
+          <div class="panel-h"><span>Latest receipts</span><a href="receipts.html" style="color:var(--ink);text-decoration:none">&rsaquo;</a></div>
+          <p class="small" id="home-receipt-count">loading receipts...</p>
           <div class="tw"><table>
-            <thead><tr><th>ID</th><th>Date</th><th>Model</th><th>Config</th><th>HW</th><th>Mode</th><th>Gate</th><th>Link</th></tr></thead>
-            <tbody>
-              <tr><td data-l="ID">R16</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">q4/q4 KV context ramp to 524K</td><td data-l="HW">RTX 3090</td><td data-l="Mode">capacity</td><td data-l="Gate" class="gp">PASS TO 524K</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md">open</a></td></tr>
-              <tr><td data-l="ID">R15</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">KV dtype × long context</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="warn">TIMEOUT / NEGATIVE</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md">open</a></td></tr>
-              <tr><td data-l="ID">R14</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">source KV dtype q8/q8 and q8/q4</td><td data-l="HW">RTX 3090</td><td data-l="Mode">patched build</td><td data-l="Gate" class="gb">NEGATIVE DELTA</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-kv-dtype-pdlpatch.md">open</a></td></tr>
-              <tr><td data-l="ID">R12</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">flash-attn × ctx (generalizes R6)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-flash-attn-context-curve.md">open</a></td></tr>
-              <tr><td data-l="ID">R11</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-14B</td><td data-l="Config">model card · extends to 14B</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">PPL 6.13</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-14b-q4km.md">open</a></td></tr>
-              <tr><td data-l="ID">R10</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">quant ladder (vs Llama R2b)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate" class="gp">PASS</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-quant-ladder.md">open</a></td></tr>
-              <tr><td data-l="ID">R9</td><td data-l="Date">2026-05-23</td><td data-l="Model">Gemma-2-9B</td><td data-l="Config">model card · 9B, extends curve</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">PPL 8.80</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-gemma2-9b-q4km.md">open</a></td></tr>
-              <tr><td data-l="ID">R8</td><td data-l="Date">2026-05-23</td><td data-l="Model">Mistral-7B-v0.3</td><td data-l="Config">model card · 3-model table</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">PPL 6.23</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-mistral-7b-v03-q4km.md">open</a></td></tr>
-              <tr><td data-l="ID">R7</td><td data-l="Date">2026-05-23</td><td data-l="Model">Qwen2.5-7B</td><td data-l="Config">model card (vs Llama-8B)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">PPL 8.02</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-qwen25-7b-q4km.md">open</a></td></tr>
-              <tr><td data-l="ID">R6</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">flash-attn × context 0–64K</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-flash-attn-context-curve.md">open</a></td></tr>
-              <tr><td data-l="ID">R5</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">flash-attn on/off</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-flash-attn.md">open</a></td></tr>
-              <tr><td data-l="ID">R4</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">KV-quant (q8_0/q4_0)</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate" class="warn">BLOCKED</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-kv-quant-BLOCKED.md">open</a></td></tr>
-              <tr><td data-l="ID">R13</td><td data-l="Date">2026-05-23</td><td data-l="Model">llama.cpp</td><td data-l="Config">source build CUDA preflight</td><td data-l="HW">RTX 3090</td><td data-l="Mode">build</td><td data-l="Gate" class="warn">BLOCKED</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama-cpp-source-build-cuda-BLOCKED.md">open</a></td></tr>
-              <tr><td data-l="ID">RS2</td><td data-l="Date">2026-05-23</td><td data-l="Model">local-vLLM</td><td data-l="Config">RealRAG gated rerank</td><td data-l="HW">RTX 4090</td><td data-l="Mode">research sibling</td><td data-l="Gate" class="gb">N500 NO DELTA</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">open</a></td></tr>
-              <tr><td data-l="ID">RS1</td><td data-l="Date">2026-05-23</td><td data-l="Model">local-vLLM</td><td data-l="Config">RealRAG entity-hop path</td><td data-l="HW">RTX 4090</td><td data-l="Mode">research sibling</td><td data-l="Gate" class="gp">MIXED</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md">open</a></td></tr>
-              <tr><td data-l="ID">R3</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">context 0–64K</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-context-sweep.md">open</a></td></tr>
-              <tr><td data-l="ID">R2b</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4/Q5/Q8 sweep</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate" class="gp">PASS</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-quant-sweep-dedicated.md">open</a></td></tr>
-              <tr><td data-l="ID">R2</td><td data-l="Date">2026-05-22</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4/Q5/Q8 sweep</td><td data-l="HW">RTX 3090</td><td data-l="Mode">shared</td><td data-l="Gate" class="gp">PASS</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-quant-sweep.md">open</a></td></tr>
-              <tr><td data-l="ID">R1b</td><td data-l="Date">2026-05-23</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4_K_M · ngl 99</td><td data-l="HW">RTX 3090</td><td data-l="Mode">dedicated</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-3090-llama31-8b-q4km-baseline-dedicated.md">open</a></td></tr>
-              <tr><td data-l="ID">R1</td><td data-l="Date">2026-05-22</td><td data-l="Model">Llama-3.1-8B</td><td data-l="Config">Q4_K_M · ngl 99</td><td data-l="HW">RTX 3090</td><td data-l="Mode">shared</td><td data-l="Gate">n/a</td><td data-l="Link"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-22-3090-llama31-8b-q4km-baseline.md">open</a></td></tr>
+            <thead><tr><th>ID</th><th>Date</th><th>Axis</th><th>Node</th><th>Status</th><th>Gesture</th><th>Link</th></tr></thead>
+            <tbody id="home-receipt-results">
+              <tr><td colspan="7">loading...</td></tr>
             </tbody>
           </table></div>
+          <p class="small">This table is generated from <code>receipts-search.js</code>, the same live index used by the receipt search page. If the archive grows, the home follows the index instead of freezing on a hand-edited list.</p>
         </div>
 
         <h2 id="about">Philosophy</h2>
@@ -93,7 +76,7 @@
 
         <div class="banner"><strong>Going far is evidence too.</strong> R16 reached 524K context on one
         RTX 3090 before finding the wall at 786K. R14/R15 stay negative, RS2 stays no-delta, and R16 stays a
-        capacity pass — the archive preserves the curve, not just the last rung. <a href="receipts.html">Read the receipts</a>.</div>
+        capacity pass - the archive preserves the curve, not just the last rung. <a href="receipts.html">Read the receipts</a>.</div>
 
         <h2 id="contact">Contact</h2>
         <p>Send a branch and a command shape; get back a receipt: commit, flags, driver,
@@ -111,4 +94,6 @@
   </div>
 </div>
 <script src="deco.js"></script>
+<script src="receipts-search.js"></script>
+<script src="home-receipts.js"></script>
 </body></html>
