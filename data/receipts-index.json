@@ -1,6 +1,6 @@
 {
   "schema": "boring-receipts-index-v1",
-  "updated": "2026-05-25",
+  "updated": "2026-05-26",
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
@@ -291,6 +291,15 @@
       "category": "runtime-build",
       "status": "CLEAN_BUILD_AND_SERVER_SMOKE_PASS__NO_SERVICE_CHANGE",
       "gesture": "clean TheTom vLLM TurboQuant baseline build and server smoke on RTX 4090 WSL2"
+    },
+    {
+      "id": "R28",
+      "file": "receipts/2026-05-26-3090-aime26-heretic-qwen36-27b-q4km.md",
+      "date": "2026-05-26",
+      "node": "AYA-3090",
+      "category": "aime-reasoning",
+      "status": "HERETIC_16_OF_30_OFF__16_OF_30_30K_REASONING__NO_LOCAL_WIN_OVER_STOCK",
+      "gesture": "AIME 2026 Heretic Qwen3.6 27B Q4_K_M reasoning-off 4096 and reasoning-on 30k local GGUF comparison"
     }
   ]
 }

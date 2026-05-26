@@ -1,11 +1,11 @@
-# Qwen3.6-27B AIME 2026 — stock vs Huihui abliterated local GGUF summary
+# Qwen3.6-27B AIME 2026 — stock vs Huihui vs Heretic local GGUF summary
 
 Date: 2026-05-25  
 Scope: local RTX 3090 / `llama.cpp` / Q4_K_M GGUF / AIME 2026 full set
 
 ## Bottom line
 
-In this local 24GB-GPU Q4_K_M setup, **Huihui/abliterated did not beat stock** on AIME 2026, and neither free nor bounded thinking gave a clear stock-model uplift.
+In this local 24GB-GPU Q4_K_M setup, **neither Huihui/abliterated nor Heretic beat stock** on AIME 2026, and neither free nor bounded thinking gave a clear uplift in the tested GGUF regime.
 
 | receipt | model | serving | score |
 |---|---|---|---:|
@@ -13,6 +13,8 @@ In this local 24GB-GPU Q4_K_M setup, **Huihui/abliterated did not beat stock** o
 | R22 | Huihui Qwen3.6-27B abliterated Q4_K_M | `--reasoning off`, `max_tokens=4096` | **15/30** |
 | R23 | stock Qwen3.6-27B Q4_K_M | `--reasoning on`, `max_tokens=30000` | **18/30** |
 | R23 | Huihui Qwen3.6-27B abliterated Q4_K_M | `--reasoning on`, `max_tokens=30000` | **15/30** |
+| R28 | Heretic Qwen3.6-27B Q4_K_M | `--reasoning off`, `max_tokens=4096` | **16/30** |
+| R28 | Heretic Qwen3.6-27B Q4_K_M | `--reasoning on`, `max_tokens=30000` | **16/30** |
 | R26 | stock Qwen3.6-27B Q4_K_M | bounded GAE GBNF, `--reasoning on`, `max_tokens=4096` | **12/30** |
 
 Observed local deltas:
@@ -20,7 +22,8 @@ Observed local deltas:
 - stock reasoning-on 30k vs stock reasoning-off 4096: **+1 problem**.
 - Huihui reasoning-on 30k vs Huihui reasoning-off 4096: **no score change**.
 - stock bounded-thinking GAE 4096 vs stock reasoning-off 4096: **-5 problems**.
-- Stock remained ahead of Huihui in both stock/Huihui comparisons.
+- Heretic reasoning-on 30k vs Heretic reasoning-off 4096: **no score change**.
+- Stock remained ahead of Huihui and Heretic in the local Q4_K_M comparisons.
 
 ## What this means
 
@@ -28,11 +31,12 @@ This is a **local-context datapoint**, not a universal claim about ablation.
 
 Narrow interpretation:
 
-1. The local Q4_K_M GGUF setup does **not** reproduce an ablated > stock direction.
+1. The local Q4_K_M GGUF setup does **not** reproduce an ablated/Heretic > stock direction.
 2. AIME 2026 did not show a clear free-reasoning uplift for stock: `17/30` → `18/30` at much higher output cost.
-3. The 30k reasoning run remained budget-limited: both stock and Huihui hit `finish_reason=length` on **15/30** cases.
-4. The bounded-thinking GAE arm structurally fired on **30/30** cases, but scored **12/30** and still length-finished in the answer body on **17/30** cases.
-5. The result should be framed as: **no clear AIME reasoning uplift in this 24GB Q4_K_M setup; no local ablated > stock signal; strict bounded GAE was worse than no-think**.
+3. Heretic did not benefit from the 30k reasoning arm in this harness: `16/30` → `16/30`.
+4. The 30k reasoning runs remained budget-limited: stock and Huihui hit `finish_reason=length` on **15/30** cases; Heretic hit length on **19/30** cases.
+5. The bounded-thinking GAE arm structurally fired on **30/30** cases, but scored **12/30** and still length-finished in the answer body on **17/30** cases.
+6. The result should be framed as: **no clear AIME reasoning uplift in this 24GB Q4_K_M setup; no local ablated/Heretic > stock signal; strict bounded GAE was worse than no-think**.
 
 ## What this does not mean
 
@@ -42,6 +46,7 @@ This does **not** falsify Bunn/Buun's broader BF16/ablation claim because:
 - Runtime is `llama.cpp` / `llama-server` on a single RTX 3090.
 - Prompt, scoring, model provenance, and exact serving defaults may differ.
 - Single-pass AIME-30 is noisy; a firm ranking would need multiple passes / prompt variants.
+- Buun's Heretic note was about quantization robustness; this receipt tests one canonical-looking Q4_K_M GGUF, not all Heretic quants or BF16.
 
 ## Receipts
 
@@ -53,6 +58,9 @@ This does **not** falsify Bunn/Buun's broader BF16/ablation claim because:
 
 - R26 — bounded-thinking GAE, 4096 tokens:  
   [`receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md`](../receipts/2026-05-25-3090-aime26-stock-qwen36-27b-q4km-bounded-gae-4096.md)
+
+- R28 — Heretic Q4_K_M, reasoning off 4096 and reasoning on 30k:  
+  [`receipts/2026-05-26-3090-aime26-heretic-qwen36-27b-q4km.md`](../receipts/2026-05-26-3090-aime26-heretic-qwen36-27b-q4km.md)
 
 ## External thread state
 
@@ -74,7 +82,7 @@ Tweet posted as a new post because direct reply was blocked by X conversation se
 
 - [`https://x.com/sztlink/status/2058899267348009321`](https://x.com/sztlink/status/2058899267348009321)
 
-Content: short local GGUF datapoint with R22/R23 scores, explicitly labeled not BF16 reproduction. `@spiritbuun` asked about max-token cutoff and scorer differences; replied with the two cutoffs and answer-extraction rule.
+Content: short local GGUF datapoint with R22/R23 scores, explicitly labeled not BF16 reproduction. `@spiritbuun` asked about max-token cutoff and scorer differences; replied with the two cutoffs and answer-extraction rule. He then suggested the Heretic model, noting it was more resilient to quantization in his testing. R28/R29 answer that prompt locally: Heretic Q4_K_M scored `16/30` both off-4096 and on-30k, below local stock in both comparable settings.
 
 ## Suggested next moves
 
