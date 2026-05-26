@@ -1,0 +1,18 @@
+2026-05-25T22:19:01.826Z AIME_CURL_RUN_START label=R28-smoke-heretic-qwen36-27b-q4km-reasoning-off
+2026-05-25T22:19:01.832Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-Q4_K_M.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18031 -np 1 --alias heretic-qwen36-27b-q4km --jinja --slots --reasoning off
+2026-05-25T22:19:01.862Z SERVER_PID 4765812
+2026-05-25T22:19:01.889Z HEALTH_WAIT fetch failed
+2026-05-25T22:19:11.901Z HEALTH 200 {"status":"ok"}
+2026-05-25T22:19:11.902Z CASE_START 1 expected=277
+2026-05-25T22:20:01.533Z CASE_DONE 1 correct=true pred=277 expected=277 elapsed=50s finish=stop
+2026-05-25T22:20:01.534Z CASE_START 2 expected=62
+2026-05-25T22:21:20.196Z CASE_DONE 2 correct=true pred=62 expected=62 elapsed=79s finish=stop
+2026-05-25T22:21:20.197Z CASE_START 3 expected=79
+2026-05-25T22:22:06.232Z CASE_DONE 3 correct=true pred=79 expected=79 elapsed=46s finish=stop
+2026-05-25T22:22:06.232Z CASE_START 4 expected=70
+2026-05-25T22:23:45.221Z CASE_DONE 4 correct=true pred=70 expected=70 elapsed=99s finish=stop
+2026-05-25T22:23:45.221Z CASE_START 5 expected=65
+2026-05-25T22:24:31.651Z CASE_DONE 5 correct=true pred=65 expected=65 elapsed=46s finish=stop
+2026-05-25T22:24:31.652Z AIME_CURL_RUN_DONE score=5/5
+2026-05-25T22:24:33.896Z SERVER_EXIT code=null sig=SIGTERM
+

@@ -1,0 +1,68 @@
+2026-05-25T23:28:37.291Z AIME_CURL_RUN_START label=R29-full-heretic-qwen36-27b-q4km-30k-reasoning-on
+2026-05-25T23:28:37.295Z SERVER_CMD llama-server.exe -m C:/Users/user/boring/models/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-Q4_K_M.gguf -ngl 99 -fa on -ctk f16 -ctv f16 -c 32768 --host 127.0.0.1 --port 18033 -np 1 --alias heretic-qwen36-27b-q4km --jinja --slots --reasoning on
+2026-05-25T23:28:37.303Z SERVER_PID 2715224
+2026-05-25T23:28:37.329Z HEALTH_WAIT fetch failed
+2026-05-25T23:28:47.339Z HEALTH 200 {"status":"ok"}
+2026-05-25T23:28:47.340Z CASE_START 1 expected=277
+2026-05-25T23:36:35.697Z CASE_DONE 1 correct=true pred=277 expected=277 elapsed=468s finish=stop
+2026-05-25T23:36:35.697Z CASE_START 2 expected=62
+2026-05-25T23:55:20.897Z CASE_DONE 2 correct=true pred=62 expected=62 elapsed=1125s finish=length
+2026-05-25T23:55:20.898Z CASE_START 3 expected=79
+2026-05-26T00:11:27.869Z CASE_DONE 3 correct=true pred=79 expected=79 elapsed=967s finish=stop
+2026-05-26T00:11:27.869Z CASE_START 4 expected=70
+2026-05-26T00:30:15.776Z CASE_DONE 4 correct=true pred=70 expected=70 elapsed=1128s finish=length
+2026-05-26T00:30:15.776Z CASE_START 5 expected=65
+2026-05-26T00:44:00.901Z CASE_DONE 5 correct=true pred=65 expected=65 elapsed=825s finish=stop
+2026-05-26T00:44:00.902Z CASE_START 6 expected=441
+2026-05-26T01:02:48.593Z CASE_DONE 6 correct=false pred=26 expected=441 elapsed=1128s finish=length
+2026-05-26T01:02:48.594Z CASE_START 7 expected=396
+2026-05-26T01:21:36.005Z CASE_DONE 7 correct=false pred=3 expected=396 elapsed=1127s finish=length
+2026-05-26T01:21:36.006Z CASE_START 8 expected=244
+2026-05-26T01:34:27.541Z CASE_DONE 8 correct=true pred=244 expected=244 elapsed=772s finish=stop
+2026-05-26T01:34:27.542Z CASE_START 9 expected=29
+2026-05-26T01:53:12.462Z CASE_DONE 9 correct=true pred=29 expected=29 elapsed=1125s finish=length
+2026-05-26T01:53:12.463Z CASE_START 10 expected=156
+2026-05-26T02:11:57.933Z CASE_DONE 10 correct=false pred=2 expected=156 elapsed=1125s finish=length
+2026-05-26T02:11:57.934Z CASE_START 11 expected=896
+2026-05-26T02:30:41.520Z CASE_DONE 11 correct=true pred=896 expected=896 elapsed=1124s finish=length
+2026-05-26T02:30:41.520Z CASE_START 12 expected=161
+2026-05-26T02:47:23.728Z CASE_DONE 12 correct=true pred=161 expected=161 elapsed=1002s finish=stop
+2026-05-26T02:47:23.728Z CASE_START 13 expected=39
+2026-05-26T03:06:10.470Z CASE_DONE 13 correct=false pred=0 expected=39 elapsed=1127s finish=length
+2026-05-26T03:06:10.470Z CASE_START 14 expected=681
+2026-05-26T03:24:53.775Z CASE_DONE 14 correct=false pred=5 expected=681 elapsed=1123s finish=length
+2026-05-26T03:24:53.775Z CASE_START 15 expected=83
+2026-05-26T03:43:41.879Z CASE_DONE 15 correct=false pred=4 expected=83 elapsed=1128s finish=length
+2026-05-26T03:43:41.880Z CASE_START 16 expected=178
+2026-05-26T03:54:27.159Z CASE_DONE 16 correct=true pred=178 expected=178 elapsed=645s finish=stop
+2026-05-26T03:54:27.160Z CASE_START 17 expected=243
+2026-05-26T04:13:11.972Z CASE_DONE 17 correct=false pred=1 expected=243 elapsed=1125s finish=length
+2026-05-26T04:13:11.972Z CASE_START 18 expected=503
+2026-05-26T04:31:55.659Z CASE_DONE 18 correct=false pred=1 expected=503 elapsed=1124s finish=length
+2026-05-26T04:31:55.659Z CASE_START 19 expected=279
+2026-05-26T04:50:18.084Z CASE_DONE 19 correct=true pred=279 expected=279 elapsed=1102s finish=stop
+2026-05-26T04:50:18.084Z CASE_START 20 expected=190
+2026-05-26T05:05:26.765Z CASE_DONE 20 correct=true pred=190 expected=190 elapsed=909s finish=stop
+2026-05-26T05:05:26.765Z CASE_START 21 expected=50
+2026-05-26T05:24:13.988Z CASE_DONE 21 correct=false pred=3 expected=50 elapsed=1127s finish=length
+2026-05-26T05:24:13.989Z CASE_START 22 expected=754
+2026-05-26T05:39:58.505Z CASE_DONE 22 correct=true pred=754 expected=754 elapsed=945s finish=stop
+2026-05-26T05:39:58.505Z CASE_START 23 expected=245
+2026-05-26T05:58:47.049Z CASE_DONE 23 correct=false pred=7 expected=245 elapsed=1129s finish=length
+2026-05-26T05:58:47.049Z CASE_START 24 expected=669
+2026-05-26T06:16:00.366Z CASE_DONE 24 correct=true pred=669 expected=669 elapsed=1033s finish=stop
+2026-05-26T06:16:00.366Z CASE_START 25 expected=850
+2026-05-26T06:32:16.922Z CASE_DONE 25 correct=true pred=850 expected=850 elapsed=977s finish=stop
+2026-05-26T06:32:16.922Z CASE_START 26 expected=132
+2026-05-26T06:50:58.048Z CASE_DONE 26 correct=true pred=132 expected=132 elapsed=1121s finish=length
+2026-05-26T06:50:58.049Z CASE_START 27 expected=223
+2026-05-26T07:09:35.457Z CASE_DONE 27 correct=false pred=12 expected=223 elapsed=1117s finish=length
+2026-05-26T07:09:35.458Z CASE_START 28 expected=107
+2026-05-26T07:28:16.317Z CASE_DONE 28 correct=false pred=2 expected=107 elapsed=1121s finish=length
+2026-05-26T07:28:16.317Z CASE_START 29 expected=157
+2026-05-26T07:46:56.880Z CASE_DONE 29 correct=false pred=8 expected=157 elapsed=1121s finish=length
+2026-05-26T07:46:56.880Z CASE_START 30 expected=393
+2026-05-26T08:05:36.442Z CASE_DONE 30 correct=false pred=2 expected=393 elapsed=1120s finish=length
+2026-05-26T08:05:36.458Z AIME_CURL_RUN_DONE score=16/30
+2026-05-26T08:05:38.735Z SERVER_EXIT code=null sig=SIGTERM
+
