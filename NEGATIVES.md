@@ -17,6 +17,8 @@ keep the lab from turning every experiment into a growth curve.
 | R15 | [`2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md) | PARTIAL / TIMEOUT / negative delta | The long-context follow-up does not rescue the patched KV-dtype axis: q8/q8 completes but gets worse vs f16 with depth, while q8/q4 collapses and exits `-1` after partial rows. |
 | RS1 | [`2026-05-23-4090-vllm-realrag-entity-hop-path.md`](receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md) | MIXED | Entity-hop path prompting beats BM25→BGE, but strict single-candidate ECD fails. The mixed result preserves the boundary between evidence construction and sampler control. |
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | 100-case PASS; 500-case NO DELTA | The small gated-rerank gain does not scale to N=500. Publishing the no-delta follow-up keeps the receipt from becoming a cherry-picked claim. |
+| RS3 | [`2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md`](receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md) | HOLDOUT FAILED | Option B found a small repair-heavy slice on inspected N=500 data, then failed fresh holdout with 1 eligible tie and 0 wins. |
+| RS4 | [`2026-05-30-4090-vllm-realrag-gated-control-closure.md`](receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md) | CLOSED AFTER HOLDOUT | Option A was too small and Option B failed fresh holdout. This closes hand-written gated control for now and redirects work to retrieval/path construction. |
 
 ## How to read a negative receipt
 
@@ -40,8 +42,11 @@ The current negatives now split across two domains:
 
 ```txt
 entity-hop path prompt == gated rerank v1
+Option B gated-control detector failed fresh holdout
+hand-written gated control is closed for now
 KV q8/q8 does not beat f16 in short or long context; q8/q4 collapses/stalls in the long-context patched-source test
 ```
 
 That does not erase the 100-case RAG signal, and it does not close the KV dtype
-axis. It demotes both to what they are: measured local results, not scaled claims.
+axis. It demotes each tempting result to what it is: measured local evidence, not
+a scaled claim.

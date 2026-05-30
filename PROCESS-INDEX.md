@@ -47,6 +47,8 @@ what kind of gesture they perform so the lab reads as process, not inventory.
 | R15 | [`2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md`](receipts/2026-05-23-3090-llama-cpp-kv-dtype-longctx-timeout.md) | Long-context KV dtype curve: q8/q8 slower with depth, q8/q4 exits `-1` before 32K. |
 | RS1 | [`2026-05-23-4090-vllm-realrag-entity-hop-path.md`](receipts/2026-05-23-4090-vllm-realrag-entity-hop-path.md) | Positive path-construction bridge plus failed strict ECD shortcut. |
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | Small-slice gain demoted by N=500 no-delta. |
+| RS3 | [`2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md`](receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md) | Option B detector found a small inspected slice, then failed fresh holdout. |
+| RS4 | [`2026-05-30-4090-vllm-realrag-gated-control-closure.md`](receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md) | Option A and Option B side-by-side closure; pivot to retrieval/path. |
 
 ## Open frontier
 

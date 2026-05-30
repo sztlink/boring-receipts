@@ -109,6 +109,14 @@ gate-v1 PASS</span>
     v1 gave a small clean gain, but the 500-case machine-only follow-up shows no delta vs direct path prompting
     (EM 0.216 vs 0.216; wins 2, losses 2). ·
     <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">full receipt RS2</a></p>
+    <p class="small"><strong>RS3 - Option B redesigned detector shadow run</strong>. A post-N=500 redesign
+    found a small repair-heavy slice on inspected data (8 eligible rows, 5 wins, 0 losses, 3 ties), then failed
+    fresh holdout at offset 500, N=100 with 1 eligible tie and 0 wins. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md">full receipt RS3</a></p>
+    <p class="small"><strong>RS4 - gated control closure</strong>. Option A was clean but too small; Option B
+    looked stronger on inspected data but failed fresh holdout. Hand-written gated control is closed for now;
+    the next front is retrieval/path construction or genuinely new uncertainty signals. ·
+    <a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md">full receipt RS4</a></p>
 
     <h2>Receipt ledger</h2>
     <p class="small">Filters are exact; semantic mode is only a discovery layer. The cited receipt file remains the source of truth.</p>

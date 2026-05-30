@@ -1,6 +1,6 @@
 {
   "schema": "boring-receipts-index-v1",
-  "updated": "2026-05-26",
+  "updated": "2026-05-30",
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
@@ -300,6 +300,24 @@
       "category": "aime-reasoning",
       "status": "HERETIC_16_OF_30_OFF__16_OF_30_30K_REASONING__NO_LOCAL_WIN_OVER_STOCK",
       "gesture": "AIME 2026 Heretic Qwen3.6 27B Q4_K_M reasoning-off 4096 and reasoning-on 30k local GGUF comparison"
+    },
+    {
+      "id": "RS3",
+      "file": "receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md",
+      "date": "2026-05-30",
+      "node": "AYA-4090",
+      "category": "research-sibling",
+      "status": "HOLDOUT_FAILED__CLOSE_GATED_CONTROL_FOR_NOW",
+      "gesture": "Option B detector found a small inspected slice, failed fresh holdout, gated control closed for now"
+    },
+    {
+      "id": "RS4",
+      "file": "receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md",
+      "date": "2026-05-30",
+      "node": "AYA-4090",
+      "category": "research-sibling",
+      "status": "CLOSED_AFTER_HOLDOUT__PIVOT_TO_RETRIEVAL_PATH",
+      "gesture": "Option A too small and Option B failed fresh holdout; close gated control for now"
     }
   ]
 }

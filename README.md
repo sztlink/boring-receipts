@@ -127,14 +127,17 @@ to start with:
   [`receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md`](receipts/2026-05-23-3090-qwen25-7b-q4q4-1m-ramp-partial.md)
 
 15 runtime receipts (R1–R16, excluding blocker R13) over a **5-model library, 7.25B–14.77B**
-(Mistral, Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1/RS2 research-sibling
+(Mistral, Qwen2.5-7B/14B, Llama-3.1-8B, Gemma-2-9B), plus RS1-RS4 research-sibling
 receipts citing the RealRAG/EPKV probe family in
 [turboquant-cuda-bench](https://github.com/sztlink/turboquant-cuda-bench). All under
 `receipts/`. Next rungs climb from here; we don't jump to the top.
 
 Important null result: **RS2 at N=500 is NO DELTA**. The small gated-rerank gain did
-not scale, and the receipt says so. Negative, blocked and no-delta receipts are
-first-class evidence, not footnotes. See `NEGATIVES.md`.
+not scale, and the receipt says so. **RS3** records an exploratory Option B shadow
+detector that found a small repair-heavy slice on inspected data, then failed fresh
+holdout. **RS4** closes gated control for now and redirects the line toward
+retrieval/path construction. Negative, blocked, no-delta and holdout-failed receipts
+are first-class evidence, not footnotes. See `NEGATIVES.md`.
 
 ## Request a receipt
 

@@ -78,6 +78,12 @@ The archive deliberately keeps resistance visible:
   fails.
 - **RS2 - N=500 NO DELTA:** the 100-case gated-rerank gain does not scale; direct
   entity-hop path prompting remains the non-oracle baseline.
+- **RS3 - Option B holdout failed:** a redesigned shadow detector found 8/500
+  eligible rows with 5 EM wins, 0 losses and 3 ties on inspected data, then failed
+  fresh holdout at offset 500, N=100 with 1 eligible tie and 0 wins.
+- **RS4 - Gated control closed:** Option A was too small, Option B failed holdout,
+  and hand-written gated control is closed for now. The next front is retrieval/path
+  construction or genuinely new pre-scoring uncertainty signals.
 
 See [`NEGATIVES.md`](NEGATIVES.md) for the public no-delta/blocked shelf.
 
