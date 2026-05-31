@@ -1,6 +1,6 @@
 {
   "schema": "boring-receipts-index-v1",
-  "updated": "2026-05-30",
+  "updated": "2026-05-31",
   "repo": "https://github.com/sztlink/boring-receipts",
   "site": "https://sztlink.github.io/boring-receipts/",
   "receipts": [
@@ -318,6 +318,15 @@
       "category": "research-sibling",
       "status": "CLOSED_AFTER_HOLDOUT__PIVOT_TO_RETRIEVAL_PATH",
       "gesture": "Option A too small and Option B failed fresh holdout; close gated control for now"
+    },
+    {
+      "id": "RS5",
+      "file": "receipts/2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md",
+      "date": "2026-05-31",
+      "node": "AYA-4090",
+      "category": "research-sibling",
+      "status": "MIXED_NEGATIVE__RETRIEVAL_COVERAGE_REPRODUCED__PROMPT_GUARDS_FAILED",
+      "gesture": "retrieval coverage reproduced on fresh slice, but answer quality mixed and global/narrow prompt guards failed by over-refusal"
     }
   ]
 }

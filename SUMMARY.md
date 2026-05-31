@@ -84,6 +84,10 @@ The archive deliberately keeps resistance visible:
 - **RS4 - Gated control closed:** Option A was too small, Option B failed holdout,
   and hand-written gated control is closed for now. The next front is retrieval/path
   construction or genuinely new pre-scoring uncertainty signals.
+- **RS5 - Path construction prompt guards failed:** retrieval coverage reproduced on
+  a fresh slice, but answer quality stayed mixed and both global and narrow prompt
+  guards underperformed the same-run path prompt. The next object is explicit path
+  candidates, not more prompt wording.
 
 See [`NEGATIVES.md`](NEGATIVES.md) for the public no-delta/blocked shelf.
 
@@ -93,13 +97,19 @@ Offline single-node receipts. Not a leaderboard, not a vendor benchmark, not
 serving-readiness. The canonical minimal KV/long-context receipt the upstream
 [llama.cpp #18722](https://github.com/ggml-org/llama.cpp/issues/18722) left unowned.
 
-The open frontier is still the **KV-dtype axis** (the heart of the TurboQuant
-comparison). R14 makes the axis runnable with a patched source build, and R15 shows
-that the long-context curve is also negative/partial for this command shape. The
-next real move is source/kernel inspection, an upstream-clean CUDA 12.x build, or
-an external branch-and-command request. For beyond-128K context specifically, R16 establishes the local 3090 capacity ladder;
-the next useful target is Qwen3.6-27B or a known long-context fork with a quality
-gate, not another blind Qwen2.5-7B capacity rerun.
+The open runtime frontier is still the **KV-dtype axis** (the heart of the
+TurboQuant comparison). R14 makes the axis runnable with a patched source build,
+and R15 shows that the long-context curve is also negative/partial for this command
+shape. The next real runtime move is source/kernel inspection, an upstream-clean
+CUDA 12.x build, or an external branch-and-command request. For beyond-128K context
+specifically, R16 establishes the local 3090 capacity ladder; the next useful target
+is Qwen3.6-27B or a known long-context fork with a quality gate, not another blind
+Qwen2.5-7B capacity rerun.
+
+The open RealRAG frontier is now **explicit path-candidate construction**. RS5 shows
+that smaller retrieval expansion improves evidence availability, but prompt-level
+guards create refusals rather than robust answers. The next RealRAG move should be
+no-LLM path candidate extraction and filtering before another 4090 answer run.
 
 
 ## R18 — Qwen3.6-35B-A3B TurboQuant+ KLD

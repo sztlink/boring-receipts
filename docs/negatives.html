@@ -31,6 +31,7 @@ no delta</span></div>
         <tr><td data-l="ID">RS2</td><td data-l="Status">N=500 NO DELTA</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md">Gated answer rerank</a></td><td data-l="Why">The small 100-case gain does not scale. Direct entity-hop path prompting remains the non-oracle baseline.</td></tr>
         <tr><td data-l="ID">RS3</td><td data-l="Status">HOLDOUT FAILED</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md">Option B detector</a></td><td data-l="Why">The redesigned detector found a small repair-heavy slice on inspected N=500 data, then failed fresh holdout with 1 eligible tie and 0 wins.</td></tr>
         <tr><td data-l="ID">RS4</td><td data-l="Status">CLOSED AFTER HOLDOUT</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md">Gated control closure</a></td><td data-l="Why">Option A was too small and Option B failed holdout. The line redirects to retrieval/path construction.</td></tr>
+        <tr><td data-l="ID">RS5</td><td data-l="Status">MIXED / NEGATIVE</td><td data-l="Receipt"><a href="https://github.com/sztlink/boring-receipts/blob/main/receipts/2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md">Path construction prompt guards</a></td><td data-l="Why">Retrieval coverage reproduced, but fresh answer quality stayed mixed and prompt guards failed. The line redirects to explicit path candidates.</td></tr>
       </tbody>
     </table></div>
 
@@ -43,7 +44,7 @@ no delta</span></div>
     </ol>
 
     <h2>Current lesson</h2>
-    <p><code>entity-hop path prompt == gated rerank v1</code> at N=500. <code>Option B gated control failed fresh holdout</code>. <code>hand-written gated control is closed for now</code>. <code>KV q8/q8 does not beat f16 through 64K</code>, and <code>KV q8/q4 exits -1 before 32K</code> in the patched-source long-context test. Each demotes a tempting claim to measured local evidence.</p>
+    <p><code>entity-hop path prompt == gated rerank v1</code> at N=500. <code>Option B gated control failed fresh holdout</code>. <code>hand-written gated control is closed for now</code>. <code>retrieval coverage can improve while answer quality stays mixed</code>. <code>prompt guards failed by over-refusal</code>. <code>KV q8/q8 does not beat f16 through 64K</code>, and <code>KV q8/q4 exits -1 before 32K</code> in the patched-source long-context test. Each demotes a tempting claim to measured local evidence.</p>
 
     <div class="foot">Positive, negative and no-delta states use the same receipt structure and the same public weight.</div>
   </div>

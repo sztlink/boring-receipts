@@ -49,6 +49,7 @@ what kind of gesture they perform so the lab reads as process, not inventory.
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | Small-slice gain demoted by N=500 no-delta. |
 | RS3 | [`2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md`](receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md) | Option B detector found a small inspected slice, then failed fresh holdout. |
 | RS4 | [`2026-05-30-4090-vllm-realrag-gated-control-closure.md`](receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md) | Option A and Option B side-by-side closure; pivot to retrieval/path. |
+| RS5 | [`2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md`](receipts/2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md) | Retrieval/path sprint: coverage reproduced, fresh answer quality mixed, global and narrow prompt guards failed. |
 
 ## Open frontier
 
@@ -58,3 +59,6 @@ for this command shape. The next honest move is not another blind benchmark loop
 is source/kernel inspection, an upstream-clean CUDA 12.x build, or an external
 branch-and-command request. For context capacity, R16 is now the local ladder: the next meaningful target is a
 Qwen3.6-27B or long-context fork recipe with a quality gate.
+
+The RealRAG frontier is different: after RS5, stop prompt-guard variants and build
+explicit path candidates before answer generation.

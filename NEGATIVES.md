@@ -19,6 +19,7 @@ keep the lab from turning every experiment into a growth curve.
 | RS2 | [`2026-05-23-4090-vllm-realrag-gated-answer-rerank.md`](receipts/2026-05-23-4090-vllm-realrag-gated-answer-rerank.md) | 100-case PASS; 500-case NO DELTA | The small gated-rerank gain does not scale to N=500. Publishing the no-delta follow-up keeps the receipt from becoming a cherry-picked claim. |
 | RS3 | [`2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md`](receipts/2026-05-30-4090-vllm-realrag-option-b-redesigned-detector-shadow.md) | HOLDOUT FAILED | Option B found a small repair-heavy slice on inspected N=500 data, then failed fresh holdout with 1 eligible tie and 0 wins. |
 | RS4 | [`2026-05-30-4090-vllm-realrag-gated-control-closure.md`](receipts/2026-05-30-4090-vllm-realrag-gated-control-closure.md) | CLOSED AFTER HOLDOUT | Option A was too small and Option B failed fresh holdout. This closes hand-written gated control for now and redirects work to retrieval/path construction. |
+| RS5 | [`2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md`](receipts/2026-05-31-4090-vllm-realrag-path-construction-prompt-guards.md) | MIXED / NEGATIVE | Retrieval coverage reproduced on a fresh slice, but answer quality stayed mixed and both global and narrow prompt guards failed. This closes prompt-guard iteration and redirects to explicit path-candidate construction. |
 
 ## How to read a negative receipt
 
@@ -44,9 +45,12 @@ The current negatives now split across two domains:
 entity-hop path prompt == gated rerank v1
 Option B gated-control detector failed fresh holdout
 hand-written gated control is closed for now
+retrieval coverage can improve while answer quality remains mixed
+prompt-level RealRAG guards failed by over-refusal
 KV q8/q8 does not beat f16 in short or long context; q8/q4 collapses/stalls in the long-context patched-source test
 ```
 
 That does not erase the 100-case RAG signal, and it does not close the KV dtype
 axis. It demotes each tempting result to what it is: measured local evidence, not
-a scaled claim.
+a scaled claim. For RealRAG, the next honest object is not another prompt rule; it
+is an explicit candidate path before answer generation.
